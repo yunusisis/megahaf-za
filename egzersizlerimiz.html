@@ -1,0 +1,1231 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mega Hafıza Ankara | Egzersizlerimiz</title>
+  <meta name="description" content="Çocuklar için okuma hızı oyunu, dikkat oyunu ve çarkıfelek eş anlamlı oyunu. Mega Hafıza Ankara egzersizler sayfası.">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --blue:#0b5ed7;
+      --black:#0b0f19;
+      --ink:#0a0d14;
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.74);
+      --card: rgba(255,255,255,.07);
+      --stroke: rgba(255,255,255,.14);
+      --shadow: 0 18px 55px rgba(0,0,0,.35);
+      --shadow2: 0 20px 80px rgba(0,0,0,.45);
+      --r: 18px;
+      --r2: 26px;
+    }
+
+    html{scroll-behavior:smooth;}
+    body{
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--black);
+      color: var(--text);
+      overflow-x:hidden;
+    }
+    .container-xl{max-width:1260px;}
+
+    /* Topbar */
+    .topbar{
+      background:#202020;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      font-size: 14px;
+    }
+    .topbar a{ color: rgba(255,255,255,.92); text-decoration:none; }
+    .topbar a:hover{ color:#fff; }
+    .topbar .item{ display:inline-flex; align-items:center; gap:.55rem; padding:.65rem 0; }
+
+    /* Nav */
+    .navwrap{
+      background:#fff;
+      border-bottom: 1px solid rgba(0,0,0,.08);
+      position: sticky;
+      top:0;
+      z-index: 1000;
+    }
+    .brand{
+      display:flex; align-items:center; gap:.7rem;
+      font-weight: 900; letter-spacing: -.02em;
+      color:#111827 !important;
+    }
+    .brand-badge{
+      width:42px;height:42px;border-radius:12px;
+      background: linear-gradient(135deg, var(--blue), #0a0d14);
+      display:grid; place-items:center;
+      overflow:hidden;
+      box-shadow: 0 14px 30px rgba(11,94,215,.18);
+    }
+    .brand-badge img{ width:26px;height:26px; object-fit:contain; }
+    .navbar-nav .nav-link{
+      color:#111827 !important;
+      font-weight: 800;
+      padding: .95rem 1rem;
+    }
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active{ color: var(--blue) !important; }
+    .nav-cta{
+      background: var(--ink);
+      color:#fff !important;
+      border-radius: 999px;
+      padding:.72rem 1.1rem;
+      font-weight: 900;
+      text-decoration:none;
+      display:inline-flex; align-items:center; gap:.55rem;
+      box-shadow: 0 14px 35px rgba(0,0,0,.18);
+      transition: transform .15s ease;
+    }
+    .nav-cta:hover{ transform: translateY(-2px); }
+
+    /* Page hero */
+    .page-hero{
+      background:
+        radial-gradient(900px 600px at 15% 10%, rgba(11,94,215,.20), transparent 60%),
+        radial-gradient(900px 600px at 85% 10%, rgba(255,255,255,.06), transparent 55%),
+        var(--black);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      padding: 68px 0 30px;
+    }
+    .page-kicker{
+      display:inline-flex; align-items:center; gap:.55rem;
+      padding:.45rem .8rem;
+      border-radius:999px;
+      background: rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.16);
+      font-weight: 800;
+      letter-spacing:.08em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: rgba(255,255,255,.92);
+    }
+    .page-hero h1{
+      font-weight: 950;
+      letter-spacing:-.05em;
+      line-height: 1.05;
+      margin-top: 14px;
+    }
+    .page-hero p{ color: rgba(255,255,255,.82); max-width: 72ch; }
+
+    /* Sections */
+    .section{padding: 76px 0;}
+    .sec-blue{
+      background:
+        linear-gradient(180deg, rgba(43,123,255,.18), rgba(43,123,255,.12)),
+        var(--blue);
+      border-top: 1px solid rgba(255,255,255,.14);
+      border-bottom: 1px solid rgba(255,255,255,.14);
+    }
+    .sec-black{
+      background:
+        radial-gradient(900px 600px at 15% 20%, rgba(11,94,215,.12), transparent 60%),
+        radial-gradient(900px 600px at 85% 10%, rgba(255,255,255,.06), transparent 55%),
+        var(--black);
+      border-top: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .section-title{
+      font-weight: 950;
+      letter-spacing: -.04em;
+      line-height: 1.08;
+    }
+    .section-sub{ color: rgba(255,255,255,.86); max-width: 80ch; }
+
+    /* Cards */
+    .card-pro{
+      border-radius: var(--r2);
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.16);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      height: 100%;
+    }
+    .card-head{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:14px;}
+    .icon-pill{
+      width:42px;height:42px;border-radius: 14px;
+      display:grid;place-items:center;
+      background: rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.14);
+    }
+    .icon-pill .bi{ font-size: 20px; }
+
+    .btn-primary{
+      background: var(--blue);
+      border:none;
+      font-weight: 900;
+      border-radius: 999px;
+      padding: .85rem 1.2rem;
+      box-shadow: 0 18px 40px rgba(11,94,215,.22);
+    }
+    .btn-primary:hover{background:#0a54c2;}
+    .btn-outline-light{
+      border-radius: 999px;
+      font-weight: 900;
+      padding: .85rem 1.2rem;
+    }
+    .btn-ghost{
+      border-radius:999px;
+      padding:.82rem 1.1rem;
+      font-weight: 900;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.18);
+      color:#fff;
+      text-decoration:none;
+      display:inline-flex; align-items:center; gap:.55rem;
+    }
+    .btn-ghost:hover{ background: rgba(0,0,0,.24); color:#fff; }
+
+    /* ========== KIDS UI UPGRADE ========== */
+    .kids-card{ position: relative; overflow: hidden; }
+    .kids-card:before{
+      content:"";
+      position:absolute;
+      inset:-120px -120px auto -120px;
+      height:240px;
+      background:
+        radial-gradient(closest-side at 20% 40%, rgba(255,255,255,.10), transparent 60%),
+        radial-gradient(closest-side at 60% 20%, rgba(11,94,215,.18), transparent 60%),
+        radial-gradient(closest-side at 80% 60%, rgba(52,199,89,.14), transparent 60%);
+      z-index:0;
+      pointer-events:none;
+    }
+    .kids-card > *{ position: relative; z-index:1; }
+
+    .kids-tip{
+      border-radius: 18px;
+      border: 1px dashed rgba(255,255,255,.22);
+      background: rgba(255,255,255,.08);
+      padding: 12px 14px;
+      color: rgba(255,255,255,.88);
+    }
+
+    .btn-group-kids{ display:flex; flex-wrap: wrap; gap:10px; align-items:center; }
+    .btn-kid{
+      border-radius: 999px !important;
+      font-weight: 950 !important;
+      padding: .78rem 1.05rem !important;
+      display:inline-flex;
+      align-items:center;
+      gap:.55rem;
+    }
+    .btn-kid i{ font-size: 1.15rem; }
+
+    /* Reading box - highlight + ruler */
+    .reading-box{
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.18);
+      padding: 18px;
+      min-height: 190px;
+      line-height: 1.85;
+      font-size: 1.12rem;
+      color: rgba(255,255,255,.92);
+      box-shadow: var(--shadow2);
+      position: relative;
+    }
+    .reading-box .w{
+      padding: 0 .14rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .reading-box .w:hover{ background: rgba(255,255,255,.10); }
+    .reading-box .w.mark{
+      background: rgba(255,215,0,.22);
+      outline: 1px solid rgba(255,215,0,.35);
+    }
+    .read-ruler{
+      position:absolute;
+      left: 12px;
+      right: 12px;
+      height: 34px;
+      border-radius: 12px;
+      background: linear-gradient(90deg, rgba(255,255,255,.12), rgba(255,255,255,.06));
+      outline: 1px solid rgba(255,255,255,.12);
+      pointer-events:none;
+      opacity: 0;
+      transition: opacity .12s ease;
+      mix-blend-mode: screen;
+      top: 12px;
+    }
+    .reading-box:hover .read-ruler{ opacity: 1; }
+
+    .mini-stat{
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.08);
+      padding: 12px 14px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      height: 100%;
+    }
+    .mini-stat .bi{ font-size: 18px; opacity:.95; }
+    .mini-stat b{ font-weight: 950; letter-spacing:-.02em; }
+
+    /* Attention grid - easy, no overflow */
+    .grid-wrap{
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.18);
+      padding: 14px;
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+    }
+    .letter-grid{
+      display:grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 10px;
+      user-select:none;
+    }
+    .cell{
+      border-radius: 12px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      display:grid;
+      place-items:center;
+      height: 52px;
+      font-weight: 900;
+      letter-spacing:.02em;
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-size: 1.05rem;
+    }
+    .cell:hover{ transform: translateY(-2px); border-color: rgba(255,255,255,.22); }
+    .cell.good{ background: rgba(52,199,89,.18); border-color: rgba(52,199,89,.35); }
+    .cell.bad{ background: rgba(255,59,48,.18); border-color: rgba(255,59,48,.35); }
+    @media (max-width: 576px){
+      .cell{ height: 44px; font-size: 1rem; }
+    }
+
+    /* Wheel */
+    .wheel-stage{ display:grid; gap: 14px; align-items:center; }
+    .wheel-wrap{
+      border-radius: 22px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.18);
+      padding: 18px;
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+    }
+    .pointer{
+      width:0;height:0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-bottom: 18px solid rgba(255,255,255,.88);
+      margin: 0 auto 10px;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,.4));
+    }
+    .wheel{
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      border: 10px solid rgba(255,255,255,.12);
+      position: relative;
+      margin: 0 auto;
+      background:
+        conic-gradient(
+          rgba(255,255,255,.10) 0 45deg,
+          rgba(255,255,255,.06) 45deg 90deg,
+          rgba(255,255,255,.10) 90deg 135deg,
+          rgba(255,255,255,.06) 135deg 180deg,
+          rgba(255,255,255,.10) 180deg 225deg,
+          rgba(255,255,255,.06) 225deg 270deg,
+          rgba(255,255,255,.10) 270deg 315deg,
+          rgba(255,255,255,.06) 315deg 360deg
+        );
+      box-shadow: 0 18px 55px rgba(0,0,0,.35);
+      transition: transform 3.2s cubic-bezier(.1,.8,.1,1);
+      overflow:hidden;
+    }
+    .wheel:after{
+      content:"";
+      position:absolute;
+      inset: 18px;
+      border-radius: 50%;
+      border:1px solid rgba(255,255,255,.16);
+      background: radial-gradient(circle at 30% 20%, rgba(11,94,215,.18), transparent 60%);
+    }
+    .wheel-center{
+      position:absolute;
+      inset:0;
+      display:grid;
+      place-items:center;
+      z-index: 2;
+      pointer-events:none;
+    }
+    .wheel-center span{
+      width: 74px; height: 74px;
+      border-radius: 22px;
+      display:grid;
+      place-items:center;
+      background: rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.18);
+      font-weight: 950;
+      letter-spacing: -.02em;
+    }
+    @media (max-width: 576px){
+      .wheel{ width: 230px; height: 230px; }
+    }
+
+    /* Quiz options */
+    .quiz-opt{
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08);
+      padding: 14px 14px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-size: 1.02rem;
+    }
+    .quiz-opt:hover{ transform: translateY(-2px); border-color: rgba(255,255,255,.24); }
+    .quiz-opt.good{ background: rgba(52,199,89,.18); border-color: rgba(52,199,89,.35); }
+    .quiz-opt.bad{ background: rgba(255,59,48,.18); border-color: rgba(255,59,48,.35); }
+
+    /* Footer */
+    footer{
+      background:#05070d;
+      border-top:1px solid rgba(255,255,255,.10);
+      padding: 54px 0;
+    }
+    .footer-link{color: rgba(255,255,255,.78); text-decoration:none;}
+    .footer-link:hover{color:#fff; text-decoration:underline;}
+  </style>
+</head>
+
+<body>
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container-xl d-flex justify-content-between align-items-center">
+      <div class="d-flex gap-4 flex-wrap">
+        <a class="item" href="tel:+905439680233"><i class="bi bi-telephone"></i><span>0543 968 0233</span></a>
+        <a class="item" href="https://wa.me/905439680233" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i><span>WhatsApp</span></a>
+      </div>
+      <div class="d-flex gap-3">
+        <a class="item" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i><span class="d-none d-md-inline">Instagram</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navwrap">
+    <div class="container-xl">
+          <a class="navbar-brand brand" href="index.html">
+                <img src="logoo.png" alt="">
+            </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Anasayfa</a></li>
+          <li class="nav-item"><a class="nav-link" href="hakkimizda.html">Hakkımızda</a></li>
+          <li class="nav-item"><a class="nav-link" href="egitimlerimiz.html">Eğitimlerimiz</a></li>
+          <li class="nav-item"><a class="nav-link" href="mega-o-mega.html">Mega O Mega</a></li>
+          <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+          <li class="nav-item"><a class="nav-link active" href="egzersizlerimiz.html">Egzersizlerimiz</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="nav-cta" href="iletisim.html"><i class="bi bi-chat-dots"></i> Bilgi Alın</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="page-hero">
+    <div class="container-xl">
+      <div class="page-kicker"><i class="bi bi-lightning-charge"></i> Oyun Gibi Egzersizler</div>
+      <h1 class="display-5 mb-2">Egzersizlerimiz</h1>
+      <p class="mb-4">Okuma hızını ölç, hedef harfi bul, çarkı çevir ve eş anlamlıyı seç! Hepsi çocuklar için eğlenceli ve kolay.</p>
+      <div class="d-flex flex-wrap gap-2">
+        <a class="btn btn-primary btn-lg" href="#okuma"><i class="bi bi-rocket-takeoff-fill"></i> Okuma Oyunu</a>
+        <a class="btn btn-outline-light btn-lg" href="#dikkat"><i class="bi bi-eye-fill"></i> Dikkat Oyunu</a>
+        <a class="btn btn-outline-light btn-lg" href="#cark"><i class="bi bi-arrow-repeat"></i> Çarkıfelek</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- OKUMA -->
+  <section id="okuma" class="section sec-blue">
+    <div class="container-xl">
+      <div class="row g-4 align-items-stretch">
+
+        <div class="col-lg-7">
+          <div class="card-pro kids-card">
+            <div class="card-head">
+              <div class="icon-pill"><i class="bi bi-rocket-takeoff-fill"></i></div>
+              <small class="text-white-50 fw-bold">Okuma Oyunu</small>
+            </div>
+
+            <h2 class="section-title h3 mb-2">Hadi hızını deneyelim! 🚀</h2>
+
+            <div class="kids-tip mb-3">
+              <b>Nasıl oynanır?</b><br>
+              1) “Metin Getir” de. 2) “Başlat” ile süre başlasın. 3) Bitirince “Bitir” de.<br>
+              İstersen “Beklet” ile durdur, “Devam” ile devam et. Kelimeye tıklarsan işaretlersin ✨
+            </div>
+
+            <div class="d-flex flex-wrap gap-2 align-items-center mb-3">
+              <label class="fw-bold me-1">Metin:</label>
+              <select id="wordCount" class="form-select" style="max-width:180px;">
+                <option value="30">30 kelime</option>
+                <option value="60">60 kelime</option>
+                <option value="90">90 kelime</option>
+                <option value="100">100 kelime</option>
+                <option value="140">140 kelime</option>
+              </select>
+
+              <button class="btn btn-light btn-kid" id="btnGenerate">
+                <i class="bi bi-shuffle"></i> Metin Getir
+              </button>
+            </div>
+
+            <div id="readingText" class="reading-box" aria-label="Okuma metni">
+              Metin getirmek için “Metin Getir” butonuna bas.
+              <div class="read-ruler" id="readRuler"></div>
+            </div>
+
+            <div class="btn-group-kids mt-3">
+              <button class="btn btn-outline-light btn-kid" id="btnStart">
+                <i class="bi bi-play-fill"></i> Başlat
+              </button>
+              <button class="btn btn-outline-light btn-kid" id="btnPause" disabled>
+                <i class="bi bi-pause-fill"></i> Beklet
+              </button>
+              <button class="btn btn-outline-light btn-kid" id="btnResume" disabled>
+                <i class="bi bi-arrow-repeat"></i> Devam
+              </button>
+              <button class="btn btn-outline-light btn-kid" id="btnStop" disabled>
+                <i class="bi bi-flag-fill"></i> Bitir
+              </button>
+
+              <button class="btn btn-dark btn-kid ms-auto" id="btnResetRead">
+                <i class="bi bi-arrow-counterclockwise"></i> Baştan
+              </button>
+            </div>
+
+            <div class="small text-white-50 mt-2">
+              İpucu: Satır çizgisini metnin üstünde gezdirerek daha rahat takip edebilirsin.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="card-pro kids-card h-100">
+            <div class="card-head">
+              <div class="icon-pill"><i class="bi bi-trophy-fill"></i></div>
+              <small class="text-white-50 fw-bold">Skor Tablosu</small>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-12">
+                <div class="mini-stat">
+                  <i class="bi bi-stopwatch"></i>
+                  <div>
+                    <div class="small text-white-50">Süre</div>
+                    <b id="readTime">00:00.0</b>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="mini-stat">
+                  <i class="bi bi-speedometer2"></i>
+                  <div>
+                    <div class="small text-white-50">Hız (WPM)</div>
+                    <b id="readWpm">—</b>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="mini-stat">
+                  <i class="bi bi-stars"></i>
+                  <div>
+                    <div class="small text-white-50">Ödül</div>
+                    <b id="readLevel">—</b>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="mini-stat">
+                  <i class="bi bi-crown"></i>
+                  <div>
+                    <div class="small text-white-50">En iyi hız</div>
+                    <b id="readBest">—</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="kids-tip mt-3">
+              <b>Seviye:</b><br>
+              170+ Orta • 220+ İyi • 280+ Süper!
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DIKKAT -->
+  <section id="dikkat" class="section sec-black">
+    <div class="container-xl">
+      <div class="row g-4 align-items-stretch">
+
+        <div class="col-lg-5">
+          <div class="card-pro kids-card h-100">
+            <div class="card-head">
+              <div class="icon-pill"><i class="bi bi-eye-fill"></i></div>
+              <small class="text-white-50 fw-bold">Dikkat Oyunu</small>
+            </div>
+
+            <h2 class="section-title h3 mb-2">Hedefi bul! 👀</h2>
+
+            <div class="kids-tip mb-3">
+              <b>Nasıl oynanır?</b><br>
+              “Başlat” de. Hedef harf çıkacak (mesela <b>A</b>).<br>
+              Izgarada gördüğün <b>hedef harflere</b> tıkla. Süre bitince skorunu göreceksin.
+            </div>
+
+            <div class="btn-group-kids mb-3">
+              <button class="btn btn-primary btn-kid" id="btnAttStart">
+                <i class="bi bi-play-fill"></i> Başlat (20 sn)
+              </button>
+              <button class="btn btn-ghost btn-kid" id="btnAttReset">
+                <i class="bi bi-arrow-counterclockwise"></i> Baştan
+              </button>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-6">
+                <div class="mini-stat">
+                  <i class="bi bi-crosshair2"></i>
+                  <div>
+                    <div class="small text-white-50">Hedef</div>
+                    <b id="targetLetter">—</b>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="mini-stat">
+                  <i class="bi bi-stopwatch"></i>
+                  <div>
+                    <div class="small text-white-50">Kalan</div>
+                    <b id="attTime">—</b>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="mini-stat">
+                  <i class="bi bi-check2-circle"></i>
+                  <div>
+                    <div class="small text-white-50">Doğru</div>
+                    <b id="attGood">0</b>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="mini-stat">
+                  <i class="bi bi-award"></i>
+                  <div>
+                    <div class="small text-white-50">Skor</div>
+                    <b id="attScore">0</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="small text-white-50 mt-3" id="attHint">
+              Hazırsan başlat. Doğru +2, yanlış -1.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="grid-wrap kids-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <div class="fw-bold"><i class="bi bi-grid-3x3-gap"></i> Izgara</div>
+              <div class="small text-white-50">Hedefe tıkla!</div>
+            </div>
+            <div id="letterGrid" class="letter-grid"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CARK -->
+  <section id="cark" class="section sec-blue">
+    <div class="container-xl">
+      <div class="row g-4 align-items-stretch">
+
+        <div class="col-lg-6">
+          <div class="card-pro kids-card h-100">
+            <div class="card-head">
+              <div class="icon-pill"><i class="bi bi-arrow-repeat"></i></div>
+              <small class="text-white-50 fw-bold">Çarkıfelek Oyunu</small>
+            </div>
+
+            <h2 class="section-title h3 mb-2">Çevir, doğru şıkkı seç! 🎡</h2>
+
+            <div class="kids-tip mb-3">
+              <b>Nasıl oynanır?</b><br>
+              “Döndür” de. Bir kelime gelecek. <b>Eş anlamlısını</b> 4 şıktan seç.<br>
+              Toplam <b>10 tur</b> var. En sonda skorunu göreceksin!
+            </div>
+
+            <div class="wheel-stage">
+              <div class="pointer"></div>
+
+              <div class="wheel-wrap">
+                <div id="wheel" class="wheel">
+                  <div class="wheel-center"><span><i class="bi bi-lightning-charge"></i></span></div>
+                </div>
+
+                <div class="btn-group-kids justify-content-center mt-3">
+                  <button class="btn btn-outline-light btn-kid" id="btnSpin">
+                    <i class="bi bi-arrow-clockwise"></i> Döndür
+                  </button>
+                  <button class="btn btn-dark btn-kid" id="btnSpinReset">
+                    <i class="bi bi-arrow-counterclockwise"></i> Baştan
+                  </button>
+                </div>
+
+                <div class="row g-3 mt-3">
+                  <div class="col-6">
+                    <div class="mini-stat">
+                      <i class="bi bi-123"></i>
+                      <div>
+                        <div class="small text-white-50">Tur</div>
+                        <b id="spinTurn">0 / 10</b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="mini-stat">
+                      <i class="bi bi-trophy"></i>
+                      <div>
+                        <div class="small text-white-50">Doğru</div>
+                        <b id="spinScore">0</b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mini-stat mt-3">
+                  <i class="bi bi-fonts"></i>
+                  <div>
+                    <div class="small text-white-50">Kelime</div>
+                    <b id="wheelWord">—</b>
+                  </div>
+                </div>
+
+                <div class="mt-3">
+                  <div class="fw-bold mb-2">Eş anlamlısı hangisi?</div>
+                  <div id="spinOpts" class="d-grid gap-2"></div>
+                  <div class="small text-white-50 mt-2" id="spinHint">Önce “Döndür” de.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card-pro kids-card h-100">
+            <div class="card-head">
+              <div class="icon-pill"><i class="bi bi-shield-check"></i></div>
+              <small class="text-white-50 fw-bold">İpucu</small>
+            </div>
+            <h2 class="section-title h3 mb-2">Aferin! 🌟</h2>
+            <p class="section-sub mb-3">Bu sayfa çocukların severek pratik yapması için tasarlandı.</p>
+            <a class="btn btn-outline-light btn-kid" href="iletisim.html"><i class="bi bi-chat-dots"></i> Bilgi Alın</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container-xl">
+      <div class="row g-4">
+        <div class="col-lg-4">
+            <a class="navbar-brand brand" href="index.html">
+                <img src="logoo.png" alt="">
+            </a>
+          <div class="text-white-50">Hızlı okuma • dikkat geliştirme • mental aritmetik</div>
+          <div class="text-white-50 small mt-3">
+            <div><i class="bi bi-geo-alt"></i> Ankara</div>
+            <div><i class="bi bi-telephone"></i> 0543 968 0233</div>
+            <div><i class="bi bi-envelope"></i> info@siteniz.com</div>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <strong class="d-block mb-2">Menü</strong>
+          <a class="footer-link d-block mb-1" href="index.html">Anasayfa</a>
+          <a class="footer-link d-block mb-1" href="hakkimizda.html">Hakkımızda</a>
+          <a class="footer-link d-block mb-1" href="egitimlerimiz.html">Eğitimlerimiz</a>
+          <a class="footer-link d-block mb-1" href="iletisim.html">İletişim</a>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <strong class="d-block mb-2">Sayfalar</strong>
+          <a class="footer-link d-block mb-1" href="egzersizlerimiz.html">Egzersizlerimiz</a>
+          <a class="footer-link d-block mb-1" href="mega-o-mega.html">Mega O Mega</a>
+        </div>
+
+        <div class="col-lg-4">
+          <strong class="d-block mb-2">Bilgi Alın</strong>
+          <div class="text-white-50 mb-3">Egzersizler ve eğitimler için WhatsApp’tan yazabilirsiniz.</div>
+          <a class="btn btn-primary" href="iletisim.html">İletişim</a>
+        </div>
+      </div>
+
+      <hr class="my-4" style="border-color: rgba(255,255,255,.10);">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2 text-white-50 small">
+        <div>© <span id="year"></span> Mega Hafıza Ankara</div>
+        <div>Egzersizler</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Year
+    const y = document.getElementById("year");
+    if(y) y.textContent = new Date().getFullYear();
+
+    // -------------------------
+    // OKUMA HIZI: Start/Pause/Resume/Stop + Highlight + Ruler
+    // -------------------------
+    const trWords = [
+      "öğrenci","dikkat","odak","çalışma","hafıza","egzersiz","okuma","hız","anlama","teknik",
+      "süreç","gelişim","pratik","hedef","başarı","plan","alışkanlık","soru","cevap","verim",
+      "zihin","konsantrasyon","performans","motivasyon","program","akış","düzen","sonuç","takip",
+      "öğrenme","not","kavrama","rutin","strateji","zaman","kontrol","denge","güç","farkındalık"
+    ];
+
+    const readingTextEl = document.getElementById("readingText");
+    const wordCountEl = document.getElementById("wordCount");
+    const btnGenerate = document.getElementById("btnGenerate");
+    const btnStart = document.getElementById("btnStart");
+    const btnPause = document.getElementById("btnPause");
+    const btnResume = document.getElementById("btnResume");
+    const btnStop = document.getElementById("btnStop");
+    const btnResetRead = document.getElementById("btnResetRead");
+
+    const readTimeEl = document.getElementById("readTime");
+    const readWpmEl = document.getElementById("readWpm");
+    const readLevelEl = document.getElementById("readLevel");
+    const readBestEl = document.getElementById("readBest");
+
+    let currentWordCount = 30;
+    let timer = null;
+    let running = false;
+    let paused = false;
+    let startTs = 0;
+    let elapsedMs = 0;
+
+    const bestKey = "mega_read_best_wpm";
+    readBestEl.textContent = localStorage.getItem(bestKey) || "—";
+
+    function escapeHtml(str){
+      return str.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+    }
+
+    function makeText(n){
+      const arr = [];
+      for(let i=0;i<n;i++){
+        arr.push(trWords[Math.floor(Math.random()*trWords.length)]);
+      }
+      let s = arr.join(" ");
+      s = s.charAt(0).toUpperCase() + s.slice(1) + ".";
+      return s;
+    }
+
+    function fmtTime(ms){
+      const total = ms/1000;
+      const m = Math.floor(total/60);
+      const s = Math.floor(total%60);
+      const t = Math.floor((total - Math.floor(total))*10);
+      return `${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}.${t}`;
+    }
+
+    function levelFromWpm(wpm){
+      if(wpm >= 280) return "Süper ⭐⭐⭐";
+      if(wpm >= 220) return "Harika ⭐⭐";
+      if(wpm >= 170) return "Güzel ⭐";
+      return "Daha da olur 💪";
+    }
+
+    function attachWordClick(){
+      readingTextEl.querySelectorAll(".w").forEach(el=>{
+        el.addEventListener("click", ()=> el.classList.toggle("mark"));
+      });
+    }
+
+    function attachRuler(){
+      const r = readingTextEl.querySelector(".read-ruler");
+      readingTextEl.addEventListener("mousemove", (e)=>{
+        const rect = readingTextEl.getBoundingClientRect();
+        const y = e.clientY - rect.top;
+        const top = Math.max(10, Math.min(rect.height - 44, y - 16));
+        r.style.top = `${top}px`;
+      });
+    }
+
+    function renderReadingText(text){
+      const words = text.replace(/\s+/g," ").trim().split(" ");
+      const html = words.map(w => `<span class="w">${escapeHtml(w)}</span>`).join(" ");
+      readingTextEl.innerHTML = html + `<div class="read-ruler"></div>`;
+      attachWordClick();
+      attachRuler();
+    }
+
+    function tick(){
+      const now = performance.now();
+      const ms = (now - startTs) + elapsedMs;
+      readTimeEl.textContent = fmtTime(ms);
+    }
+
+    function setButtons(state){
+      if(state === "idle"){
+        btnStart.disabled = false;
+        btnPause.disabled = true;
+        btnResume.disabled = true;
+        btnStop.disabled = true;
+      }
+      if(state === "running"){
+        btnStart.disabled = true;
+        btnPause.disabled = false;
+        btnResume.disabled = true;
+        btnStop.disabled = false;
+      }
+      if(state === "paused"){
+        btnStart.disabled = true;
+        btnPause.disabled = true;
+        btnResume.disabled = false;
+        btnStop.disabled = false;
+      }
+      if(state === "finished"){
+        btnStart.disabled = false;
+        btnPause.disabled = true;
+        btnResume.disabled = true;
+        btnStop.disabled = true;
+      }
+    }
+
+    btnGenerate.addEventListener("click", ()=>{
+      currentWordCount = parseInt(wordCountEl.value, 10);
+      renderReadingText(makeText(currentWordCount));
+      // reset
+      running=false; paused=false; elapsedMs=0;
+      if(timer) clearInterval(timer);
+      readTimeEl.textContent = "00:00.0";
+      readWpmEl.textContent = "—";
+      readLevelEl.textContent = "—";
+      setButtons("idle");
+    });
+
+    btnStart.addEventListener("click", ()=>{
+      if(!readingTextEl.querySelector(".w")){
+        currentWordCount = parseInt(wordCountEl.value, 10);
+        renderReadingText(makeText(currentWordCount));
+      }
+      running=true; paused=false;
+      startTs = performance.now();
+      if(timer) clearInterval(timer);
+      timer = setInterval(tick, 80);
+      setButtons("running");
+    });
+
+    btnPause.addEventListener("click", ()=>{
+      if(!running) return;
+      paused=true; running=false;
+      clearInterval(timer);
+      elapsedMs += (performance.now() - startTs);
+      setButtons("paused");
+    });
+
+    btnResume.addEventListener("click", ()=>{
+      if(!paused) return;
+      paused=false; running=true;
+      startTs = performance.now();
+      timer = setInterval(tick, 80);
+      setButtons("running");
+    });
+
+    btnStop.addEventListener("click", ()=>{
+      if(!running && !paused) return;
+      if(running){
+        clearInterval(timer);
+        elapsedMs += (performance.now() - startTs);
+      }
+      running=false; paused=false;
+
+      readTimeEl.textContent = fmtTime(elapsedMs);
+      const minutes = elapsedMs/1000/60;
+      const wpm = Math.round(currentWordCount / Math.max(minutes, 0.0001));
+      readWpmEl.textContent = String(wpm);
+      readLevelEl.textContent = levelFromWpm(wpm);
+
+      const bestNow = parseInt(localStorage.getItem(bestKey) || "0", 10);
+      if(wpm > bestNow){
+        localStorage.setItem(bestKey, String(wpm));
+        readBestEl.textContent = String(wpm);
+      }
+      setButtons("finished");
+    });
+
+    btnResetRead.addEventListener("click", ()=>{
+      if(timer) clearInterval(timer);
+      running=false; paused=false; elapsedMs=0;
+      readingTextEl.textContent = "Metin getirmek için “Metin Getir” butonuna bas.";
+      readTimeEl.textContent = "00:00.0";
+      readWpmEl.textContent = "—";
+      readLevelEl.textContent = "—";
+      setButtons("idle");
+    });
+
+    setButtons("idle");
+
+    // -------------------------
+    // DIKKAT OYUNU (kolay: 8x8, 20sn)
+    // -------------------------
+    const gridEl = document.getElementById("letterGrid");
+    const btnAttStart = document.getElementById("btnAttStart");
+    const btnAttReset = document.getElementById("btnAttReset");
+    const targetLetterEl = document.getElementById("targetLetter");
+    const attTimeEl = document.getElementById("attTime");
+    const attScoreEl = document.getElementById("attScore");
+    const attGoodEl = document.getElementById("attGood");
+    const attHintEl = document.getElementById("attHint");
+
+    const letters = "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ".split("");
+
+    let attActive=false, attLeft=20, attTimer=null;
+    let targetLetter=null, attGood=0, attScore=0;
+
+    function buildGridEasy(){
+      gridEl.innerHTML="";
+      const size = 64; // 8x8
+      const targetCount = 10 + Math.floor(Math.random()*5); // 10-14
+      const targets = new Set();
+      while(targets.size < targetCount){
+        targets.add(Math.floor(Math.random()*size));
+      }
+      const others = letters.filter(x => x !== targetLetter);
+
+      for(let i=0;i<size;i++){
+        const d = document.createElement("div");
+        d.className = "cell";
+        const isT = targets.has(i);
+
+        d.dataset.target = isT ? "1" : "0";
+        d.textContent = isT ? targetLetter : others[Math.floor(Math.random()*others.length)];
+
+        d.addEventListener("click", ()=>{
+          if(!attActive) return;
+          if(d.dataset.hit === "1") return;
+          d.dataset.hit = "1";
+
+          if(d.dataset.target === "1"){
+            attGood++;
+            attScore += 2;
+            d.classList.add("good");
+          }else{
+            attScore -= 1;
+            d.classList.add("bad");
+          }
+          attGoodEl.textContent = attGood;
+          attScoreEl.textContent = attScore;
+        });
+
+        gridEl.appendChild(d);
+      }
+    }
+
+    function resetAtt(){
+      attActive=false;
+      if(attTimer) clearInterval(attTimer);
+      targetLetterEl.textContent="—";
+      attTimeEl.textContent="—";
+      attGood=0; attScore=0;
+      attGoodEl.textContent="0";
+      attScoreEl.textContent="0";
+      attHintEl.textContent="Hazırsan başlat. Doğru +2, yanlış -1.";
+      gridEl.innerHTML="";
+    }
+
+    btnAttStart.addEventListener("click", ()=>{
+      resetAtt();
+      attActive=true;
+      attLeft=20;
+      targetLetter = letters[Math.floor(Math.random()*letters.length)];
+      targetLetterEl.textContent = targetLetter;
+      attTimeEl.textContent = `${attLeft}s`;
+      attHintEl.textContent = `Hedef: ${targetLetter} — gördüğünde tıkla!`;
+
+      buildGridEasy();
+
+      attTimer = setInterval(()=>{
+        attLeft--;
+        attTimeEl.textContent = `${attLeft}s`;
+        if(attLeft <= 0){
+          clearInterval(attTimer);
+          attActive=false;
+          attHintEl.textContent = `Bitti 🎉 Doğru: ${attGood} • Skor: ${attScore}`;
+        }
+      }, 1000);
+    });
+
+    btnAttReset.addEventListener("click", resetAtt);
+    resetAtt();
+
+    // -------------------------
+    // ÇARKI FELEK -> 10 TUR, 4 ŞIK, EŞ ANLAM
+    // -------------------------
+    const wheelEl = document.getElementById("wheel");
+    const btnSpin = document.getElementById("btnSpin");
+    const btnSpinReset = document.getElementById("btnSpinReset");
+    const wheelWordEl = document.getElementById("wheelWord");
+    const spinOptsEl = document.getElementById("spinOpts");
+    const spinHintEl = document.getElementById("spinHint");
+    const spinTurnEl = document.getElementById("spinTurn");
+    const spinScoreEl = document.getElementById("spinScore");
+
+    const synBank = [
+      {q:"Mutlu", a:"Sevinçli", opts:["Sevinçli","Yorgun","Kızgın","Korkak"]},
+      {q:"Cesur", a:"Yürekli", opts:["Yürekli","Kırgın","Sessiz","Dağınık"]},
+      {q:"Akıllı", a:"Zeki", opts:["Zeki","Tembel","Zor","Uzak"]},
+      {q:"Hızlı", a:"Süratli", opts:["Süratli","Yavaş","Geniş","Soluk"]},
+      {q:"Özen",  a:"Dikkat", opts:["Dikkat","Öfke","Şaka","Kayıp"]},
+      {q:"Güzel", a:"Hoş",    opts:["Hoş","Kötü","Zayıf","Yalın"]},
+      {q:"Sessiz",a:"Sakin",  opts:["Sakin","Gür","Kırık","Hızlı"]},
+      {q:"Hediye",a:"Armağan",opts:["Armağan","Kayıp","Zarar","Yanlış"]},
+      {q:"Kısa",  a:"Az",     opts:["Az","Derin","Sert","Kırık"]},
+      {q:"Başlangıç", a:"İlk",opts:["İlk","Son","Kısa","Sert"]},
+    ];
+
+    let wheelAngle=0, spinning=false;
+    let turn=0, correct=0;
+    let currentQ=null;
+    const maxTurn=10;
+
+    function shuffle(arr){
+      return arr.map(v=>[Math.random(),v]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]);
+    }
+
+    function renderSpinQuestion(item){
+      currentQ = item;
+      wheelWordEl.textContent = item.q;
+      spinOptsEl.innerHTML = "";
+      spinHintEl.textContent = "Şıklardan doğru olanı seç.";
+
+      const opts = shuffle([...item.opts]);
+      opts.forEach(opt=>{
+        const d = document.createElement("div");
+        d.className = "quiz-opt";
+        d.innerHTML = `<span class="fw-bold">${opt}</span><span class="text-white-50 small"><i class="bi bi-chevron-right"></i></span>`;
+        d.addEventListener("click", ()=>{
+          if(!currentQ) return;
+
+          const children = [...spinOptsEl.children];
+          children.forEach(c=>c.style.pointerEvents="none");
+
+          const isOk = (opt === item.a);
+          if(isOk){
+            d.classList.add("good");
+            correct++;
+            spinHintEl.textContent = "Doğru ✅";
+          }else{
+            d.classList.add("bad");
+            spinHintEl.textContent = `Yanlış ❌ Doğru: ${item.a}`;
+            children.forEach(c=>{
+              if(c.textContent.includes(item.a)) c.classList.add("good");
+            });
+          }
+          spinScoreEl.textContent = String(correct);
+
+          currentQ = null;
+
+          if(turn >= maxTurn){
+            btnSpin.disabled = true;
+            spinHintEl.textContent = `Oyun bitti 🎉 ${correct} / ${maxTurn} doğru!`;
+          }else{
+            spinHintEl.textContent += " — Yeni tur için Döndür!";
+          }
+        });
+        spinOptsEl.appendChild(d);
+      });
+    }
+
+    function updateTurnUI(){
+      spinTurnEl.textContent = `${turn} / ${maxTurn}`;
+      spinScoreEl.textContent = String(correct);
+    }
+
+    btnSpin.addEventListener("click", ()=>{
+      if(spinning) return;
+      if(turn >= maxTurn){
+        spinHintEl.textContent = "Hak bitti. Baştan ile yeniden başla.";
+        return;
+      }
+      if(currentQ !== null){
+        spinHintEl.textContent = "Önce şıklardan birini seç 😉";
+        return;
+      }
+
+      spinning = true;
+      turn++;
+      updateTurnUI();
+
+      const extra = 1080 + Math.floor(Math.random()*720);
+      wheelAngle = (wheelAngle + extra) % 3600;
+      wheelEl.style.transform = `rotate(${wheelAngle}deg)`;
+
+      setTimeout(()=>{
+        const item = synBank[Math.floor(Math.random()*synBank.length)];
+        renderSpinQuestion(item);
+        spinning = false;
+      }, 3200);
+    });
+
+    btnSpinReset.addEventListener("click", ()=>{
+      if(spinning) return;
+      wheelAngle=0;
+      wheelEl.style.transform = "rotate(0deg)";
+      turn=0; correct=0; currentQ=null;
+      updateTurnUI();
+      wheelWordEl.textContent = "—";
+      spinOptsEl.innerHTML = "";
+      spinHintEl.textContent = "Önce “Döndür” de.";
+      btnSpin.disabled = false;
+    });
+
+    updateTurnUI();
+  </script>
+</body>
+</html>
