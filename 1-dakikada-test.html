@@ -1,0 +1,1173 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>1 Dakikada Kendini Test Et</title>
+  <meta name="description" content="1 dakikalık mini test: okuma + dikkat + eş anlamlı. Mobil/tablet için hızlı ve akıcı." />
+
+  <!-- Bootstrap (mobil/tablet için yeterli) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f7f9ff;
+      --bg2:#eef4ff;
+      --card:#ffffff;
+      --ink:#0b1220;
+      --muted: rgba(11,18,32,.70);
+      --stroke: rgba(11,18,32,.10);
+
+      --blue:#2b6fff;
+      --blueSoft: rgba(43,111,255,.10);
+
+      --ok:#16a34a;
+      --okSoft: rgba(22,163,74,.12);
+
+      --bad:#dc2626;
+      --badSoft: rgba(220,38,38,.10);
+
+      --r:18px;
+      --r2:22px;
+
+      --tap: 48px;           /* büyük dokunma alanı */
+      --shadow: 0 10px 22px rgba(11,18,32,.08); /* hafif - performans */
+    }
+
+    /* MOBİL/TABLET ODAKLI: masaüstü görünümü hedeflenmez */
+    html{scroll-behavior:smooth;}
+    body{
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(700px 420px at 20% 0%, rgba(43,111,255,.10), transparent 60%),
+        radial-gradient(700px 420px at 80% 0%, rgba(122,167,255,.10), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      color: var(--ink);
+      margin:0;
+      padding: 16px 12px 92px; /* sticky bar alanı */
+      -webkit-text-size-adjust: 100%;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* performans: blur/backdrop yok, dev gölgeler yok */
+    .wrap{
+      max-width: 720px; /* tablet için ideal, masaüstü hedef değil */
+      margin: 0 auto;
+    }
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.86);
+      color: rgba(11,18,32,.80);
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    h1{
+      margin: 12px 0 6px;
+      font-weight: 950;
+      letter-spacing: -.03em;
+      line-height: 1.08;
+      font-size: clamp(28px, 5vw, 38px);
+    }
+
+    .sub{
+      color: var(--muted);
+      font-weight: 700;
+      line-height: 1.55;
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap: wrap;
+      margin: 10px 0 16px;
+    }
+
+    .btn-pill{
+      border-radius: 999px !important;
+      font-weight: 950 !important;
+      min-height: var(--tap);
+      padding: 12px 16px !important;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      white-space: nowrap;
+    }
+
+    .btn-primary{
+      background: var(--blue);
+      border-color: var(--blue);
+    }
+
+    .cardx{
+      border-radius: var(--r2);
+      border: 1px solid var(--stroke);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+
+    .card-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom: 10px;
+    }
+
+    .title{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width: 0;
+    }
+
+    .icon{
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display:grid;
+      place-items:center;
+      border: 1px solid rgba(43,111,255,.18);
+      background: var(--blueSoft);
+      flex: 0 0 auto;
+    }
+
+    .icon .bi{ font-size: 20px; color: rgba(43,111,255,.95); }
+
+    .tblock{
+      min-width: 0;
+    }
+    .tblock .h{
+      font-weight: 950;
+      letter-spacing:-.02em;
+      margin:0;
+      font-size: 16px;
+    }
+    .tblock .s{
+      margin:0;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 1.2;
+    }
+
+    .badge-soft{
+      border-radius: 999px;
+      padding: 8px 10px;
+      border: 1px solid var(--stroke);
+      background: rgba(11,18,32,.05);
+      font-weight: 950;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .badge-soft.ok{
+      border-color: rgba(22,163,74,.22);
+      background: var(--okSoft);
+      color: rgba(22,163,74,.95);
+    }
+
+    .tip{
+      border-radius: var(--r);
+      border: 1px dashed rgba(11,18,32,.18);
+      background: rgba(247,249,255,.65);
+      padding: 12px;
+      color: rgba(11,18,32,.78);
+      font-weight: 700;
+      line-height: 1.45;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    /* OKUMA: highlight + satır çizgisi (hafif) */
+    .reading{
+      border-radius: var(--r);
+      border: 1px solid rgba(11,18,32,.10);
+      background: rgba(247,249,255,.70);
+      padding: 12px;
+      line-height: 1.85;
+      font-size: 16px;
+      font-weight: 700;
+      position: relative;
+      overflow:hidden;
+      touch-action: pan-y;
+    }
+    .reading .w{
+      padding: 0 .12rem;
+      border-radius: 8px;
+    }
+    .reading .w.on{
+      background: rgba(255,215,0,.24);
+      outline: 1px solid rgba(255,215,0,.30);
+    }
+    .ruler{
+      position:absolute;
+      left: 10px; right: 10px;
+      height: 26px;
+      border-radius: 12px;
+      background: linear-gradient(90deg, rgba(43,111,255,.10), rgba(43,111,255,.04));
+      outline: 1px solid rgba(43,111,255,.12);
+      pointer-events:none;
+      opacity:.65;
+      top: 10px;
+    }
+
+    .qbox{
+      margin-top: 10px;
+      border-radius: var(--r);
+      border: 1px solid rgba(11,18,32,.10);
+      background: rgba(255,255,255,.92);
+      padding: 10px;
+    }
+
+    .opt{
+      min-height: var(--tap);
+      border-radius: 16px;
+      border: 1px solid rgba(11,18,32,.10);
+      background: rgba(11,18,32,.04);
+      padding: 12px 12px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      font-weight: 950;
+      cursor:pointer;
+      user-select:none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .opt.good{ background: var(--okSoft); border-color: rgba(22,163,74,.22); }
+    .opt.bad{ background: var(--badSoft); border-color: rgba(220,38,38,.22); }
+
+    /* DIKKAT: mobil/tablet için dengeli (performanslı) grid */
+    .gridWrap{
+      border-radius: var(--r);
+      border: 1px solid rgba(11,18,32,.10);
+      background: rgba(247,249,255,.70);
+      padding: 10px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(7, 1fr); /* mobil için ideal */
+      gap: 8px;
+      user-select:none;
+    }
+    .cell{
+      height: 46px;
+      border-radius: 14px;
+      border: 1px solid rgba(11,18,32,.10);
+      background: rgba(255,255,255,.92);
+      display:grid;
+      place-items:center;
+      font-weight: 950;
+      cursor:pointer;
+      user-select:none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .cell.good{ background: var(--okSoft); border-color: rgba(22,163,74,.22); }
+    .cell.bad{ background: var(--badSoft); border-color: rgba(220,38,38,.22); }
+
+    /* TABLET iyileştirme */
+    @media (min-width: 600px){
+      body{ padding: 18px 16px 96px; }
+      .grid{ grid-template-columns: repeat(8, 1fr); gap: 10px; }
+      .cell{ height: 52px; }
+    }
+
+    /* SONUÇ */
+    .result{
+      border-radius: var(--r2);
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.94);
+      box-shadow: var(--shadow);
+      padding: 14px;
+      margin-top: 10px;
+    }
+    .result h2{
+      margin: 0;
+      font-weight: 950;
+      letter-spacing:-.02em;
+      font-size: 20px;
+    }
+    .result p{ margin: 6px 0 0; color: var(--muted); font-weight: 800; line-height:1.4; }
+
+    .stats{
+      margin-top: 10px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .stat{
+      border-radius: 18px;
+      border: 1px solid rgba(11,18,32,.10);
+      background: rgba(11,18,32,.04);
+      padding: 10px 12px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-height: 56px;
+    }
+    .stat i{ font-size: 18px; color: rgba(11,18,32,.70); }
+    .stat b{ font-weight: 950; }
+
+    /* STICKY TIMER: scroll ederken hep görünür (performanslı, blur yok) */
+    .stickyBar{
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 12px;
+      width: min(720px, calc(100% - 20px));
+      z-index: 9999;
+      border-radius: 999px;
+      background: rgba(255,255,255,.96);
+      border: 1px solid rgba(11,18,32,.10);
+      box-shadow: 0 14px 30px rgba(11,18,32,.14);
+      padding: 10px 10px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .timePill{
+      border-radius:999px;
+      padding: 8px 10px;
+      border: 1px solid rgba(43,111,255,.18);
+      background: var(--blueSoft);
+      font-weight: 950;
+      display:flex;
+      align-items:center;
+      gap: 8px;
+      white-space:nowrap;
+    }
+    .timeNum{
+      width: 42px;
+      text-align:center;
+      border-radius: 999px;
+      padding: 6px 8px;
+      background: rgba(43,111,255,.14);
+      border: 1px solid rgba(43,111,255,.18);
+      font-weight: 950;
+    }
+    .bar{
+      height: 10px;
+      background: rgba(11,18,32,.06);
+      border-radius: 999px;
+      overflow:hidden;
+      flex: 1 1 auto;
+    }
+    .bar > div{
+      height: 100%;
+      width: 0%;
+      background: var(--blue);
+      border-radius: 999px;
+    }
+    .miniBtn{
+      min-height: 42px;
+      border-radius: 999px !important;
+      font-weight: 950 !important;
+      padding: 8px 12px !important;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      white-space:nowrap;
+    }
+
+    /* azaltılmış hareket: animasyon yok */
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="kicker"><i class="bi bi-stopwatch"></i> 60 saniyelik hızlı test</div>
+    <h1>1 dakikada kendini test et</h1>
+    <p class="sub">
+      Bu test <b>kolay değil</b>: Okuma bölümünde <b>2 soru</b>, Dikkat bölümünde <b>tüm hedefleri bulma</b>,
+      Eş anlamlıda <b>3 soru</b> var. (Tamamı bitmeden “Tamamlandı” olmaz.)
+    </p>
+
+    <div class="actions">
+      <button class="btn btn-primary btn-pill" id="btnStart">
+        <i class="bi bi-play-fill"></i> Başlat
+      </button>
+      <button class="btn btn-outline-dark btn-pill" id="btnReset" disabled>
+        <i class="bi bi-arrow-counterclockwise"></i> Reset
+      </button>
+      <a class="btn btn-outline-dark btn-pill" href="iletisim.html">
+        <i class="bi bi-chat-dots"></i> Bilgi Alın
+      </a>
+    </div>
+
+    <!-- OKUMA -->
+    <section class="cardx" id="cardRead">
+      <div class="card-head">
+        <div class="title">
+          <div class="icon"><i class="bi bi-book-half"></i></div>
+          <div class="tblock">
+            <p class="h">Okuma</p>
+            <p class="s">Metni oku + 2 soru</p>
+          </div>
+        </div>
+        <span class="badge-soft" id="readBadge">Bekliyor</span>
+      </div>
+
+      <div class="tip">
+        <b>Ne yapacaksın?</b><br>
+        Metni sessiz oku. <b>En az 12 saniye</b> geçince “Okudum” açılır. Sonra 2 soruyu cevapla.
+      </div>
+
+      <div class="reading" id="readingBox">
+        <div id="readingText">Başlatınca metin gelecek…</div>
+        <div class="ruler" id="ruler"></div>
+      </div>
+
+      <div class="mt-2 d-flex gap-2">
+        <button class="btn btn-outline-dark btn-pill w-100" id="btnReadDone" disabled>
+          <i class="bi bi-check2-circle"></i> Okudum
+        </button>
+      </div>
+
+      <div class="qbox d-none" id="readQBox">
+        <div class="fw-bold mb-2">Mini Sorular</div>
+
+        <div class="mb-3">
+          <div class="small fw-bold" style="color: var(--muted);">Soru 1</div>
+          <div class="fw-bold mb-2" id="rq1Text">—</div>
+          <div class="d-grid gap-2" id="rq1Opts"></div>
+        </div>
+
+        <div>
+          <div class="small fw-bold" style="color: var(--muted);">Soru 2</div>
+          <div class="fw-bold mb-2" id="rq2Text">—</div>
+          <div class="d-grid gap-2" id="rq2Opts"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIKKAT -->
+    <section class="cardx" id="cardAtt">
+      <div class="card-head">
+        <div class="title">
+          <div class="icon"><i class="bi bi-bullseye"></i></div>
+          <div class="tblock">
+            <p class="h">Dikkat</p>
+            <p class="s">Tüm hedefleri bul</p>
+          </div>
+        </div>
+        <span class="badge-soft" id="attBadge">Bekliyor</span>
+      </div>
+
+      <div class="tip">
+        <b>Ne yapacaksın?</b><br>
+        Hedef harf: <span class="badge text-bg-primary" id="targetLetter">—</span>
+        <span class="ms-1" style="color: var(--muted); font-weight: 800;">(benzer harflere dikkat)</span><br>
+        Kalan hedef: <b id="targetsLeft">—</b>
+      </div>
+
+      <div class="gridWrap">
+        <div class="grid" id="grid"></div>
+      </div>
+    </section>
+
+    <!-- EŞ ANLAM -->
+    <section class="cardx" id="cardSyn">
+      <div class="card-head">
+        <div class="title">
+          <div class="icon"><i class="bi bi-lightbulb"></i></div>
+          <div class="tblock">
+            <p class="h">Eş Anlamlı</p>
+            <p class="s">3 soru (4 şık)</p>
+          </div>
+        </div>
+        <span class="badge-soft" id="synBadge">Bekliyor</span>
+      </div>
+
+      <div class="tip">
+        <b>Ne yapacaksın?</b><br>
+        Gelen kelimenin eş anlamlısını seç. Toplam <b>3 soru</b> var.
+      </div>
+
+      <div class="mb-2 d-flex justify-content-between align-items-center">
+        <div class="fw-bold" style="color: var(--muted);">İlerleme</div>
+        <div class="badge-soft" id="synProgress">0 / 3</div>
+      </div>
+
+      <div class="qbox mb-2">
+        <div class="small fw-bold" style="color: var(--muted);">Kelime</div>
+        <div class="fw-bold" style="font-size: 18px;" id="synWord">—</div>
+      </div>
+
+      <div class="d-grid gap-2" id="synOpts"></div>
+    </section>
+
+    <!-- RESULT -->
+    <section class="result" id="resultBox">
+      <h2>Seviyen: <span id="levelText">—</span></h2>
+      <p id="levelDesc">Testi başlatınca sonuç burada görünecek.</p>
+
+      <div class="stats">
+        <div class="stat"><i class="bi bi-book-half"></i><div><div class="small" style="color:var(--muted); font-weight:900;">Okuma</div><b id="readScore">0</b></div></div>
+        <div class="stat"><i class="bi bi-eye-fill"></i><div><div class="small" style="color:var(--muted); font-weight:900;">Dikkat</div><b id="attScore">0</b></div></div>
+        <div class="stat"><i class="bi bi-lightbulb"></i><div><div class="small" style="color:var(--muted); font-weight:900;">Eş Anlam</div><b id="synScore">0</b></div></div>
+        <div class="stat"><i class="bi bi-collection"></i><div><div class="small" style="color:var(--muted); font-weight:900;">Toplam</div><b id="totalScore">0</b></div></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Sticky Timer (scroll ile daima görünür) -->
+  <div class="stickyBar" aria-live="polite">
+    <div class="timePill">
+      <i class="bi bi-stopwatch"></i>
+      <span>Kalan</span>
+      <span class="timeNum" id="tLeft">60</span>
+      <span class="d-none d-sm-inline">sn</span>
+    </div>
+    <div class="bar" aria-label="Süre çubuğu"><div id="tFill"></div></div>
+    <button class="btn btn-primary miniBtn" id="tStart">
+      <i class="bi bi-play-fill"></i> Başlat
+    </button>
+    <button class="btn btn-outline-dark miniBtn" id="tReset" disabled>
+      <i class="bi bi-arrow-counterclockwise"></i> Reset
+    </button>
+  </div>
+
+  <script>
+    // =========================
+    // PERF NOTLARI (kod içi):
+    // - Blur/backdrop yok
+    // - Ağır animasyon yok
+    // - DOM minimal
+    // - Tıklamalar tek seferlik kilitleniyor
+    // =========================
+
+    // GLOBAL
+    const btnStart = document.getElementById("btnStart");
+    const btnReset = document.getElementById("btnReset");
+    const tStart   = document.getElementById("tStart");
+    const tReset   = document.getElementById("tReset");
+    const tLeftEl  = document.getElementById("tLeft");
+    const tFill    = document.getElementById("tFill");
+
+    let active = false;
+    let left = 60;
+    let timer = null;
+
+    // completion
+    let readComplete=false, attComplete=false, synComplete=false;
+
+    // scores
+    let readScore=0, attScore=0, synScore=0;
+
+    function setBadge(id, text, ok){
+      const el = document.getElementById(id);
+      el.textContent = text;
+      el.classList.toggle("ok", !!ok);
+    }
+
+    function syncScores(){
+      document.getElementById("readScore").textContent = readScore;
+      document.getElementById("attScore").textContent = attScore;
+      document.getElementById("synScore").textContent = synScore;
+      document.getElementById("totalScore").textContent = (readScore + attScore + synScore);
+    }
+
+    function syncTimer(){
+      tLeftEl.textContent = String(left);
+      const used = 60 - left;
+      tFill.style.width = Math.min(100, (used/60)*100) + "%";
+      if(left <= 10) tFill.style.background = "#dc2626";
+      else if(left <= 20) tFill.style.background = "#f59e0b";
+      else tFill.style.background = "#2b6fff";
+    }
+
+    function resetAll(){
+      active = false;
+      if(timer) clearInterval(timer);
+      timer=null;
+      left=60;
+
+      readComplete=false; attComplete=false; synComplete=false;
+      readScore=0; attScore=0; synScore=0;
+
+      // badges
+      setBadge("readBadge","Bekliyor",false);
+      setBadge("attBadge","Bekliyor",false);
+      setBadge("synBadge","Bekliyor",false);
+
+      // UI
+      btnStart.disabled=false; tStart.disabled=false;
+      btnReset.disabled=true;  tReset.disabled=true;
+
+      // reading
+      readingText.innerHTML = "Başlatınca metin gelecek…";
+      btnReadDone.disabled = true;
+      readQBox.classList.add("d-none");
+      rqAnswered1=false; rqAnswered2=false;
+
+      // attention
+      targetLetterEl.textContent="—";
+      targetsLeftEl.textContent="—";
+      gridEl.innerHTML="";
+      attTargetsRemaining=0;
+
+      // synonyms
+      synWordEl.textContent="—";
+      synOptsEl.innerHTML="";
+      synIdx=0;
+      synProgressEl.textContent="0 / 3";
+
+      // result
+      levelText.textContent="—";
+      levelDesc.textContent="Testi başlatınca sonuç burada görünecek.";
+
+      syncScores();
+      syncTimer();
+    }
+
+    function finishTest(reason){
+      if(timer) clearInterval(timer);
+      timer=null;
+      active=false;
+
+      btnReset.disabled=false;
+      tReset.disabled=false;
+
+      // kilitle
+      btnReadDone.disabled=true;
+      lockOptions(rq1OptsEl); lockOptions(rq2OptsEl);
+      [...gridEl.querySelectorAll(".cell")].forEach(c=>c.style.pointerEvents="none");
+      lockOptions(synOptsEl);
+
+      // seviye
+      const total = readScore + attScore + synScore;
+      if(reason === "timeup"){
+        // süre bitti ama yine seviye hesapla
+      }
+
+      // daha zor bandlar
+      if(total >= 44){
+        levelText.textContent = "Çok İyi 🌟";
+        levelDesc.textContent = "Harika! Bu seviyeyi korumak için düzenli pratik öneriyoruz.";
+      }else if(total >= 32){
+        levelText.textContent = "İyi ✅";
+        levelDesc.textContent = "İyi! Düzenli egzersizle çok daha iyiye çıkarsın.";
+      }else if(total >= 18){
+        levelText.textContent = "Orta 🙂";
+        levelDesc.textContent = "Merkezimizden eğitim alıp tekrar deneyiniz. Doğru tekniklerle hızlı gelişirsin.";
+      }else{
+        levelText.textContent = "Geliştirilebilir 💪";
+        levelDesc.textContent = "Merkezimizden eğitim alıp tekrar deneyiniz. Düzenli çalışma ile büyük fark oluşur.";
+      }
+    }
+
+    function startAll(){
+      if(active) return;
+      active=true;
+
+      btnStart.disabled=true;
+      tStart.disabled=true;
+      btnReset.disabled=true;
+      tReset.disabled=false;
+
+      // init
+      initReading();
+      initAttention();
+      initSynonyms();
+
+      left=60;
+      syncTimer();
+
+      timer = setInterval(()=>{
+        left--;
+        syncTimer();
+
+        if(left <= 0){
+          finishTest("timeup");
+          return;
+        }
+
+        // Erken bitmeyi engelle: 45sn dolmadan tamamlanmış sayma
+        const used = 60 - left;
+        if(readComplete && attComplete && synComplete && used >= 45){
+          finishTest("done");
+        }
+      }, 1000);
+    }
+
+    btnStart.addEventListener("click", startAll);
+    tStart.addEventListener("click", startAll);
+    btnReset.addEventListener("click", resetAll);
+    tReset.addEventListener("click", resetAll);
+
+    // =========================
+    // OKUMA (mobilde hız kesmesin diye sade DOM)
+    // =========================
+    const readingBox = document.getElementById("readingBox");
+    const readingText = document.getElementById("readingText");
+    const ruler = document.getElementById("ruler");
+    const btnReadDone = document.getElementById("btnReadDone");
+    const readQBox = document.getElementById("readQBox");
+
+    const rq1Text = document.getElementById("rq1Text");
+    const rq2Text = document.getElementById("rq2Text");
+    const rq1OptsEl = document.getElementById("rq1Opts");
+    const rq2OptsEl = document.getElementById("rq2Opts");
+
+    let readUnlockTO=null;
+    let readStartMs=0;
+    let rqAnswered1=false, rqAnswered2=false;
+
+    const readPool = [
+      "Bugün kısa ama dikkat isteyen bir mini test yapıyorsun. Metni sakin oku ve anlamaya odaklan.",
+      "Hızlı okumada amaç yalnızca hız değildir. Hız ile anlama dengesi birlikte gelişir.",
+      "Düzenli pratik, dikkatini ve çalışma hafızanı güçlendirir. Küçük adımlar büyük fark oluşturur."
+    ];
+    const readWords = [
+      "dikkat","okuma","hafıza","anlama","hız","odak","pratik","gelişim","hedef","zihin","konsantrasyon",
+      "takip","strateji","alışkanlık","zaman","denge","performans","öğrenme","kavrama","rutin"
+    ];
+
+    function escapeHtml(str){
+      return str.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+    }
+
+    function makeReadText(){
+      const n = 95 + Math.floor(Math.random()*16); // zor: 95-110 kelime
+      const arr = [];
+      arr.push(readPool[Math.floor(Math.random()*readPool.length)]);
+      for(let i=0;i<n;i++) arr.push(readWords[Math.floor(Math.random()*readWords.length)]);
+      arr.push(readPool[Math.floor(Math.random()*readPool.length)]);
+      let t = arr.join(" ").replace(/\s+/g," ").trim() + ".";
+      return t.charAt(0).toUpperCase() + t.slice(1);
+    }
+
+    function renderRead(text){
+      const ws = text.split(" ").filter(Boolean);
+      readingText.innerHTML = ws.map(w=>`<span class="w">${escapeHtml(w)}</span>`).join(" ");
+
+      // mobil/tablet: ruler takip (touch + scroll)
+      readingBox.onmousemove = (e)=>{
+        const rect = readingBox.getBoundingClientRect();
+        const y = e.clientY - rect.top;
+        const top = Math.max(8, Math.min(rect.height - 36, y - 13));
+        ruler.style.top = `${top}px`;
+      };
+      readingBox.ontouchmove = (e)=>{
+        const touch = e.touches && e.touches[0];
+        if(!touch) return;
+        const rect = readingBox.getBoundingClientRect();
+        const y = touch.clientY - rect.top;
+        const top = Math.max(8, Math.min(rect.height - 36, y - 13));
+        ruler.style.top = `${top}px`;
+      };
+    }
+
+    function lockOptions(container){
+      [...container.children].forEach(c=>c.style.pointerEvents="none");
+    }
+    function highlightCorrect(container, correctText){
+      [...container.children].forEach(c=>{
+        if(c.textContent.trim().includes(correctText)) c.classList.add("good");
+      });
+    }
+
+    function buildOpts(container, opts, correct, onPick){
+      container.innerHTML="";
+      opts.forEach(opt=>{
+        const d = document.createElement("div");
+        d.className="opt";
+        d.innerHTML = `<span>${escapeHtml(opt)}</span><span class="text-muted"><i class="bi bi-chevron-right"></i></span>`;
+        d.addEventListener("click", ()=> onPick(d, opt===correct, correct));
+        container.appendChild(d);
+      });
+    }
+
+    function initReading(){
+      setBadge("readBadge","Devam",false);
+      readComplete=false;
+      readScore=0;
+      rqAnswered1=false; rqAnswered2=false;
+
+      renderRead(makeReadText());
+
+      btnReadDone.disabled=true;
+      readQBox.classList.add("d-none");
+
+      if(readUnlockTO) clearTimeout(readUnlockTO);
+      readStartMs = performance.now();
+
+      // erken bitirmeyi engelle: min 12s
+      readUnlockTO = setTimeout(()=>{
+        if(active) btnReadDone.disabled=false;
+      }, 12000);
+    }
+
+    function maybeReadComplete(){
+      if(rqAnswered1 && rqAnswered2){
+        readComplete=true;
+        setBadge("readBadge","Tamamlandı",true);
+
+        // hız puanı: çok hızlı okudum diye aşırı ödül yok, dengeli
+        const sec = (performance.now() - readStartMs)/1000;
+        let speedPts = (sec <= 22) ? 6 : (sec <= 30) ? 8 : (sec <= 40) ? 7 : 5;
+        readScore = Math.min(24, readScore + speedPts);
+        syncScores();
+      }
+    }
+
+    btnReadDone.addEventListener("click", ()=>{
+      if(!active) return;
+      btnReadDone.disabled=true;
+      readQBox.classList.remove("d-none");
+
+      // Q1
+      rq1Text.textContent = "Metinde asıl vurgulanan şey hangisi?";
+      const q1Correct = "Hız ve anlama dengesini korumak";
+      const q1Opts = shuffle([
+        q1Correct,
+        "Sadece hızlı olmak",
+        "Hiç pratik yapmamak",
+        "Okumayı bırakmak"
+      ]);
+      buildOpts(rq1OptsEl, q1Opts, q1Correct, (el, ok)=>{
+        lockOptions(rq1OptsEl);
+        if(ok){ el.classList.add("good"); readScore += 8; }
+        else { el.classList.add("bad"); readScore -= 2; highlightCorrect(rq1OptsEl, q1Correct); }
+        rqAnswered1=true;
+        syncScores();
+        maybeReadComplete();
+      });
+
+      // Q2
+      rq2Text.textContent = "Düzenli pratik neyi güçlendirir?";
+      const q2Correct = "Dikkat ve çalışma hafızasını";
+      const q2Opts = shuffle([
+        q2Correct,
+        "Sadece şansı",
+        "Sadece uykuyu",
+        "Sadece sesi"
+      ]);
+      buildOpts(rq2OptsEl, q2Opts, q2Correct, (el, ok)=>{
+        lockOptions(rq2OptsEl);
+        if(ok){ el.classList.add("good"); readScore += 8; }
+        else { el.classList.add("bad"); readScore -= 2; highlightCorrect(rq2OptsEl, q2Correct); }
+        rqAnswered2=true;
+        syncScores();
+        maybeReadComplete();
+      });
+    });
+
+    // =========================
+    // DIKKAT (mobil/tablet): hedefleri bitirince yeşil + "Tamamlandı"
+    // =========================
+    const targetLetterEl = document.getElementById("targetLetter");
+    const targetsLeftEl  = document.getElementById("targetsLeft");
+    const gridEl = document.getElementById("grid");
+
+    const letters = "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ".split("");
+    const confusables = { "O":"Ö","Ö":"O","U":"Ü","Ü":"U","I":"İ","İ":"I","S":"Ş","Ş":"S","G":"Ğ","Ğ":"G","C":"Ç","Ç":"C" };
+
+    let target="A", decoy="B";
+    let attTargetsRemaining=0;
+
+    function pickTarget(){
+      const keys = Object.keys(confusables);
+      target = keys[Math.floor(Math.random()*keys.length)];
+      decoy  = confusables[target];
+      targetLetterEl.textContent = target;
+    }
+
+    function initAttention(){
+      setBadge("attBadge","Devam",false);
+      attComplete=false;
+      attScore=0;
+
+      pickTarget();
+
+      // mobil/tablet zorlaştır: daha çok hedef + daha çok yanıltıcı
+      const cols = window.matchMedia("(min-width: 600px)").matches ? 8 : 7;
+      const rows = window.matchMedia("(min-width: 600px)").matches ? 8 : 8;
+      const size = cols*rows;
+
+      const targetCount = window.matchMedia("(min-width: 600px)").matches ? 18 : 16;
+      const decoyCount  = window.matchMedia("(min-width: 600px)").matches ? 14 : 12;
+
+      const targets = new Set();
+      const decoys  = new Set();
+
+      while(targets.size < targetCount){
+        targets.add(Math.floor(Math.random()*size));
+      }
+      while(decoys.size < decoyCount){
+        const idx = Math.floor(Math.random()*size);
+        if(!targets.has(idx)) decoys.add(idx);
+      }
+
+      attTargetsRemaining = targetCount;
+      targetsLeftEl.textContent = String(attTargetsRemaining);
+
+      const others = letters.filter(l => l!==target && l!==decoy);
+
+      gridEl.innerHTML="";
+      gridEl.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+
+      for(let i=0;i<size;i++){
+        const d = document.createElement("div");
+        d.className="cell";
+
+        let type="other";
+        if(targets.has(i)) type="target";
+        else if(decoys.has(i)) type="decoy";
+        d.dataset.type=type;
+
+        d.textContent = (type==="target") ? target : (type==="decoy") ? decoy : others[Math.floor(Math.random()*others.length)];
+
+        d.addEventListener("click", ()=>{
+          if(!active) return;
+          if(d.dataset.hit==="1") return;
+          d.dataset.hit="1";
+
+          if(d.dataset.type==="target"){
+            d.classList.add("good");
+            attScore += 2;
+            attTargetsRemaining--;
+            targetsLeftEl.textContent = String(attTargetsRemaining);
+
+            if(attTargetsRemaining<=0){
+              attComplete=true;
+              setBadge("attBadge","Tamamlandı",true);
+              // bonus
+              attScore += 8;
+              // kilitle
+              [...gridEl.querySelectorAll(".cell")].forEach(c=>c.style.pointerEvents="none");
+            }
+          }else{
+            d.classList.add("bad");
+            attScore -= 1;
+          }
+          syncScores();
+        });
+
+        gridEl.appendChild(d);
+      }
+      syncScores();
+    }
+
+    // =========================
+    // EŞ ANLAM: 3 soru, 4 şık
+    // =========================
+    const synWordEl = document.getElementById("synWord");
+    const synOptsEl = document.getElementById("synOpts");
+    const synProgressEl = document.getElementById("synProgress");
+
+    const synBank = [
+      {q:"Mutlu", a:"Sevinçli", opts:["Sevinçli","Yorgun","Kızgın","Korkak"]},
+      {q:"Cesur", a:"Yürekli", opts:["Yürekli","Kırgın","Sessiz","Dağınık"]},
+      {q:"Akıllı", a:"Zeki", opts:["Zeki","Tembel","Zor","Uzak"]},
+      {q:"Hızlı", a:"Süratli", opts:["Süratli","Yavaş","Geniş","Soluk"]},
+      {q:"Güzel", a:"Hoş", opts:["Hoş","Kötü","Zayıf","Yalın"]},
+      {q:"Sessiz", a:"Sakin", opts:["Sakin","Gür","Kırık","Hızlı"]},
+      {q:"Hediye", a:"Armağan", opts:["Armağan","Kayıp","Zarar","Yanlış"]},
+      {q:"Zor", a:"Güç", opts:["Güç","Kolay","Uzak","Açık"]},
+      {q:"Özen", a:"Dikkat", opts:["Dikkat","Öfke","Şaka","Kayıp"]},
+      {q:"Başlangıç", a:"İlk", opts:["İlk","Son","Derin","Sert"]},
+    ];
+
+    let synOrder=[], synIdx=0, synAnswered=false, currentSyn=null;
+
+    function shuffle(arr){
+      return arr.map(v=>[Math.random(),v]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]);
+    }
+    function lockSyn(){ [...synOptsEl.children].forEach(c=>c.style.pointerEvents="none"); }
+    function highlightCorrectOpt(container, correctText){
+      [...container.children].forEach(c=>{
+        if(c.textContent.trim().includes(correctText)) c.classList.add("good");
+      });
+    }
+
+    function initSynonyms(){
+      setBadge("synBadge","Devam",false);
+      synComplete=false;
+      synScore=0;
+      synIdx=0;
+      synAnswered=false;
+
+      synOrder = shuffle([...synBank]).slice(0,3);
+      renderSyn();
+      syncScores();
+    }
+
+    function renderSyn(){
+      currentSyn = synOrder[synIdx];
+      synProgressEl.textContent = `${synIdx} / 3`;
+      synWordEl.textContent = currentSyn.q;
+      synOptsEl.innerHTML = "";
+      synAnswered=false;
+
+      const opts = shuffle([...currentSyn.opts]);
+      opts.forEach(opt=>{
+        const d = document.createElement("div");
+        d.className="opt";
+        d.innerHTML = `<span>${escapeHtml(opt)}</span><span class="text-muted"><i class="bi bi-chevron-right"></i></span>`;
+        d.addEventListener("click", ()=>{
+          if(!active || synAnswered) return;
+          synAnswered=true;
+          lockSyn();
+
+          const ok = (opt === currentSyn.a);
+          if(ok){ d.classList.add("good"); synScore += 9; }
+          else { d.classList.add("bad"); synScore -= 2; highlightCorrectOpt(synOptsEl, currentSyn.a); }
+
+          syncScores();
+
+          setTimeout(()=>{
+            synIdx++;
+            if(synIdx >= 3){
+              synComplete=true;
+              setBadge("synBadge","Tamamlandı",true);
+              synProgressEl.textContent = `3 / 3`;
+              synWordEl.textContent = "Bitti ✅";
+              synOptsEl.innerHTML = "";
+              synScore = Math.max(0, synScore + 4);
+              syncScores();
+            }else{
+              renderSyn();
+            }
+          }, 500);
+        });
+        synOptsEl.appendChild(d);
+      });
+    }
+
+    // =========================
+    // START/FINISH LOGIC
+    // =========================
+    function allCompleted(){ return readComplete && attComplete && synComplete; }
+
+    // Okuma sorularının tamamlanması readComplete'i açar (maybeReadComplete içinde)
+    // Dikkat hedefler bitince attComplete açılıyor
+    // Eş anlamlı 3 soru bitince synComplete açılıyor
+
+    // Okuma tamamlanma fonksiyonu yukarıda
+    // (finish koşulu: 45 saniye dolmadan erken bitmeyi engelliyoruz)
+    function tick(){
+      left--;
+      syncTimer();
+
+      if(left <= 0){
+        finishTest("timeup");
+        return;
+      }
+
+      const used = 60 - left;
+      if(allCompleted() && used >= 45){
+        finishTest("done");
+      }
+    }
+
+    function finishTest(reason){
+      if(timer) clearInterval(timer);
+      timer=null;
+      active=false;
+
+      btnReset.disabled=false;
+      tReset.disabled=false;
+
+      // seviye
+      const total = readScore + attScore + synScore;
+
+      if(total >= 46){
+        levelText.textContent = "Çok İyi 🌟";
+        levelDesc.textContent = "Harika! Bu seviyeyi korumak için düzenli pratik öneriyoruz.";
+      }else if(total >= 34){
+        levelText.textContent = "İyi ✅";
+        levelDesc.textContent = "İyi! Düzenli egzersizle çok daha iyiye çıkarsın.";
+      }else if(total >= 18){
+        levelText.textContent = "Orta 🙂";
+        levelDesc.textContent = "Merkezimizden eğitim alıp tekrar deneyiniz. Doğru tekniklerle hızlı gelişirsin.";
+      }else{
+        levelText.textContent = "Geliştirilebilir 💪";
+        levelDesc.textContent = "Merkezimizden eğitim alıp tekrar deneyiniz. Düzenli çalışma ile büyük fark oluşur.";
+      }
+
+      // kilitle
+      btnReadDone.disabled=true;
+      lockOptions(rq1OptsEl); lockOptions(rq2OptsEl);
+      [...gridEl.querySelectorAll(".cell")].forEach(c=>c.style.pointerEvents="none");
+      lockOptions(synOptsEl);
+
+      // sticky start tekrar açılmaz, reset ile baştan
+      btnStart.disabled=true;
+      tStart.disabled=true;
+
+      // süre bitti ise kullanıcı görsün
+      if(reason === "timeup"){
+        // hedefler tamamlanmadıysa badge'ler bekliyor kalır
+      }
+    }
+
+    function startAll(){
+      if(active) return;
+      active=true;
+
+      btnStart.disabled=true;
+      tStart.disabled=true;
+      btnReset.disabled=true;
+      tReset.disabled=false;
+
+      // init
+      left=60;
+      syncTimer();
+
+      readComplete=false; attComplete=false; synComplete=false;
+      readScore=0; attScore=0; synScore=0;
+      syncScores();
+
+      initReading();
+      initAttention();
+      initSynonyms();
+
+      timer = setInterval(tick, 1000);
+    }
+
+    btnStart.addEventListener("click", startAll);
+    tStart.addEventListener("click", startAll);
+    btnReset.addEventListener("click", resetAll);
+    tReset.addEventListener("click", resetAll);
+
+    // =========================
+    // Okuma tamamlanma kontrolü
+    // =========================
+    function maybeReadComplete(){
+      if(rqAnswered1 && rqAnswered2){
+        readComplete=true;
+        setBadge("readBadge","Tamamlandı",true);
+
+        const sec = (performance.now() - readStartMs)/1000;
+        let speedPts = (sec <= 22) ? 6 : (sec <= 30) ? 8 : (sec <= 40) ? 7 : 5;
+        readScore = Math.min(24, readScore + speedPts);
+        syncScores();
+      }
+    }
+
+    // =========================
+    // INIT
+    // =========================
+    resetAll();
+  </script>
+</body>
+</html>
