@@ -3,10 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mega Hafıza | 1 Dakikada Kendini Test Et (2-4. Sınıf)</title>
-  <meta name="description" content="2, 3, 4. sınıflar için 1 dakikalık okuma-anlama, dikkat ve kelime/dil testi. 100 üzerinden puan ve seviye sonucu." />
+  <title>Mega Hafıza | 1 Dakikada Kendini Test Et (1-5. Sınıf)</title>
+  <meta name="description" content="1-5. sınıflar için 1 dakikalık okuma-anlama, dikkat ve kelime testi. 100 üzerinden puan ve seviye sonucu." />
 
-  <!-- Bootstrap (sadece grid+butonlar için) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
@@ -25,7 +24,6 @@
       --r:18px;
       --r2:24px;
     }
-
     html,body{height:100%}
     body{
       margin:0;
@@ -36,15 +34,13 @@
       color:var(--ink);
       overflow-x:hidden;
     }
-
-    /* Mobil/tablet optimize */
     .wrap{
-      max-width: 720px;
+      max-width: 760px;
       margin: 0 auto;
-      padding: 14px 14px 120px;
+      padding: 14px 14px 130px;
     }
 
-    /* Sticky timer bar */
+    /* Sticky timer */
     .top-sticky{
       position: sticky;
       top: 0;
@@ -65,10 +61,8 @@
       gap:10px;
     }
     .timer-pill{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight: 800;
+      display:flex; align-items:center; gap:10px;
+      font-weight: 900;
       letter-spacing: -.01em;
     }
     .time{
@@ -96,32 +90,27 @@
       border-radius: 999px;
       transition: width .2s linear;
     }
-
     .btn-main{
       border:0;
       background: linear-gradient(135deg, var(--blue), #1d4ed8);
       color:#fff;
-      font-weight: 900;
+      font-weight: 950;
       padding: 10px 14px;
       border-radius: 999px;
       box-shadow: 0 14px 26px rgba(37,99,235,.22);
       white-space: nowrap;
     }
-    .btn-main:disabled{
-      opacity:.55;
-      box-shadow:none;
-    }
+    .btn-main:disabled{opacity:.55; box-shadow:none;}
     .btn-soft{
       border:1px solid var(--stroke);
       background: rgba(255,255,255,.82);
       color: var(--ink);
-      font-weight: 900;
+      font-weight: 950;
       padding: 10px 14px;
       border-radius: 999px;
       white-space: nowrap;
     }
 
-    /* Cards */
     .cardx{
       border: 1px solid var(--stroke);
       background: rgba(255,255,255,.86);
@@ -130,26 +119,20 @@
       padding: 14px;
       overflow:hidden;
     }
-
-    .hero{
-      padding: 10px 0 6px;
-    }
     .badge-grade{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
+      display:inline-flex; align-items:center; gap:8px;
       padding: 7px 10px;
       border-radius: 999px;
       border:1px solid rgba(37,99,235,.18);
       background: rgba(37,99,235,.08);
       color: rgba(29,78,216,1);
-      font-weight: 900;
+      font-weight: 950;
       font-size: 13px;
     }
     h1{
       margin: 10px 0 6px;
       letter-spacing: -.03em;
-      font-weight: 950;
+      font-weight: 1000;
       line-height: 1.05;
       font-size: clamp(22px, 5.5vw, 32px);
     }
@@ -157,10 +140,9 @@
       color: var(--muted);
       margin: 0 0 10px;
       line-height: 1.5;
-      font-weight: 650;
+      font-weight: 750;
     }
 
-    /* Steps */
     .step-head{
       display:flex;
       align-items:center;
@@ -169,21 +151,19 @@
       margin-bottom: 8px;
     }
     .step-title{
-      font-weight: 950;
+      font-weight: 1000;
       letter-spacing: -.02em;
       margin:0;
       font-size: 18px;
     }
     .chip{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
+      display:inline-flex; align-items:center; gap:8px;
       padding: 6px 10px;
       border-radius: 999px;
       border:1px solid var(--stroke);
       background:#fff;
       color: rgba(11,18,32,.78);
-      font-weight: 900;
+      font-weight: 950;
       font-size: 12px;
       white-space:nowrap;
     }
@@ -192,19 +172,31 @@
       background: rgba(22,163,74,.10);
       color: rgba(22,163,74,1);
     }
+    .hint{
+      color: var(--muted);
+      font-weight: 780;
+      line-height: 1.5;
+      margin-top: 8px;
+    }
+    .tiny{
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 760;
+      margin-top: 6px;
+    }
 
-    /* Reading area */
+    /* Reading */
     .reading-box{
       border:1px solid rgba(15,23,42,.12);
       background: #fff;
       border-radius: var(--r);
       padding: 12px;
+      position: relative;
     }
     .reading-text{
       font-size: 15.5px;
       line-height: 1.65;
       margin:0;
-      position: relative;
       user-select: none;
       -webkit-user-select: none;
       touch-action: manipulation;
@@ -214,11 +206,10 @@
       padding: 0 2px;
       border-radius: 6px;
     }
-    /* Satır takip çizgisi */
     .tracker{
       position: absolute;
-      left: 0;
-      right: 0;
+      left: 8px;
+      right: 8px;
       height: 34px;
       border-radius: 12px;
       background: linear-gradient(90deg, rgba(37,99,235,.14), rgba(96,165,250,.10));
@@ -226,6 +217,7 @@
       pointer-events: none;
       opacity: 0;
       transition: opacity .15s ease;
+      top: 12px;
     }
     .tracker.on{ opacity: 1; }
 
@@ -237,11 +229,7 @@
       border:1px solid var(--stroke);
       background: rgba(255,255,255,.78);
     }
-    .q p{
-      margin:0 0 8px;
-      font-weight: 900;
-      letter-spacing: -.01em;
-    }
+    .q p{ margin:0 0 8px; font-weight: 950; letter-spacing: -.01em; }
     .opt{
       display:flex;
       gap:10px;
@@ -251,14 +239,13 @@
       border:1px solid rgba(15,23,42,.10);
       background:#fff;
       margin-bottom: 8px;
-      font-weight: 850;
+      font-weight: 900;
       cursor:pointer;
       user-select:none;
     }
     .opt input{ accent-color: var(--blue); }
-    .opt:active{ transform: scale(.99); }
 
-    /* Attention: grid */
+    /* Attention grid */
     .grid{
       display:grid;
       grid-template-columns: repeat(9, 1fr);
@@ -271,7 +258,7 @@
       background:#fff;
       display:grid;
       place-items:center;
-      font-weight: 950;
+      font-weight: 1000;
       letter-spacing: -.01em;
       cursor:pointer;
       user-select:none;
@@ -279,52 +266,64 @@
       transition: transform .06s ease, background .12s ease, border-color .12s ease;
     }
     .cell:active{ transform: scale(.98); }
-    .cell.hit{
-      background: rgba(22,163,74,.12);
-      border-color: rgba(22,163,74,.22);
-      color: rgba(22,163,74,1);
-    }
-    .cell.miss{
-      background: rgba(239,68,68,.10);
-      border-color: rgba(239,68,68,.18);
-      color: rgba(239,68,68,1);
-    }
+    .cell.hit{ background: rgba(22,163,74,.12); border-color: rgba(22,163,74,.22); color: rgba(22,163,74,1); }
+    .cell.miss{ background: rgba(239,68,68,.10); border-color: rgba(239,68,68,.18); color: rgba(239,68,68,1); }
 
-    /* Word choose */
-    .mini-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
+    /* Go/No-go reaction test */
+    .reaction-wrap{
+      border-radius: var(--r);
+      border:1px solid rgba(15,23,42,.12);
+      background:#fff;
+      padding: 12px;
     }
+    .signal{
+      height: 150px;
+      border-radius: 18px;
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(37,99,235,.06);
+      display:grid;
+      place-items:center;
+      font-weight: 1000;
+      letter-spacing: -.02em;
+      user-select:none;
+      -webkit-user-select:none;
+      touch-action: manipulation;
+    }
+    .signal .box{
+      width: 86px;
+      height: 86px;
+      border-radius: 20px;
+      border: 2px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.92);
+      box-shadow: 0 10px 18px rgba(2,6,23,.08);
+    }
+    .signal.green .box{ background: rgba(22,163,74,.14); border-color: rgba(22,163,74,.22); }
+    .signal.red .box{ background: rgba(239,68,68,.14); border-color: rgba(239,68,68,.22); }
+    .signal .txt{ margin-top: 10px; font-size: 14px; color: var(--muted); font-weight: 800; text-align:center; padding: 0 10px; }
+    .stat-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top: 10px; }
+    .stat{ padding: 8px 10px; border-radius: 999px; border:1px solid var(--stroke); background:#fff; font-weight: 950; font-size: 12px; }
+
+    /* Language picks */
+    .mini-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .pick{
       border-radius: 16px;
       border:1px solid rgba(15,23,42,.10);
       background:#fff;
       padding: 12px;
-      font-weight: 950;
+      font-weight: 1000;
       letter-spacing: -.01em;
       text-align:center;
       cursor:pointer;
       user-select:none;
+      -webkit-tap-highlight-color: transparent;
     }
-    .pick.good{
-      border-color: rgba(22,163,74,.22);
-      background: rgba(22,163,74,.10);
-      color: rgba(22,163,74,1);
-    }
-    .pick.bad{
-      border-color: rgba(239,68,68,.18);
-      background: rgba(239,68,68,.10);
-      color: rgba(239,68,68,1);
-    }
+    .pick.good{ border-color: rgba(22,163,74,.22); background: rgba(22,163,74,.10); color: rgba(22,163,74,1); }
+    .pick.bad{ border-color: rgba(239,68,68,.18); background: rgba(239,68,68,.10); color: rgba(239,68,68,1); }
 
     /* Result */
-    .result{
-      display:none;
-      margin-top: 12px;
-    }
+    .result{ display:none; margin-top: 12px; }
     .score{
-      font-weight: 1000;
+      font-weight: 1100;
       letter-spacing: -.03em;
       font-size: 40px;
       line-height: 1;
@@ -335,23 +334,15 @@
       gap:10px;
       padding: 10px 12px;
       border-radius: 16px;
-      font-weight: 950;
+      font-weight: 1000;
       border: 1px solid var(--stroke);
       background: rgba(255,255,255,.86);
     }
     .level.bad{ border-color: rgba(239,68,68,.18); background: rgba(239,68,68,.10); color: rgba(185,28,28,1); }
-    .level.warn{ border-color: rgba(245,158,11,.20); background: rgba(245,158,11,.12); color: rgba(146,64,14,1); }
     .level.mid{ border-color: rgba(37,99,235,.18); background: rgba(37,99,235,.10); color: rgba(29,78,216,1); }
     .level.good{ border-color: rgba(22,163,74,.20); background: rgba(22,163,74,.10); color: rgba(22,163,74,1); }
 
-    .hint{
-      color: var(--muted);
-      font-weight: 750;
-      line-height: 1.5;
-      margin-top: 8px;
-    }
-
-    /* Bottom fixed actions */
+    /* Bottom actions */
     .bottom-actions{
       position: fixed;
       left: 0; right: 0; bottom: 0;
@@ -362,22 +353,15 @@
       z-index: 60;
     }
     .bottom-actions .inner{
-      max-width: 720px;
+      max-width: 760px;
       margin: 0 auto;
       display:flex;
       gap:10px;
       align-items:center;
     }
-    .tiny{
-      font-size: 12px;
-      color: var(--muted);
-      font-weight: 750;
-      margin-top: 6px;
-    }
 
-    /* Tablet refinements */
     @media (min-width: 768px){
-      .wrap{ padding: 18px 18px 120px; }
+      .wrap{ padding: 18px 18px 130px; }
       .grid{ grid-template-columns: repeat(10, 1fr); }
     }
   </style>
@@ -390,12 +374,10 @@
     <div class="top-sticky">
       <div class="topbar">
         <div class="timer-pill">
-          <span style="font-weight:1000">⏱️</span>
+          <span style="font-weight:1100">⏱️</span>
           <span class="time" id="time">01:00</span>
         </div>
-        <div class="progress" aria-label="Süre ilerleme">
-          <div id="bar"></div>
-        </div>
+        <div class="progress"><div id="bar"></div></div>
         <button class="btn-main" id="btnStart">Başla</button>
       </div>
       <div class="tiny" id="tinyNote">Sınıfı seç → Başla. Süre bitince otomatik sonuç çıkar.</div>
@@ -403,40 +385,41 @@
 
     <!-- Intro -->
     <section class="hero">
-      <span class="badge-grade">📚 2–4. Sınıf • 1 Dakikalık Mini Test</span>
+      <span class="badge-grade">🎯 1–5. Sınıf • 60 Saniyelik Mini Test</span>
       <h1>1 Dakikada Kendini Test Et</h1>
       <p class="sub">
-        Bu test <b>okuma-anlama</b>, <b>dikkat</b> ve <b>kelime/doğru seçme</b> alanlarını hızlıca ölçer.
+        Bu test <b>okuma-anlama</b>, <b>dikkat</b>, <b>tepki kontrolü</b> ve <b>doğru kelime seçimi</b> alanlarını ölçer.
         60 saniye içinde olabildiğince çok doğru yap!
       </p>
 
       <div class="cardx">
         <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap">
-          <div style="font-weight:950">Sınıfını seç</div>
-          <div class="d-flex gap-2">
-            <button class="btn-soft" data-grade="2">2. Sınıf</button>
-            <button class="btn-soft" data-grade="3">3. Sınıf</button>
-            <button class="btn-soft" data-grade="4">4. Sınıf</button>
+          <div style="font-weight:1000">Sınıfını seç</div>
+          <div class="d-flex gap-2 flex-wrap">
+            <button class="btn-soft" data-grade="1">1</button>
+            <button class="btn-soft" data-grade="2">2</button>
+            <button class="btn-soft" data-grade="3">3</button>
+            <button class="btn-soft" data-grade="4">4</button>
+            <button class="btn-soft" data-grade="5">5</button>
           </div>
         </div>
         <div class="hint mt-2" id="gradeHint">Seçim yapınca sorular seviyene göre ayarlanır.</div>
       </div>
     </section>
 
-    <!-- STEP 1: Reading + Comprehension -->
-    <section class="mt-3">
+    <!-- 1) Reading -->
+    <section class="mt-3" id="secRead">
       <div class="cardx">
         <div class="step-head">
           <h2 class="step-title">1) Okuma & Anlama</h2>
           <span class="chip" id="chipRead">⏳ Devam ediyor</span>
         </div>
-
         <div class="hint mb-2">
-          <b>Ne yapacağım?</b> Metni hızlıca oku. Sonra alttaki soruları işaretle.
+          <b>Ne yapacağım?</b> Metni oku. Sonra soruları işaretle.
           Metindeki kelimelere dokunursan <b>işaretlenir</b>. Parmağını metnin üzerinde gezdirirsen <b>satır çizgisi</b> yardımcı olur.
         </div>
 
-        <div class="reading-box">
+        <div class="reading-box" id="readingBox">
           <div class="tracker" id="tracker"></div>
           <p class="reading-text" id="readingText"></p>
         </div>
@@ -445,17 +428,16 @@
       </div>
     </section>
 
-    <!-- STEP 2: Attention -->
-    <section class="mt-3">
+    <!-- 2) Target letter attention -->
+    <section class="mt-3" id="secAttn">
       <div class="cardx">
         <div class="step-head">
-          <h2 class="step-title">2) Dikkat Testi (Hedefi Bul)</h2>
+          <h2 class="step-title">2) Dikkat (Hedefi Bul)</h2>
           <span class="chip" id="chipAttn">⏳ Devam ediyor</span>
         </div>
 
         <div class="hint mb-2" id="attnHint">
-          <b>Ne yapacağım?</b> Aşağıdaki kutularda hedef harfi bul ve <b>hepsine dokun</b>.
-          Yanlış kutuya basarsan puan kırılır.
+          <b>Ne yapacağım?</b> Hedef harfi bul ve <b>hepsine dokun</b>. Yanlış dokunuş puan kırar.
         </div>
 
         <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap mb-2">
@@ -467,23 +449,53 @@
       </div>
     </section>
 
-    <!-- STEP 3: Word / Language -->
-    <section class="mt-3">
+    <!-- 3) Go/No-go (ONLY STARTS WHEN THIS SECTION ENTERS VIEW) -->
+    <section class="mt-3" id="secReact">
       <div class="cardx">
         <div class="step-head">
-          <h2 class="step-title">3) Kelimeyi Doğru Seç</h2>
+          <h2 class="step-title">3) Dur–Git (Tepki Testi)</h2>
+          <span class="chip" id="chipReact">⏳ Devam ediyor</span>
+        </div>
+
+        <div class="hint mb-2" id="reactHint">
+          <b>Ne yapacağım?</b> Kutu <b>yeşil</b> olunca <b>hemen dokun</b>. Kutu <b>kırmızı</b> olunca <b>dokunma</b>.
+          Yanlış dokunuş puan kırar.
+          <br><span class="tiny">Not: Bu bölüm <b>sadece buraya geldiğinde</b> otomatik başlar.</span>
+        </div>
+
+        <div class="reaction-wrap">
+          <div class="signal" id="signal" aria-label="Tepki alanı">
+            <div>
+              <div class="box" id="signalBox"></div>
+              <div class="txt" id="signalText">Bu bölüme gelince başlayacak.</div>
+            </div>
+          </div>
+          <div class="stat-row">
+            <div class="stat">🟩 Doğru: <span id="rGood">0</span></div>
+            <div class="stat">🟥 Hata: <span id="rBad">0</span></div>
+            <div class="stat">⏩ Ortalama tepki: <span id="rAvg">-</span> ms</div>
+          </div>
+          <div class="tiny">İpucu: Çok hızlı ve çok dikkatli ol 🙂</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4) Language -->
+    <section class="mt-3" id="secLang">
+      <div class="cardx">
+        <div class="step-head">
+          <h2 class="step-title">4) Kelimeyi Doğru Seç</h2>
           <span class="chip" id="chipLang">⏳ Devam ediyor</span>
         </div>
 
         <div class="hint mb-2" id="langHint">
           <b>Ne yapacağım?</b> Kutulardan <b>doğru olan kelimeyi</b> seç.
-          Bazıları konuşurken “yuvarlama/yanlış söyleme” gibi hatalarla karışabiliyor.
         </div>
 
         <div class="q">
           <p id="langQ">Soru</p>
           <div class="mini-grid" id="langOpts"></div>
-          <div class="tiny">Not: Bir seçim yaptıktan sonra diğer soruya otomatik geçer.</div>
+          <div class="tiny">Bir seçimden sonra diğer soruya otomatik geçer.</div>
         </div>
       </div>
     </section>
@@ -493,21 +505,22 @@
       <div class="cardx">
         <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap">
           <div>
-            <div style="font-weight:950">Sonuç</div>
+            <div style="font-weight:1000">Sonuç</div>
             <div class="hint">Toplam puanın ve seviyen aşağıda.</div>
           </div>
           <button class="btn-soft" id="btnRetry">Tekrar Dene</button>
         </div>
 
         <div class="mt-3 d-flex align-items-center justify-content-between gap-3 flex-wrap">
-          <div class="score"><span id="score">0</span><span style="font-size:16px;font-weight:900;color:var(--muted)">/100</span></div>
+          <div class="score"><span id="score">0</span><span style="font-size:16px;font-weight:950;color:var(--muted)">/100</span></div>
           <div class="level" id="levelBox">Seviye</div>
         </div>
 
-        <div class="mt-3">
-          <div class="chip">📖 Okuma-Anlama: <b id="sRead">0</b>/50</div>
-          <div class="chip ms-2">🎯 Dikkat: <b id="sAttn">0</b>/30</div>
-          <div class="chip ms-2">🗣️ Kelime: <b id="sLang">0</b>/20</div>
+        <div class="mt-3 d-flex flex-wrap gap-2">
+          <div class="chip">📖 Okuma-Anlama: <b id="sRead">0</b>/40</div>
+          <div class="chip">🎯 Hedef Harf: <b id="sAttn">0</b>/25</div>
+          <div class="chip">⚡ Tepki: <b id="sReact">0</b>/20</div>
+          <div class="chip">🗣️ Kelime: <b id="sLang">0</b>/15</div>
         </div>
 
         <div class="hint mt-3" id="finalMsg"></div>
@@ -525,187 +538,164 @@
   </div>
 
   <script>
-    // ===========================
-    // DATA (2-3-4. sınıf)
-    // ===========================
-    const DATA = {
-      2: {
-        reading: {
-          text:
-            "Mert sabah erkenden uyandı. Pencereden bakınca yağmur yağdığını gördü. Şemsiyesini aldı ve okula gitmek için hazırlandı. Yolda bir kedi gördü. Kedi üşümüş gibiydi. Mert, kediyi bir saçak altına götürdü. Sonra koşmadan, dikkatlice okula yürüdü.",
-          qs: [
-            {q:"Mert pencereden bakınca ne gördü?", a:["Güneş açtığını","Yağmur yağdığını","Kar yağdığını","Rüzgâr estiğini"], c:1},
-            {q:"Mert yolda ne yaptı?", a:["Kediyi yağmura bıraktı","Kediyi saçak altına götürdü","Okula koştu","Eve geri döndü"], c:1}
-          ]
-        },
-        attn: { targetPool: ["A","E","K"], size: 81, targets: 10 },
-        lang: [
-          {q:"Hangisi doğru yazım?", options:["okül","okul","okulü","okülü"], correct:1},
-          {q:"Hangisi doğru yazım?", options:["kitap","kitab","kitabp","kitapı"], correct:0},
-          {q:"Hangisi doğru yazım?", options:["geliyorum","geliyom","gelyorum","geliyurum"], correct:0},
-          {q:"Hangisi doğru yazım?", options:["çocuk","çoçuk","çocuq","çocok"], correct:0}
-        ]
-      },
-      3: {
-        reading: {
-          text:
-            "Elif, kütüphaneden bir kitap ödünç aldı. Kitabın konusu uzaydı. Elif her gün on dakika okudu ve okurken önemli yerleri işaretledi. Sonra defterine kısa notlar yazdı. Bir hafta sonra kitabı bitirdi. Öğretmenine kitabın en sevdiği bölümünü anlattı.",
-          qs: [
-            {q:"Elif kitabı nereden aldı?", a:["Market","Kütüphane","Park","Spor salonu"], c:1},
-            {q:"Elif okurken ne yaptı?", a:["Hiç not almadı","Önemli yerleri işaretledi","Sadece resimlere baktı","Kitabı yarım bıraktı"], c:1},
-            {q:"Elif kitabı ne zaman bitirdi?", a:["Bir günde","Bir haftada","Bir ayda","Hiç bitirmedi"], c:1}
-          ]
-        },
-        attn: { targetPool: ["B","D","R"], size: 90, targets: 12 },
-        lang: [
-          {q:"Doğru olanı seç:", options:["bügün","bugün","bu gün","bugun"], correct:1},
-          {q:"Doğru olanı seç:", options:["herkez","herkes","herkezs","herkess"], correct:1},
-          {q:"Doğru olanı seç:", options:["gidicem","gideceğim","gidecem","gidceğim"], correct:1},
-          {q:"Doğru olanı seç:", options:["çünki","çünkü","çünkı","çünkú"], correct:1}
-        ]
-      },
-      4: {
-        reading: {
-          text:
-            "Deniz, sınıfta yapılacak sunum için araştırma yapıyordu. İnternetten bulduğu bilgileri hemen kopyalamak yerine, önce okuyup anlamaya çalıştı. Sonra kendi cümleleriyle özet çıkardı. Böylece hem daha iyi öğrendi hem de sunumunu daha etkili hazırladı. Öğretmeni, Deniz’in emek verdiğini fark etti.",
-          qs: [
-            {q:"Deniz bilgileri neden hemen kopyalamadı?", a:["Zamanı yoktu","Önce okuyup anlamak istedi","Bilgileri sevmedi","Sunum yapmayacaktı"], c:1},
-            {q:"Deniz sunumu nasıl hazırladı?", a:["Kopyalayarak","Kendi cümleleriyle özet çıkararak","Hiç çalışmayarak","Sadece resim koyarak"], c:1},
-            {q:"Bu metinden çıkarılacak en iyi sonuç nedir?", a:["Kopyalamak daha kolaydır","Anlayarak çalışmak öğrenmeyi artırır","Sunum gereksizdir","Okumak sıkıcıdır"], c:1}
-          ]
-        },
-        attn: { targetPool: ["M","S","T"], size: 100, targets: 14 },
-        lang: [
-          {q:"Doğru olanı seç:", options:["yalnış","yanlış","yanlş","yanlıs"], correct:1},
-          {q:"Doğru olanı seç:", options:["birşey","bir şey","bi şey","birş ey"], correct:1},
-          {q:"Doğru olanı seç:", options:["deyil","değil","degil","degil’"], correct:1},
-          {q:"Doğru olanı seç:", options:["gelicem","geleceğim","gelcem","gelceğim"], correct:1}
-        ]
-      }
-    };
-
-    // ===========================
-    // STATE
-    // ===========================
     const $ = (id)=>document.getElementById(id);
-
-    let grade = null;
-    let running = false;
-    let paused = false;
-    let t = 60;
-    let timerId = null;
-
-    // scoring
-    let readCorrect = 0, readTotal = 0;
-    let attnHit = 0, attnMiss = 0, attnTargets = 0;
-    let langIndex = 0, langCorrect = 0;
-
-    // attention grid tracking
-    let targetLetter = "?";
-    let targetSet = new Set(); // indices that are targets
-    let alreadyClicked = new Set();
-
-    // ===========================
-    // HELPERS
-    // ===========================
-    function clamp(n,min,max){ return Math.max(min, Math.min(max,n)); }
+    const clamp=(n,min,max)=>Math.max(min,Math.min(max,n));
     function shuffle(arr){
-      const a = arr.slice();
+      const a=arr.slice();
       for(let i=a.length-1;i>0;i--){
-        const j = Math.floor(Math.random()*(i+1));
+        const j=Math.floor(Math.random()*(i+1));
         [a[i],a[j]]=[a[j],a[i]];
       }
       return a;
     }
     function formatTime(sec){
-      const m = Math.floor(sec/60);
-      const s = sec%60;
+      const m=Math.floor(sec/60), s=sec%60;
       return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
     }
 
-    function setChipDone(chipId){
-      const el = $(chipId);
+    // ==============
+    // DATA 1–5
+    // ==============
+    const DATA = {
+      1: {
+        reading: {
+          text:
+            "Ali okula gitti. Çantasını sırasına koydu. Öğretmeni gülümseyerek sınıfa girdi. Ali defterini açtı ve dikkatle dinledi.",
+          qs: [
+            {q:"Ali nereye gitti?", a:["Parka","Okula","Markete","Eve"], c:1},
+            {q:"Ali neyi açtı?", a:["Kapıyı","Defteri","Televizyonu","Kutuyu"], c:1}
+          ]
+        },
+        attn: { targetPool: ["A","E","K"], size: 64, targets: 8 },
+        react: { rounds: 12, greenRatio: 0.62, minDelay: 520, maxDelay: 980 }, // zorlaştırıldı
+        lang: [
+          {q:"Doğru olanı seç:", options:["okul","okül","okulü","okuul"], correct:0},
+          {q:"Doğru olanı seç:", options:["elma","elme","alma","elmaa"], correct:0},
+          {q:"Doğru olanı seç:", options:["kedi","kediğ","kedı","kedi "], correct:0}
+        ]
+      },
+      2: {
+        reading: {
+          text:
+            "Mert sabah erkenden uyandı. Pencereden bakınca yağmur yağdığını gördü. Şemsiyesini aldı ve okula gitmek için hazırlandı. Yolda bir kedi gördü. Kedi üşümüş gibiydi. Mert, kediyi bir saçak altına götürdü. Sonra dikkatlice okula yürüdü.",
+          qs: [
+            {q:"Mert pencereden bakınca ne gördü?", a:["Güneş açtığını","Yağmur yağdığını","Kar yağdığını","Rüzgâr estiğini"], c:1},
+            {q:"Mert yolda ne yaptı?", a:["Kediyi saçak altına götürdü","Okula koştu","Eve döndü","Kediyi yağmura bıraktı"], c:0},
+            {q:"Mert okula nasıl yürüdü?", a:["Koşarak","Dikkatlice","Uçarak","Zıplayarak"], c:1}
+          ]
+        },
+        attn: { targetPool: ["A","E","K"], size: 81, targets: 10 },
+        react: { rounds: 14, greenRatio: 0.58, minDelay: 480, maxDelay: 980 },
+        lang: [
+          {q:"Hangisi doğru?", options:["okül","okul","okulü","okülü"], correct:1},
+          {q:"Hangisi doğru?", options:["geliyorum","geliyom","gelyorum","geliyurum"], correct:0},
+          {q:"Hangisi doğru?", options:["kitap","kitab","kitapı","kitapıı"], correct:0}
+        ]
+      },
+      3: {
+        reading: {
+          text:
+            "Elif, kütüphaneden bir kitap ödünç aldı. Kitabın konusu uzaydı. Elif her gün on dakika okudu ve okurken önemli yerleri işaretledi. Sonra defterine kısa notlar yazdı. Bir hafta sonra kitabı bitirdi.",
+          qs: [
+            {q:"Elif kitabı nereden aldı?", a:["Market","Kütüphane","Park","Spor salonu"], c:1},
+            {q:"Elif okurken ne yaptı?", a:["Önemli yerleri işaretledi","Sadece resimlere baktı","Hiç okumadı","Hızlıca bıraktı"], c:0},
+            {q:"Elif kitabı ne zaman bitirdi?", a:["Bir günde","Bir haftada","Bir ayda","Bitirmedi"], c:1}
+          ]
+        },
+        attn: { targetPool: ["B","D","R"], size: 90, targets: 12 },
+        react: { rounds: 16, greenRatio: 0.56, minDelay: 440, maxDelay: 920 },
+        lang: [
+          {q:"Doğru olanı seç:", options:["bügün","bugün","bu gün","bugun"], correct:1},
+          {q:"Doğru olanı seç:", options:["herkez","herkes","herkess","herkezs"], correct:1},
+          {q:"Doğru olanı seç:", options:["çünki","çünkü","çünkı","çünkú"], correct:1},
+          {q:"Doğru olanı seç:", options:["gideceğim","gidicem","gidecem","gidceğim"], correct:0}
+        ]
+      },
+      4: {
+        reading: {
+          text:
+            "Deniz, sunum için araştırma yapıyordu. İnternetten bulduğu bilgileri hemen kopyalamak yerine önce okuyup anlamaya çalıştı. Sonra kendi cümleleriyle özet çıkardı. Böylece sunumunu daha etkili hazırladı.",
+          qs: [
+            {q:"Deniz bilgileri neden kopyalamadı?", a:["Önce anlayarak okumak istedi","Zamanı yoktu","Bilgileri sevmedi","Sunum yapmayacaktı"], c:0},
+            {q:"Deniz sunumu nasıl hazırladı?", a:["Kopyalayarak","Kendi cümleleriyle özet çıkararak","Hiç çalışmayarak","Sadece resim koyarak"], c:1},
+            {q:"Bu metinden en doğru sonuç?", a:["Anlayarak çalışmak öğrenmeyi artırır","Kopyalamak en iyidir","Sunum gereksizdir","Okumak sıkıcıdır"], c:0}
+          ]
+        },
+        attn: { targetPool: ["M","S","T"], size: 100, targets: 14 },
+        react: { rounds: 18, greenRatio: 0.54, minDelay: 420, maxDelay: 900 },
+        lang: [
+          {q:"Doğru olanı seç:", options:["yalnış","yanlış","yanlş","yanlıs"], correct:1},
+          {q:"Doğru olanı seç:", options:["birşey","bir şey","bi şey","birş ey"], correct:1},
+          {q:"Doğru olanı seç:", options:["deyil","değil","degil","degil’"], correct:1},
+          {q:"Doğru olanı seç:", options:["geleceğim","gelicem","gelcem","gelceğim"], correct:0}
+        ]
+      },
+      5: {
+        reading: {
+          text:
+            "Ayşe, sınava hazırlanırken her gün kısa tekrarlar yapıyordu. Zorlandığı konuları küçük parçalara böldü ve her parçayı bitirince kendini ödüllendirdi. Böylece motivasyonu arttı ve çalışmayı daha düzenli hale getirdi. Sonunda deneme sınavlarında daha iyi sonuçlar aldı.",
+          qs: [
+            {q:"Ayşe zorlandığı konuları nasıl çalıştı?", a:["Hiç çalışmadı","Küçük parçalara böldü","Sadece ezberledi","Hep erteledi"], c:1},
+            {q:"Ayşe neden kendini ödüllendirdi?", a:["Motivasyonu artsın diye","Daha az çalışmak için","Sınavı boşvermek için","Arkadaşları istedi"], c:0},
+            {q:"Ayşe’nin sonucu ne oldu?", a:["Daha kötü oldu","Değişmedi","Denemelerde daha iyi oldu","Hiç sınava girmedi"], c:2}
+          ]
+        },
+        attn: { targetPool: ["N","P","R"], size: 110, targets: 16 },
+        react: { rounds: 20, greenRatio: 0.52, minDelay: 400, maxDelay: 880 },
+        lang: [
+          {q:"Doğru olanı seç:", options:["yanlızca","yalnızca","yalnıca","yanlızca "], correct:1},
+          {q:"Doğru olanı seç:", options:["hiç bir","hiçbir","hicbir","hiç bir "], correct:1},
+          {q:"Doğru olanı seç:", options:["farketmek","fark etmek","farket mek","fark etmeK"], correct:1},
+          {q:"Doğru olanı seç:", options:["bir çok","birçok","bircok","bir cok"], correct:1}
+        ]
+      }
+    };
+
+    // ==============
+    // STATE
+    // ==============
+    let grade = null;
+    let running=false, paused=false;
+    let t = 60, timerId=null;
+
+    // scores raw
+    let readCorrect=0, readTotal=0;
+    let attnHit=0, attnMiss=0, attnTargets=0;
+
+    let langIndex=0, langCorrect=0;
+
+    // reaction stats
+    let reactRounds=0, reactDone=0;
+    let reactGood=0, reactBad=0;
+    let reactTimes=[]; // ms
+    let reactActive=false;
+    let reactExpected="none"; // "tap" or "no"
+    let reactShowAt=0;
+    let reactTimeout=null;
+
+    // IMPORTANT: only start reaction when section is visible
+    let reactStarted = false;
+
+    // attention grid
+    let targetLetter="?", targetSet=new Set(), alreadyClicked=new Set();
+
+    function setChipDone(id){
+      const el=$(id);
       el.classList.add("done");
-      el.textContent = "✅ Tamamlandı";
+      el.textContent="✅ Tamamlandı";
     }
-
-    function setChipDoing(chipId){
-      const el = $(chipId);
+    function setChipDoing(id){
+      const el=$(id);
       el.classList.remove("done");
-      el.textContent = "⏳ Devam ediyor";
+      el.textContent="⏳ Devam ediyor";
     }
-
     function updateTimerUI(){
       $("time").textContent = formatTime(t);
-      const pct = ((60 - t) / 60) * 100;
-      $("bar").style.width = `${pct}%`;
+      $("bar").style.width = `${((60-t)/60)*100}%`;
     }
-
     function stopTimer(){
       if(timerId) clearInterval(timerId);
-      timerId = null;
-    }
-
-    function finishTest(auto=false){
-      if(!grade) return;
-
-      running = false;
-      paused = false;
-      stopTimer();
-
-      $("btnStart").disabled = false;
-      $("btnPause").disabled = true;
-      $("btnFinish").disabled = true;
-      $("tinyNote").textContent = auto ? "Süre bitti. Sonuç hazır ✅" : "Test bitirildi. Sonuç hazır ✅";
-
-      // Mark chips if user interacted enough
-      // Reading: if answered all questions -> done
-      if(readCorrect + (readTotal - readCorrect) >= readTotal && readTotal>0){
-        // not reliable; we'll check any answer selected
-      }
-
-      // scores
-      const readScore = Math.round((readCorrect / Math.max(1, readTotal)) * 50);
-      // attention: reward hits, penalize misses
-      // max 30. each hit gives, miss removes. normalize by targets
-      const rawAttn = (attnHit - attnMiss*0.7);
-      const attnScore = Math.round(clamp((rawAttn / Math.max(1, attnTargets)) * 30, 0, 30));
-      const langScore = Math.round((langCorrect / Math.max(1, DATA[grade].lang.length)) * 20);
-
-      const total = clamp(readScore + attnScore + langScore, 0, 100);
-
-      // level
-      let levelText = "";
-      let levelClass = "";
-      if(total < 20){ levelText = "Çok Kötü"; levelClass = "bad"; }
-      else if(total < 40){ levelText = "Kötü"; levelClass = "bad"; }
-      else if(total < 60){ levelText = "Orta"; levelClass = "mid"; }
-      else if(total < 80){ levelText = "İyi"; levelClass = "good"; }
-      else { levelText = "Mükemmel"; levelClass = "good"; }
-
-      $("score").textContent = total;
-      $("sRead").textContent = readScore;
-      $("sAttn").textContent = attnScore;
-      $("sLang").textContent = langScore;
-
-      const levelBox = $("levelBox");
-      levelBox.className = `level ${levelClass}`;
-      levelBox.textContent = `🏁 Seviye: ${levelText}`;
-
-      // message
-      let msg = "";
-      if(total < 60){
-        msg = "📌 Sonuç geliştirmeye açık! Mega Hafıza Batıkent’de doğru tekniklerle hız + anlama + dikkat birlikte güçlenir. Merkezimizden eğitim alıp tekrar deneyiniz.";
-      }else if(total < 80){
-        msg = "✨ Güzel gidiyorsun! Biraz daha teknik ve düzenli çalışmayla çok daha iyi olursun. Eğitim alıp tekrar deneyebilirsin.";
-      }else{
-        msg = "🏆 Harika! Çok iyi bir seviye. Düzenli tekrar ve doğru tekniklerle bu seviyeyi koruyabilirsin.";
-      }
-      $("finalMsg").textContent = msg;
-
-      $("result").style.display = "block";
-      // Scroll to result (mobile friendly)
-      setTimeout(()=> $("result").scrollIntoView({behavior:"smooth", block:"start"}), 120);
+      timerId=null;
     }
 
     function resetAll(){
@@ -715,99 +705,99 @@
 
       readCorrect=0; readTotal=0;
       attnHit=0; attnMiss=0; attnTargets=0;
+      $("hit").textContent="0"; $("miss").textContent="0";
+      $("targetChip").textContent="🎯 Hedef: ?";
+
       langIndex=0; langCorrect=0;
 
-      targetLetter="?";
-      targetSet.clear();
-      alreadyClicked.clear();
-
-      $("hit").textContent = "0";
-      $("miss").textContent = "0";
-      $("targetChip").textContent = "🎯 Hedef: ?";
-
-      $("btnStart").disabled = false;
-      $("btnPause").disabled = true;
-      $("btnFinish").disabled = true;
-
-      $("result").style.display = "none";
+      // reaction reset
+      reactDone=0; reactGood=0; reactBad=0; reactTimes=[];
+      $("rGood").textContent="0"; $("rBad").textContent="0"; $("rAvg").textContent="-";
+      $("signal").className="signal";
+      $("signalText").textContent="Bu bölüme gelince başlayacak.";
+      reactActive=false; reactExpected="none";
+      reactStarted=false;
+      if(reactTimeout) clearTimeout(reactTimeout);
 
       setChipDoing("chipRead");
       setChipDoing("chipAttn");
+      setChipDoing("chipReact");
       setChipDoing("chipLang");
 
-      $("tinyNote").textContent = "Sınıfı seç → Başla. Süre bitince otomatik sonuç çıkar.";
+      $("result").style.display="none";
+
+      $("btnStart").disabled=false;
+      $("btnPause").disabled=true;
+      $("btnFinish").disabled=true;
+
+      $("tinyNote").textContent="Sınıfı seç → Başla. Süre bitince otomatik sonuç çıkar.";
     }
 
-    // ===========================
-    // BUILD UI BY GRADE
-    // ===========================
+    // ======================
+    // BUILD BY GRADE
+    // ======================
     function buildReading(){
       const d = DATA[grade].reading;
       const textEl = $("readingText");
-      textEl.innerHTML = ""; // fill as spans
+      textEl.innerHTML="";
       const words = d.text.split(" ");
-      // clickable highlight for words
-      words.forEach((w, i)=>{
-        const span = document.createElement("span");
-        span.textContent = w + (i === words.length-1 ? "" : " ");
-        span.style.cursor = "pointer";
+      words.forEach((w,i)=>{
+        const span=document.createElement("span");
+        span.textContent = w + (i===words.length-1 ? "" : " ");
+        span.style.cursor="pointer";
         span.addEventListener("click", ()=>{
-          if(!running) return;
-          // toggle mark
+          if(!running || paused) return;
           if(span.querySelector("mark")){
-            span.innerHTML = span.textContent; // remove mark but keep text
+            span.innerHTML = span.textContent;
           }else{
-            const m = document.createElement("mark");
+            const m=document.createElement("mark");
             m.textContent = span.textContent;
-            span.textContent = "";
+            span.textContent="";
             span.appendChild(m);
           }
         });
         textEl.appendChild(span);
       });
 
-      // questions
-      const qWrap = $("questions");
-      qWrap.innerHTML = "";
-      readTotal = d.qs.length;
-      readCorrect = 0;
+      const qWrap=$("questions");
+      qWrap.innerHTML="";
+      readTotal=d.qs.length;
+      readCorrect=0;
 
-      d.qs.forEach((qObj, qi)=>{
-        const box = document.createElement("div");
-        box.className = "q";
-        const p = document.createElement("p");
-        p.textContent = qObj.q;
+      d.qs.forEach((qObj,qi)=>{
+        const box=document.createElement("div");
+        box.className="q";
+        const p=document.createElement("p");
+        p.textContent=qObj.q;
         box.appendChild(p);
 
-        const name = `q${qi}`;
-        qObj.a.forEach((opt, oi)=>{
-          const label = document.createElement("label");
-          label.className = "opt";
-          const input = document.createElement("input");
-          input.type = "radio";
-          input.name = name;
-          input.value = String(oi);
+        const name=`q${qi}`;
+        qObj.a.forEach((opt,oi)=>{
+          const label=document.createElement("label");
+          label.className="opt";
+          const input=document.createElement("input");
+          input.type="radio";
+          input.name=name;
+          input.value=String(oi);
 
           input.addEventListener("change", ()=>{
-            if(!running) return;
-            // recompute correctness for all questions safely
-            let correct = 0;
-            d.qs.forEach((qq, idx)=>{
-              const chosen = document.querySelector(`input[name="q${idx}"]:checked`);
-              if(chosen && Number(chosen.value) === qq.c) correct++;
+            if(!running || paused) return;
+            let correct=0;
+            d.qs.forEach((qq,idx)=>{
+              const chosen=document.querySelector(`input[name="q${idx}"]:checked`);
+              if(chosen && Number(chosen.value)===qq.c) correct++;
             });
-            readCorrect = correct;
+            readCorrect=correct;
 
-            // if all answered -> chip done
-            const answered = d.qs.every((qq, idx)=> document.querySelector(`input[name="q${idx}"]:checked`));
+            const answered=d.qs.every((qq,idx)=>document.querySelector(`input[name="q${idx}"]:checked`));
             if(answered) setChipDone("chipRead");
           });
 
-          const span = document.createElement("span");
-          span.textContent = opt;
+          const s=document.createElement("span");
+          s.textContent=opt;
 
           label.appendChild(input);
-          label.appendChild(span);
+          label.appendChild(s);
           box.appendChild(label);
         });
 
@@ -816,43 +806,38 @@
     }
 
     function buildAttention(){
-      const conf = DATA[grade].attn;
-      const letters = "ABCDEFGHIKLMNOPRSTUVYZ"; // TR-friendly subset (no QWX)
+      const conf=DATA[grade].attn;
+      const letters="ABCDEFGHIKLMNOPRSTUVYZ";
       targetLetter = conf.targetPool[Math.floor(Math.random()*conf.targetPool.length)];
       $("targetChip").textContent = `🎯 Hedef: ${targetLetter}`;
+      $("attnHint").innerHTML =
+        `<b>Ne yapacağım?</b> Hedef harf <b>${targetLetter}</b>. Bu harfi gördüğün kutuya dokun.
+         Hepsini bulunca bölüm tamam ✅ (Yanlış dokunuş puan düşürür.)`;
 
-      attnHit = 0; attnMiss = 0;
-      $("hit").textContent = "0";
-      $("miss").textContent = "0";
+      attnHit=0; attnMiss=0;
+      $("hit").textContent="0"; $("miss").textContent="0";
 
-      const totalCells = conf.size;
-      const targetsCount = conf.targets;
-      attnTargets = targetsCount;
+      const totalCells=conf.size;
+      const targetsCount=conf.targets;
+      attnTargets=targetsCount;
 
-      // choose target indices
-      targetSet = new Set();
-      while(targetSet.size < targetsCount){
-        targetSet.add(Math.floor(Math.random()*totalCells));
-      }
-      alreadyClicked = new Set();
+      targetSet=new Set();
+      while(targetSet.size<targetsCount) targetSet.add(Math.floor(Math.random()*totalCells));
+      alreadyClicked=new Set();
 
-      const grid = $("grid");
-      grid.innerHTML = "";
+      const grid=$("grid");
+      grid.innerHTML="";
 
-      // fill cells
       for(let i=0;i<totalCells;i++){
-        const cell = document.createElement("div");
-        cell.className = "cell";
-        const isTarget = targetSet.has(i);
+        const cell=document.createElement("div");
+        cell.className="cell";
+        const isTarget=targetSet.has(i);
 
-        // choose distractor letter not equal to target
-        let ch = targetLetter;
+        let ch=targetLetter;
         if(!isTarget){
-          do{
-            ch = letters[Math.floor(Math.random()*letters.length)];
-          }while(ch === targetLetter);
+          do{ ch = letters[Math.floor(Math.random()*letters.length)]; }while(ch===targetLetter);
         }
-        cell.textContent = ch;
+        cell.textContent=ch;
 
         cell.addEventListener("click", ()=>{
           if(!running || paused) return;
@@ -862,80 +847,62 @@
           if(isTarget){
             attnHit++;
             cell.classList.add("hit");
-            $("hit").textContent = String(attnHit);
+            $("hit").textContent=String(attnHit);
           }else{
             attnMiss++;
             cell.classList.add("miss");
-            $("miss").textContent = String(attnMiss);
+            $("miss").textContent=String(attnMiss);
           }
-
-          // done if found all targets
-          if(attnHit >= attnTargets){
-            setChipDone("chipAttn");
-          }
+          if(attnHit>=attnTargets) setChipDone("chipAttn");
         });
 
         grid.appendChild(cell);
       }
-
-      // Make it not-too-easy: grid is scrollable content anyway; they must scan.
-      $("attnHint").innerHTML =
-        `<b>Ne yapacağım?</b> Hedef harf <b>${targetLetter}</b>. Kutularda bu harfi gördüğün yere dokun.
-         Hepsini bulunca bölüm <b>tamamlandı</b> olur. (Yanlış dokunuş puan düşürür.)`;
     }
 
     function buildLang(){
-      const pool = shuffle(DATA[grade].lang);
-      DATA[grade]._langShuffled = pool;
-      langIndex = 0;
-      langCorrect = 0;
+      DATA[grade]._langShuffled = shuffle(DATA[grade].lang);
+      langIndex=0;
+      langCorrect=0;
       renderLangQuestion();
     }
 
     function renderLangQuestion(){
-      const pool = DATA[grade]._langShuffled;
-      const qWrap = $("langOpts");
-      qWrap.innerHTML = "";
+      const pool=DATA[grade]._langShuffled;
+      const qWrap=$("langOpts");
+      qWrap.innerHTML="";
 
-      if(langIndex >= pool.length){
+      if(langIndex>=pool.length){
         setChipDone("chipLang");
-        $("langQ").textContent = "✅ Bu bölüm tamamlandı!";
+        $("langQ").textContent="✅ Bu bölüm tamamlandı!";
         $("langOpts").innerHTML = `<div class="hint">Harika! İstersen diğer bölümlere dön, sonra “Bitir” de.</div>`;
         return;
       }
 
-      const item = pool[langIndex];
-      $("langQ").textContent = item.q;
+      const item=pool[langIndex];
+      $("langQ").textContent=item.q;
 
-      const opts = item.options.map((o,i)=>({o,i}));
-      // keep order but can shuffle for fairness:
-      const shuffled = shuffle(opts);
-
-      shuffled.forEach(({o,i})=>{
-        const btn = document.createElement("div");
-        btn.className = "pick";
-        btn.textContent = o;
+      const opts = shuffle(item.options.map((o,i)=>({o,i})));
+      opts.forEach(({o,i})=>{
+        const btn=document.createElement("div");
+        btn.className="pick";
+        btn.textContent=o;
 
         btn.addEventListener("click", ()=>{
           if(!running || paused) return;
 
-          // lock all
-          const all = qWrap.querySelectorAll(".pick");
-          all.forEach(x=> x.style.pointerEvents = "none");
+          qWrap.querySelectorAll(".pick").forEach(x=>x.style.pointerEvents="none");
 
-          const correctIndex = item.correct;
-          if(i === correctIndex){
+          if(i===item.correct){
             langCorrect++;
             btn.classList.add("good");
           }else{
             btn.classList.add("bad");
-            // highlight correct one
-            all.forEach(x=>{
-              if(x.textContent === item.options[correctIndex]) x.classList.add("good");
+            qWrap.querySelectorAll(".pick").forEach(x=>{
+              if(x.textContent===item.options[item.correct]) x.classList.add("good");
             });
           }
 
-          // next after a short beat
           setTimeout(()=>{
             langIndex++;
             renderLangQuestion();
@@ -946,71 +913,271 @@
       });
     }
 
+    // Tracker line for reading
     function enableTracker(){
-      const tracker = $("tracker");
-      tracker.classList.add("on");
+      const tracker=$("tracker");
+      const box=$("readingBox");
+      const text=$("readingText");
 
-      const box = $("readingText");
-      // Follow finger (touch/mouse)
-      const move = (clientY)=>{
-        const rect = box.getBoundingClientRect();
-        const y = clamp(clientY - rect.top - 18, 0, rect.height - 34);
-        tracker.style.top = (box.offsetTop + y) + "px";
-      };
+      function show(){ tracker.classList.add("on"); }
+      function hide(){ tracker.classList.remove("on"); }
 
-      // We attach to reading-box area
-      const rb = box.parentElement;
-      rb.addEventListener("touchstart",(e)=>{
-        if(!running || paused) return;
-        move(e.touches[0].clientY);
-      }, {passive:true});
-      rb.addEventListener("touchmove",(e)=>{
-        if(!running || paused) return;
-        move(e.touches[0].clientY);
-      }, {passive:true});
-      rb.addEventListener("mousemove",(e)=>{
-        if(!running || paused) return;
-        move(e.clientY);
-      });
+      function move(clientY){
+        const rect=text.getBoundingClientRect();
+        const y=clamp(clientY-rect.top-18, 0, rect.height-34);
+        tracker.style.top = (12 + y) + "px";
+      }
 
-      rb.addEventListener("mouseleave",()=> tracker.classList.remove("on"));
-      rb.addEventListener("touchend",()=> tracker.classList.remove("on"), {passive:true});
+      box.addEventListener("touchstart",(e)=>{ if(!running||paused) return; show(); move(e.touches[0].clientY); }, {passive:true});
+      box.addEventListener("touchmove",(e)=>{ if(!running||paused) return; move(e.touches[0].clientY); }, {passive:true});
+      box.addEventListener("touchend",()=>hide(), {passive:true});
+      box.addEventListener("mousemove",(e)=>{ if(!running||paused) return; show(); move(e.clientY); });
+      box.addEventListener("mouseleave",()=>hide());
     }
 
+    // ======================
+    // REACTION TEST (starts only when secReact is visible)
+    // ======================
+    function startReactionLoop(){
+      const conf = DATA[grade].react;
+      reactRounds = conf.rounds;
+      reactDone = 0;
+      reactGood = 0;
+      reactBad = 0;
+      reactTimes = [];
+      $("rGood").textContent="0";
+      $("rBad").textContent="0";
+      $("rAvg").textContent="-";
+      setChipDoing("chipReact");
+
+      reactActive = true;
+      scheduleNextSignal();
+    }
+
+    function scheduleNextSignal(){
+      if(!reactActive || !running || paused) return;
+
+      const conf = DATA[grade].react;
+      if(reactDone >= reactRounds){
+        setChipDone("chipReact");
+        $("signal").className="signal";
+        $("signalText").textContent="✅ Tepki testi tamamlandı!";
+        reactExpected="none";
+        reactActive=false;
+        return;
+      }
+
+      // clear to neutral
+      $("signal").className="signal";
+      $("signalText").textContent="Hazır ol…";
+      reactExpected="none";
+
+      const delay = Math.floor(conf.minDelay + Math.random()*(conf.maxDelay - conf.minDelay));
+      reactTimeout = setTimeout(()=>{
+        if(!reactActive || !running || paused) return;
+
+        const isGreen = Math.random() < conf.greenRatio;
+        $("signal").className = "signal " + (isGreen ? "green" : "red");
+        $("signalText").textContent = isGreen ? "🟩 YEŞİL! DOKUN!" : "🟥 KIRMIZI! DOKUNMA!";
+        reactExpected = isGreen ? "tap" : "no";
+        reactShowAt = performance.now();
+
+        // auto advance after short window
+        const windowMs = 950;
+        reactTimeout = setTimeout(()=>{
+          if(reactExpected === "tap"){
+            reactBad++;
+            $("rBad").textContent = String(reactBad);
+          }
+          reactDone++;
+          scheduleNextSignal();
+        }, windowMs);
+
+      }, delay);
+    }
+
+    $("signal").addEventListener("click", ()=>{
+      if(!running || paused || !reactActive) return;
+
+      const now = performance.now();
+
+      if(reactExpected === "tap"){
+        const rt = Math.round(now - reactShowAt);
+        reactTimes.push(rt);
+        reactGood++;
+        $("rGood").textContent = String(reactGood);
+        reactExpected = "none";
+
+        const avg = Math.round(reactTimes.reduce((a,b)=>a+b,0) / reactTimes.length);
+        $("rAvg").textContent = String(avg);
+
+        if(reactTimeout) clearTimeout(reactTimeout);
+        reactDone++;
+        scheduleNextSignal();
+      }else if(reactExpected === "no"){
+        reactBad++;
+        $("rBad").textContent = String(reactBad);
+        reactExpected = "none";
+
+        if(reactTimeout) clearTimeout(reactTimeout);
+        reactDone++;
+        scheduleNextSignal();
+      }else{
+        reactBad++;
+        $("rBad").textContent = String(reactBad);
+      }
+    });
+
+    // ======================
+    // BUILD ALL
+    // ======================
     function buildAll(){
-      $("result").style.display = "none";
       buildReading();
       buildAttention();
       buildLang();
       enableTracker();
+
+      // Prepare reaction to start later (when secReact enters view)
+      reactStarted = false;
+      reactActive = false;
+      reactExpected = "none";
+      if(reactTimeout) clearTimeout(reactTimeout);
+      $("signal").className="signal";
+      $("signalText").textContent="Bu bölüme gelince başlayacak.";
+
+      // Start reaction ONLY when this section becomes visible
+      const reactSection = document.getElementById("secReact");
+      if(reactSection){
+        const io = new IntersectionObserver((entries)=>{
+          entries.forEach(e=>{
+            if(e.isIntersecting){
+              if(running && !paused && !reactStarted){
+                reactStarted = true;
+                startReactionLoop();
+              }
+            }
+          });
+        }, { threshold: 0.35 }); // %35 görünürse başlat
+        io.observe(reactSection);
+      }
+
+      $("result").style.display="none";
     }
 
-    // ===========================
-    // TIMER LOGIC (60s)
-    // ===========================
+    // ======================
+    // SCORING / FINISH
+    // ======================
+    function finishTest(auto=false){
+      if(!grade) return;
+
+      running=false;
+      paused=false;
+      stopTimer();
+
+      // stop reaction
+      reactActive=false;
+      if(reactTimeout) clearTimeout(reactTimeout);
+      reactExpected="none";
+
+      $("btnStart").disabled=false;
+      $("btnPause").disabled=true;
+      $("btnFinish").disabled=true;
+      $("tinyNote").textContent = auto ? "Süre bitti. Sonuç hazır ✅" : "Test bitirildi. Sonuç hazır ✅";
+
+      // Score weights:
+      // Reading 40, Attn 25, Reaction 20, Language 15
+      const readScore = Math.round((readCorrect / Math.max(1, readTotal)) * 40);
+
+      // attention: hits good, misses penalize
+      const rawAttn = (attnHit - attnMiss*0.7);
+      const attnScore = Math.round(clamp((rawAttn / Math.max(1, attnTargets)) * 25, 0, 25));
+
+      // reaction: good vs bad, also reward fast avg
+      const conf = DATA[grade].react;
+      const totalR = Math.max(1, conf.rounds);
+
+      // Eğer çocuk o bölüme hiç gelmediyse (reactStarted=false), adil olsun diye 10/20 veriyoruz.
+      // İstersen bunu 0 yapabilirsin.
+      let reactScore;
+      if(!reactStarted){
+        reactScore = 10;
+      }else{
+        const base = (reactGood / totalR) * 20;
+        const penalty = (reactBad / totalR) * 6;
+        reactScore = clamp(Math.round(base - penalty), 0, 20);
+
+        if(reactTimes.length >= Math.max(3, Math.floor(conf.rounds*0.3))){
+          const avg = reactTimes.reduce((a,b)=>a+b,0) / reactTimes.length;
+          const bonus = (avg < 420) ? 2 : (avg < 520) ? 1 : 0;
+          reactScore = clamp(reactScore + bonus, 0, 20);
+        }
+      }
+
+      const langScore = Math.round((langCorrect / Math.max(1, DATA[grade].lang.length)) * 15);
+
+      const total = clamp(readScore + attnScore + reactScore + langScore, 0, 100);
+
+      // level buckets
+      let levelText="", levelClass="";
+      if(total < 20){ levelText="Çok Kötü"; levelClass="bad"; }
+      else if(total < 40){ levelText="Kötü"; levelClass="bad"; }
+      else if(total < 60){ levelText="Orta"; levelClass="mid"; }
+      else if(total < 80){ levelText="İyi"; levelClass="good"; }
+      else { levelText="Mükemmel"; levelClass="good"; }
+
+      $("score").textContent = total;
+      $("sRead").textContent = readScore;
+      $("sAttn").textContent = attnScore;
+      $("sReact").textContent = reactScore;
+      $("sLang").textContent = langScore;
+
+      const levelBox=$("levelBox");
+      levelBox.className = `level ${levelClass}`;
+      levelBox.textContent = `🏁 Seviye: ${levelText}`;
+
+      let msg="";
+      if(total < 60){
+        msg = "📌 Sonuç geliştirmeye açık! Mega Hafıza Ankara’da okuma-anlama + dikkat + tepki kontrolü birlikte güçlenir. Merkezimizden eğitim alıp tekrar deneyiniz.";
+      }else if(total < 80){
+        msg = "✨ Güzel gidiyorsun! Biraz daha teknik ve düzenli çalışmayla çok daha iyi olursun. Eğitim alıp tekrar deneyebilirsin.";
+      }else{
+        msg = "🏆 Harika! Çok iyi bir seviye. Düzenli tekrar ve doğru tekniklerle bu seviyeyi koruyabilirsin.";
+      }
+      $("finalMsg").textContent = msg;
+
+      $("result").style.display="block";
+      setTimeout(()=> $("result").scrollIntoView({behavior:"smooth", block:"start"}), 120);
+    }
+
+    // ======================
+    // TIMER
+    // ======================
     function startTest(){
-      if(!grade) {
-        $("gradeHint").textContent = "Önce sınıfını seçmelisin 🙂";
-        $("gradeHint").style.color = "rgba(239,68,68,1)";
+      if(!grade){
+        $("gradeHint").textContent="Önce sınıfını seçmelisin 🙂";
+        $("gradeHint").style.color="rgba(239,68,68,1)";
         return;
       }
       if(running) return;
 
-      running = true;
-      paused = false;
-      $("btnStart").disabled = true;
-      $("btnPause").disabled = false;
-      $("btnFinish").disabled = false;
+      running=true;
+      paused=false;
+      $("btnStart").disabled=true;
+      $("btnPause").disabled=false;
+      $("btnFinish").disabled=false;
 
-      $("tinyNote").textContent = "Başladı! 60 saniye içinde olabildiğince çok doğru yap.";
+      $("tinyNote").textContent="Başladı! 60 saniye içinde olabildiğince çok doğru yap.";
+
+      // NOTE: reaction DOES NOT start here anymore.
+      // It will start when secReact becomes visible (IntersectionObserver).
 
       stopTimer();
-      timerId = setInterval(()=>{
+      timerId=setInterval(()=>{
         if(paused) return;
         t--;
         updateTimerUI();
-        if(t <= 0){
-          t = 0;
+        if(t<=0){
+          t=0;
           updateTimerUI();
           finishTest(true);
         }
@@ -1022,18 +1189,28 @@
       paused = !paused;
       $("btnPause").textContent = paused ? "Devam Et" : "Duraklat";
       $("tinyNote").textContent = paused ? "Duraklatıldı. Hazır olunca Devam Et." : "Devam! Süre akıyor.";
+
+      if(!paused){
+        // reaction startedysa devam etsin
+        if(reactStarted) scheduleNextSignal();
+      }else{
+        // pause olunca varsa bekleyen timeout'u durdur
+        if(reactTimeout) clearTimeout(reactTimeout);
+      }
     }
 
-    // ===========================
+    // ======================
     // EVENTS
-    // ===========================
+    // ======================
     document.querySelectorAll("[data-grade]").forEach(btn=>{
       btn.addEventListener("click", ()=>{
-        // set grade
         grade = Number(btn.getAttribute("data-grade"));
-        // visual select
-        document.querySelectorAll("[data-grade]").forEach(b=> b.classList.remove("btn-main"));
-        document.querySelectorAll("[data-grade]").forEach(b=> b.classList.add("btn-soft"));
+
+        // highlight
+        document.querySelectorAll("[data-grade]").forEach(b=>{
+          b.classList.remove("btn-main");
+          b.classList.add("btn-soft");
+        });
         btn.classList.remove("btn-soft");
         btn.classList.add("btn-main");
 
@@ -1042,19 +1219,20 @@
 
         resetAll();
         buildAll();
+        window.scrollTo({top:0, behavior:"smooth"});
       });
     });
 
     $("btnStart").addEventListener("click", startTest);
     $("btnPause").addEventListener("click", togglePause);
-    $("btnFinish").addEventListener("click", ()=> finishTest(false));
+    $("btnFinish").addEventListener("click", ()=>finishTest(false));
     $("btnRetry").addEventListener("click", ()=>{
       resetAll();
       buildAll();
       window.scrollTo({top:0, behavior:"smooth"});
     });
 
-    // initial UI
+    // init
     updateTimerUI();
   </script>
 </body>
