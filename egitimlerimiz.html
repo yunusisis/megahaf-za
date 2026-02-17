@@ -1,0 +1,1143 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Mega Hafıza Ankara | Eğitimlerimiz</title>
+  <meta name="description"
+    content="Mega Hafıza Ankara eğitimleri: Mega Hızlı Okuma, Mega Aktif Okuma, Mega Anzan Aritmetik ve Çocuk Zeka & Hafıza Atölyesi. Program detayları, kimler için uygun ve kayıt bilgisi." />
+  <link rel="canonical" href="https://www.siteniz.com/egitimlerimiz.html">
+
+  <!-- Perf -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --blue: #0b5ed7;
+      --blue2: #2b7bff;
+      --black: #0b0f19;
+      --ink: #0a0d14;
+      --white: #ffffff;
+
+      --text: rgba(255, 255, 255, .92);
+      --muted: rgba(255, 255, 255, .74);
+
+      --card: rgba(255, 255, 255, .07);
+      --stroke: rgba(255, 255, 255, .14);
+
+      --shadow: 0 18px 55px rgba(0, 0, 0, .35);
+      --shadow2: 0 20px 80px rgba(0, 0, 0, .45);
+
+      --r: 18px;
+      --r2: 26px;
+    }
+
+    html,
+    body {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--text);
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .container-xl {
+      max-width: 1260px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Topbar */
+    .topbar {
+      background: #202020;
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+      font-size: 14px;
+    }
+
+    .topbar a {
+      color: rgba(255, 255, 255, .92);
+      text-decoration: none;
+    }
+
+    .topbar a:hover {
+      color: #fff;
+    }
+
+    .topbar .item {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .65rem 0;
+    }
+
+    .topbar .bi {
+      opacity: .95;
+    }
+
+    /* Nav */
+    .navwrap {
+      background: #fff;
+      border-bottom: 1px solid rgba(0, 0, 0, .08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      font-weight: 900;
+      letter-spacing: -.02em;
+      color: #111827 !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: #111827 !important;
+      font-weight: 800;
+      padding: .95rem 1rem;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: var(--blue) !important;
+    }
+
+    .nav-cta {
+      background: var(--ink);
+      color: #fff !important;
+      border-radius: 999px;
+      padding: .72rem 1.1rem;
+      font-weight: 900;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, .18);
+      transition: transform .15s ease;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: clamp(380px, 45vh, 680px);
+      min-height: 480px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('banner.png') center/cover no-repeat;
+      transform: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(0, 0, 0, .70) 0%, rgba(0, 0, 0, .38) 55%, rgba(0, 0, 0, .18) 100%),
+        radial-gradient(1000px 700px at 18% 40%, rgba(11, 94, 215, .22), transparent 60%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-box {
+      max-width: 760px;
+      border-radius: 22px;
+      padding: 26px 26px 22px;
+      background: rgba(162, 219, 210, 0.13);
+      border: 1px solid rgba(178, 221, 205, 0.027);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 18px 60px rgba(0, 0, 0, .35);
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .45rem .8rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .10);
+      border: 1px solid rgba(255, 255, 255, .16);
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 14px 0 18px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-points li {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .45rem .7rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .14);
+      color: rgba(255, 255, 255, .92);
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      border: none;
+      font-weight: 900;
+      border-radius: 999px;
+      padding: .85rem 1.2rem;
+      box-shadow: 0 18px 40px rgba(11, 94, 215, .22);
+    }
+
+    .btn-primary:hover {
+      background: #0a54c2;
+    }
+
+    .btn-outline-light {
+      border-radius: 999px;
+      font-weight: 900;
+      padding: .85rem 1.2rem;
+    }
+
+    .btn-ghost {
+      border-radius: 999px;
+      padding: .82rem 1.1rem;
+      font-weight: 900;
+      border: 1px solid rgba(255, 255, 255, .18);
+      background: rgba(0, 0, 0, .18);
+      color: #fff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(0, 0, 0, .24);
+      color: #fff;
+    }
+
+    /* Sections */
+    .section {
+      padding: 84px 0;
+    }
+
+    .sec-blue {
+      background:
+        linear-gradient(180deg, rgba(35, 25, 92), rgba(35, 25, 92)),
+        var(--blue);
+      border-top: 1px solid rgba(255, 255, 255, .14);
+      border-bottom: 1px solid rgba(255, 255, 255, .14);
+    }
+
+    .sec-black {
+      background:
+        radial-gradient(900px 600px at 15% 20%, rgba(11, 94, 215, .12), transparent 60%),
+        radial-gradient(900px 600px at 85% 10%, rgba(255, 255, 255, .06), transparent 55%),
+        var(--black);
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .sec-white {
+      background: #ffffff;
+      color: #0b0f19;
+      border-top: 1px solid rgba(0, 0, 0, .08);
+      border-bottom: 1px solid rgba(0, 0, 0, .08);
+    }
+
+    .section-title {
+      font-weight: 950;
+      letter-spacing: -.04em;
+      line-height: 1.08;
+    }
+
+    .section-sub {
+      color: rgba(255, 255, 255, .86);
+      max-width: 78ch;
+    }
+
+    .soft-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .20), transparent);
+    }
+
+    /* Cards */
+    .card-pro {
+      height: 100%;
+      border-radius: var(--r2);
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, .16);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      transition: transform .2s ease, border-color .2s ease;
+    }
+
+    .card-pro:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 255, 255, .26);
+    }
+
+    .card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .icon-pill {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, .10);
+      border: 1px solid rgba(255, 255, 255, .14);
+    }
+
+    .icon-pill .bi {
+      font-size: 20px;
+    }
+
+    .card-pro h3 {
+      font-weight: 950;
+      letter-spacing: -.02em;
+      margin: 0;
+    }
+
+    .card-pro p {
+      color: rgba(255, 255, 255, .80);
+      margin: 10px 0 16px;
+    }
+
+    .card-features {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 18px;
+      font-size: 14px;
+      opacity: .92;
+    }
+
+    .card-features li {
+      margin-bottom: 6px;
+      display: flex;
+      gap: .55rem;
+      align-items: flex-start;
+    }
+
+    .card-features i {
+      margin-top: 2px;
+    }
+
+    .btn-card {
+      width: 100%;
+      border-radius: 999px;
+      padding: .78rem 1rem;
+      font-weight: 900;
+      border: 1px solid rgba(255, 255, 255, .18);
+      background: rgba(255, 255, 255, .92);
+      color: #0b0f19;
+      text-decoration: none;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .btn-card:hover {
+      opacity: .95;
+      color: #0b0f19;
+    }
+
+    /* Feature blocks */
+    .feature {
+      border-radius: 34px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .14);
+      background: rgba(255, 255, 255, .06);
+      box-shadow: var(--shadow2);
+    }
+
+    .feature-white {
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, .08);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .08);
+      border-radius: 34px;
+      overflow: hidden;
+    }
+
+    .feature-media {
+      min-height: 320px;
+      background: #0f152800 center/cover no-repeat;
+      position: relative;
+    }
+
+    .feature-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, .00), rgba(0, 0, 0, .55));
+    }
+
+    .feature-body {
+      padding: 30px;
+    }
+
+    .feature-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      font-weight: 900;
+      color: rgba(255, 255, 255, .92);
+      margin-bottom: 10px;
+    }
+
+    .feature-kicker.dark {
+      color: #0b0f19;
+      font-weight: 900;
+    }
+
+    .feature-body p {
+      color: rgba(255, 255, 255, .82);
+      max-width: 90ch;
+    }
+
+    .feature-body .text-muted {
+      color: rgba(11, 15, 25, .70) !important;
+    }
+
+    .list-clean {
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .list-clean li {
+      display: flex;
+      gap: .65rem;
+      align-items: flex-start;
+      color: rgba(255, 255, 255, .86);
+      margin-bottom: 10px;
+    }
+
+    .list-clean i {
+      color: rgba(255, 255, 255, .95);
+    }
+
+    .list-clean.dark li {
+      color: #0b0f19;
+    }
+
+    .list-clean.dark i {
+      color: var(--blue);
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    /* White cards inside white sections */
+    .white-card {
+      border-radius: 26px;
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, .08);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, .10);
+      padding: 22px;
+      height: 100%;
+    }
+
+    .white-card h3 {
+      font-weight: 950;
+      letter-spacing: -.02em;
+      margin: 0;
+      color: #0b0f19;
+    }
+
+    .white-card p {
+      margin: 10px 0 0;
+      color: rgba(11, 15, 25, .72);
+      font-weight: 600;
+      line-height: 1.55;
+    }
+
+    .mini-note {
+      font-size: 13px;
+      color: rgba(11, 15, 25, .64);
+      font-weight: 600;
+    }
+
+    /* Form */
+    .form-control {
+      border-radius: 16px;
+      padding: .95rem 1rem;
+      border: 1px solid rgba(11, 15, 25, .12);
+    }
+
+    /* Footer */
+    footer {
+      background: #05070d;
+      border-top: 1px solid rgba(255, 255, 255, .10);
+      padding: 60px 0;
+    }
+
+    .footer-link {
+      color: rgba(255, 255, 255, .76);
+      text-decoration: none;
+    }
+
+    .footer-link:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* Floating */
+    .floating {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .float-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+      border-radius: 999px;
+      padding: .72rem 1.05rem;
+      border: 1px solid rgba(255, 255, 255, .18);
+      background: rgba(10, 13, 20, .75);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 900;
+      box-shadow: var(--shadow);
+    }
+
+    .float-btn .fab {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--blue), #000);
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+    }
+
+    @media (max-width: 991px) {
+      .hero {
+        min-height: 420px;
+      }
+
+      .feature-media {
+        min-height: 240px;
+      }
+    }
+  </style>
+
+  <!-- LocalBusiness schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Mega Hafıza Ankara",
+    "areaServed":"Ankara",
+    "address":{"@type":"PostalAddress","addressLocality":"Ankara","addressCountry":"TR"},
+    "url":"https://www.siteniz.com/",
+    "description":"Ankara'da hızlı okuma, dikkat geliştirme, Mega Anzan Aritmetik, Mega Aktif Okuma ve mental aritmetik eğitimleri."
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container-xl d-flex justify-content-between align-items-center">
+      <div class="d-flex gap-4 flex-wrap">
+        <a class="item" href="tel:+905439680233"><i class="bi bi-telephone"></i><span>0543 968 0233</span></a>
+        <a class="item" href="https://wa.me/905439680233" target="_blank" rel="noopener"><i
+            class="bi bi-whatsapp"></i><span>WhatsApp</span></a>
+      </div>
+      <div class="d-flex gap-3">
+        <a class="item" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i><span
+            class="d-none d-md-inline">Instagram</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navwrap">
+    <div class="container-xl">
+      <a class="navbar-brand brand" href="index.html">
+        <img src="logoo.png" alt="">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Menü">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Anasayfa</a></li>
+          <li class="nav-item"><a class="nav-link" href="hakkimizda.html">Hakkımızda</a></li>
+          <li class="nav-item"><a class="nav-link active" href="egitimlerimiz.html">Eğitimlerimiz</a></li>
+          <li class="nav-item"><a class="nav-link" href="mega-o-mega.html">Mega O Mega</a></li>
+          <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+          <li class="nav-item"><a class="nav-link" href="egzersizlerimiz.html">Egzersizlerimiz</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="nav-cta" href="iletisim.html"><i class="bi bi-chat-dots"></i> Bilgi Alın</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" aria-label="Eğitimlerimiz giriş">
+    <div class="container-xl hero-inner">
+      <div class="hero-box">
+        <div class="hero-kicker">
+          <i class="bi bi-mortarboard"></i>
+          <span>Programlar • Mega Hafıza Ankara</span>
+        </div>
+
+        <h1 class="display-5 fw-bold mb-2" style="letter-spacing:-.04em;">Eğitimlerimiz</h1>
+        <p class="mb-2" style="color: rgba(255,255,255,.86); max-width: 78ch;">
+          Mega Hafıza Ankara’da öğrenciler için <strong>hızlı okuma</strong>, <strong>aktif okuma</strong>,
+          <strong>dikkat geliştirme</strong> ve <strong>mental aritmetik</strong> tabanlı eğitim programları sunuyoruz.
+          Aşağıdan programı seçip detaylara inebilirsiniz.
+        </p>
+
+        <ul class="hero-points">
+          <li><i class="bi bi-speedometer2"></i> Mega Hızlı Okuma</li>
+          <li><i class="bi bi-book"></i> Mega Aktif Okuma</li>
+          <li><i class="bi bi-calculator"></i> Mega Anzan Aritmetik</li>
+          <li><i class="bi bi-lightning-charge"></i> Zeka & Hafıza Atölyesi</li>
+        </ul>
+
+        <div class="d-flex flex-wrap gap-2">
+          <a href="#programlar" class="btn btn-primary btn-lg"><i class="bi bi-grid"></i> Programları Gör</a>
+          <a href="iletisim.html" class="btn btn-outline-light btn-lg"><i class="bi bi-chat-dots"></i> Bilgi Alın</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 1) PROGRAM KARTLARI (BLUE) -->
+  <section id="programlar" class="section sec-blue">
+    <div class="container-xl">
+      <div class="row align-items-end g-3 mb-4">
+        <div class="col-lg-8">
+          <h2 class="section-title display-6 mb-2"><i class="bi bi-calendar2-week me-2"></i>Program Seçin</h2>
+          <p class="section-sub mb-0">Detaylara inin veya kayıt için <strong>Bilgi Alın</strong> butonuna tıklayın.</p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <a class="btn btn-outline-light fw-bold px-4 rounded-pill" href="iletisim.html"><i
+              class="bi bi-chat-dots"></i> Danışmanlık Al</a>
+        </div>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- Mega Hızlı Okuma -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card-pro">
+            <div class="card-head">
+              <div class="icon-pill"><i class="bi bi-speedometer2"></i></div>
+              <small class="badge bg-light text-dark fw-bold">Popüler</small>
+            </div>
+            <h3 class="h5">Mega Hızlı Okuma</h3>
+            <p>Hız + anlama + hafıza dengesiyle okuma performansını güçlendirin.</p>
+            <ul class="card-features">
+              <li><i class="bi bi-check2-circle"></i> 2–4 kat hız hedefi</li>
+              <li><i class="bi bi-check2-circle"></i> Konsantrasyon desteği</li>
+            </ul>
+            <a class="btn-card" href="#hizli-okuma"><i class="bi bi-arrow-down"></i> Detaya İn</a>
+          </div>
+        </div>
+
+        <!-- Mega Aktif Okuma -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card-pro">
+            <div class="card-head">
+              <div class="icon-pill"><i class="bi bi-book"></i></div>
+              <small class="badge bg-success fw-bold">Yeni Dönem</small>
+            </div>
+            <h3 class="h5">Mega Aktif Okuma</h3>
+            <p>Okuduğunu anlama, not alma ve kalıcı öğrenme için aktif okuma modeli.</p>
+            <ul class="card-features">
+              <li><i class="bi bi-check2-circle"></i> Not alma stratejisi</li>
+              <li><i class="bi bi-check2-circle"></i> Kalıcı öğrenme</li>
+            </ul>
+            <a class="btn-card" href="#aktif-okuma"><i class="bi bi-arrow-down"></i> Detaya İn</a>
+          </div>
+        </div>
+
+        <!-- Mega Anzan -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card-pro">
+            <div class="card-head">
+              <div class="icon-pill"><i class="bi bi-calculator"></i></div>
+              <small class="badge bg-warning text-dark fw-bold">Kayıt Açık</small>
+            </div>
+            <h3 class="h5">Mega Anzan Aritmetik</h3>
+            <p>Zihinden işlem, dikkat ve zihinsel çeviklik için oyun temelli yaklaşım.</p>
+            <ul class="card-features">
+              <li><i class="bi bi-check2-circle"></i> Zihinden işlem</li>
+              <li><i class="bi bi-check2-circle"></i> Odak & dikkat</li>
+            </ul>
+            <a class="btn-card" href="#anzan"><i class="bi bi-arrow-down"></i> Detaya İn</a>
+          </div>
+        </div>
+
+        <!-- Atölye -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card-pro">
+            <div class="card-head">
+              <div class="icon-pill"><i class="bi bi-lightning-charge"></i></div>
+              <small class="badge bg-info text-dark fw-bold">Atölye</small>
+            </div>
+            <h3 class="h5">Çocuk Zeka & Hafıza Atölyesi</h3>
+            <p>Dikkat, hafıza, strateji ve zeka oyunlarıyla keyifli gelişim çalışmaları.</p>
+            <ul class="card-features">
+              <li><i class="bi bi-check2-circle"></i> Oyun temelli</li>
+              <li><i class="bi bi-check2-circle"></i> Rutin egzersiz</li>
+            </ul>
+            <a class="btn-card" href="#atolye"><i class="bi bi-arrow-down"></i> Detaya İn</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="soft-divider"></div>
+
+  <!-- 2) MEGA HIZLI OKUMA (WHITE - uzun metin okunabilir) -->
+  <section id="hizli-okuma" class="section sec-white">
+    <div class="container-xl">
+      <div class="feature-white">
+        <div class="row g-0 align-items-stretch">
+          <div class="col-lg-5">
+            <div class="feature-media" style="background-image:url('2.jpg');"></div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="feature-body">
+              <div class="feature-kicker dark"><i class="bi bi-speedometer2"></i> Mega Hızlı Okuma</div>
+              <h2 class="section-title h1 mb-2 text-dark">Hızlı Okuma Eğitimi Niçin Gerekli?</h2>
+              <p class="text-muted mb-3">
+                Son yıllarda yapılan araştırmalar, insanların çok hızlı okuyabileceklerini bilimsel olarak ortaya koymuştur.
+                Sınav rekabeti, yoğun tempo ve zamanı verimli kullanma zorunluluğu hızlı okumayı bir ihtiyaç haline getirmiştir.
+              </p>
+              <p class="text-muted mb-3">
+                Ancak hızlı okumak tek başına yeterli değildir. Okunan bilgilerin <strong>anlaşılması</strong> ve
+                <strong>hafızada tutulması</strong> gerekir. Eğer okuduklarınızı gerektiğinde hatırlayamıyorsanız,
+                sadece hız odaklı okuma zamanı boşa harcayabilir.
+              </p>
+
+              <h3 class="h4 fw-bold text-dark mt-4" style="letter-spacing:-.02em;">Hızlı Okuma Kurslarının Çoğu Neden Başarısız?</h3>
+              <p class="text-muted mb-2">
+                Birçok kurs ve seminerde kısa süreli hız artışı görülebilir; fakat kurs bittiğinde hız eski seviyeye dönebilir.
+                Bunun iki temel nedeni vardır:
+              </p>
+
+              <div class="row g-3 mt-2">
+                <div class="col-md-6">
+                  <div class="white-card">
+                    <h3 class="h6"><i class="bi bi-person-x me-2"></i>Uzmanlık Eksikliği</h3>
+                    <p>
+                      Hafıza, beyin fonksiyonları ve modern okuma teorileri alanında eğitim geçmişi olmayan eğitmenlerle
+                      yürütülen çalışmalar istenen sonucu vermez.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="white-card">
+                    <h3 class="h6"><i class="bi bi-eye me-2"></i>Sadece Göz Tekniği</h3>
+                    <p>
+                      Yalnızca göz açılarına dayalı (takistoskobik) yöntemler beynin tüm fonksiyonlarını katmadığı için
+                      tek başına yeterli olmaz.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="h4 fw-bold text-dark mt-4" style="letter-spacing:-.02em;">Yavaş Okumak Neden Konsantrasyonu Bozar?</h3>
+              <p class="text-muted mb-3">
+                Okuma hızı çok düşük olduğunda zihin “boşluk” bulur ve dikkat dağılması kolaylaşır.
+                Bu nedenle doğru tekniklerle hız artışı, odaklanmayı da destekleyebilir.
+              </p>
+
+              <h3 class="h4 fw-bold text-dark mt-4" style="letter-spacing:-.02em;">Kimler İçin Uygun?</h3>
+              <p class="text-muted mb-2 mini-note">
+                Aşağıdakilerden <strong>en az biri</strong> sizde varsa, Mega Hızlı Okuma programı sizin için uygundur:
+              </p>
+              <ul class="list-clean dark">
+                <li><i class="bi bi-check2-circle"></i> Okunacak çok şey var ama zaman az</li>
+                <li><i class="bi bi-check2-circle"></i> Okurken dalıp gidip metinden kopma</li>
+                <li><i class="bi bi-check2-circle"></i> Kendini yavaş okuyucu olarak görme</li>
+                <li><i class="bi bi-check2-circle"></i> Sınavlarda zamanı daha iyi kullanma ihtiyacı</li>
+                <li><i class="bi bi-check2-circle"></i> Bilgisayar ekranında yoğun okuma yapma</li>
+              </ul>
+
+              <h3 class="h4 fw-bold text-dark mt-4" style="letter-spacing:-.02em;">Katıldığınızda Ne Kazanırsınız?</h3>
+              <ul class="list-clean dark">
+                <li><i class="bi bi-check2-circle"></i> Daha az zamanda daha çok bilgi</li>
+                <li><i class="bi bi-check2-circle"></i> Daha iyi konsantrasyon</li>
+                <li><i class="bi bi-check2-circle"></i> Okuduklarını daha uzun süre hatırlama</li>
+                <li><i class="bi bi-check2-circle"></i> Okuma yükünü yönetebilme</li>
+                <li><i class="bi bi-check2-circle"></i> Özgüven ve akademik performans desteği</li>
+              </ul>
+
+              <div class="btn-row">
+                <a class="btn btn-primary btn-lg" href="iletisim.html"><i class="bi bi-chat-dots"></i> Bilgi Alın</a>
+                <a class="btn btn-outline-dark btn-lg" href="#programlar"><i class="bi bi-arrow-up"></i> Programlara Dön</a>
+              </div>
+
+              <div class="mini-note mt-3">
+                * Not: Buradaki içerikler bilgilendirme amaçlıdır. Program detayları için iletişime geçebilirsiniz.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3) MEGA AKTİF OKUMA (BLUE) -->
+  <section id="aktif-okuma" class="section sec-blue">
+    <div class="container-xl">
+      <div class="feature">
+        <div class="row g-0 align-items-stretch flex-lg-row-reverse">
+          <div class="col-lg-5">
+            <div class="feature-media" style="background-image:url('3.jpg');"></div>
+          </div>
+          <div class="col-lg-7">
+            <div class="feature-body">
+              <div class="feature-kicker"><i class="bi bi-book"></i> Mega Aktif Okuma</div>
+              <h2 class="section-title h1 mb-2">Okuduğunu Anla • Not Al • Kalıcı Öğren</h2>
+              <p class="mb-3">
+                Mega Aktif Okuma; okuma sırasında dikkat yönetimi, önemli bilgiyi seçme,
+                not alma ve bilgiyi uzun süre hatırlama becerilerini destekleyen bir yaklaşımdır.
+              </p>
+
+              <ul class="list-clean">
+                <li><i class="bi bi-check2-circle"></i> Anlama odaklı okuma teknikleri</li>
+                <li><i class="bi bi-check2-circle"></i> Not alma ve tekrar stratejileri</li>
+                <li><i class="bi bi-check2-circle"></i> Okuma rutini ve öğrenme planı</li>
+              </ul>
+
+              <div class="btn-row">
+                <a class="btn btn-outline-light btn-lg fw-bold rounded-pill" href="iletisim.html"><i
+                    class="bi bi-chat-dots"></i> Bilgi Alın</a>
+                <a class="btn-ghost" href="#programlar"><i class="bi bi-arrow-up"></i> Programlara Dön</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4) MEGA ANZAN (WHITE) -->
+  <section id="anzan" class="section sec-white">
+    <div class="container-xl">
+      <div class="feature-white">
+        <div class="row g-0 align-items-stretch">
+          <div class="col-lg-5">
+            <div class="feature-media" style="background-image:url('4.jpg');"></div>
+          </div>
+          <div class="col-lg-7">
+            <div class="feature-body">
+              <div class="feature-kicker dark"><i class="bi bi-calculator"></i> Mega Anzan Aritmetik</div>
+              <h2 class="section-title h1 mb-2 text-dark">Zihinden İşlem • Dikkat • Zihinsel Çeviklik</h2>
+              <p class="text-muted mb-3">
+                Mega Anzan Aritmetik; zihinden işlem becerisi, dikkat ve mental çevikliği destekleyen,
+                beyin egzersizleri ve zeka oyunlarıyla güçlendirilmiş bir eğitim yaklaşımıdır.
+              </p>
+
+              <ul class="list-clean dark">
+                <li><i class="bi bi-check2-circle"></i> Zihinden işlem becerisi ve hız</li>
+                <li><i class="bi bi-check2-circle"></i> Dikkat ve konsantrasyon çalışmaları</li>
+                <li><i class="bi bi-check2-circle"></i> Oyunlarla pekiştirme</li>
+                <li><i class="bi bi-check2-circle"></i> Çalışma hafızası desteği</li>
+              </ul>
+
+              <div class="btn-row">
+                <a class="btn btn-primary btn-lg" href="iletisim.html"><i class="bi bi-chat-dots"></i> Bilgi Alın</a>
+                <a class="btn btn-outline-dark btn-lg" href="#programlar"><i class="bi bi-arrow-up"></i> Programlara Dön</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5) ATÖLYE (BLACK) -->
+  <section id="atolye" class="section sec-black">
+    <div class="container-xl">
+      <div class="feature">
+        <div class="row g-0 align-items-stretch flex-lg-row-reverse">
+          <div class="col-lg-5">
+            <div class="feature-media" style="background-image:url('atolye.jpg');"></div>
+          </div>
+          <div class="col-lg-7">
+            <div class="feature-body">
+              <div class="feature-kicker"><i class="bi bi-lightning-charge"></i> Çocuk Zeka & Hafıza Atölyesi</div>
+              <h2 class="section-title h1 mb-2">Oyunlarla Dikkat ve Hafıza Gelişimi</h2>
+              <p class="mb-3">
+                Atölye formatında; dikkat, hafıza, strateji ve problem çözme becerilerini geliştiren
+                eğlenceli egzersizler ve zeka oyunlarıyla öğrencinin motivasyonunu artırır.
+              </p>
+
+              <ul class="list-clean">
+                <li><i class="bi bi-check2-circle"></i> Dikkat ve odak egzersizleri</li>
+                <li><i class="bi bi-check2-circle"></i> Hafıza oyunları ve strateji</li>
+                <li><i class="bi bi-check2-circle"></i> Grup çalışması ve özgüven</li>
+              </ul>
+
+              <div class="btn-row">
+                <a class="btn btn-primary btn-lg" href="iletisim.html"><i class="bi bi-chat-dots"></i> Bilgi Alın</a>
+                <a class="btn-ghost" href="#programlar"><i class="bi bi-arrow-up"></i> Programlara Dön</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6) DİĞER EĞİTİMLER PROMO (WHITE) -->
+  <section class="section sec-white">
+    <div class="container-xl">
+      <div class="row align-items-end g-3 mb-4">
+        <div class="col-lg-8">
+          <h2 class="section-title display-6 mb-2 text-dark"><i class="bi bi-grid me-2"></i>Diğer Eğitimlerimiz</h2>
+          <p class="section-sub dark mb-0">Mega Hafıza başlıklı diğer eğitimlerimize göz atın.</p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <a class="btn btn-primary btn-lg" href="iletisim.html"><i class="bi bi-chat-dots"></i> Hemen Bilgi Al</a>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="white-card">
+            <h3 class="h5">Mega Anzan Aritmetik</h3>
+            <p>Zihinden işlem, dikkat ve çalışma hafızası egzersizleriyle desteklenen program.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="white-card">
+            <h3 class="h5">Mega Aktif Okuma</h3>
+            <p>Not alma, anlama, kalıcı öğrenme ve okuma rutini oluşturma yaklaşımı.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="white-card">
+            <h3 class="h5">Zeka & Hafıza Atölyesi</h3>
+            <p>Dikkat, hafıza ve strateji geliştiren oyun temelli atölye çalışmaları.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7) SİZİ ARAYALIM (BLUE) -->
+  <section class="section sec-blue" id="sizi-arayalim">
+    <div class="container-xl">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <h2 class="section-title display-6 mb-2"><i class="bi bi-telephone-inbound me-2"></i>Sizi Arayalım…</h2>
+          <p class="section-sub mb-0">
+            İletişim bilgilerinizi bırakın, ekibimiz en kısa sürede sizinle iletişime geçsin.
+          </p>
+          <div class="mt-3" style="color: rgba(255,255,255,.86); font-weight:700;">
+            <i class="bi bi-check2-circle me-2"></i> Hızlı dönüş
+            <span class="mx-2">•</span>
+            <i class="bi bi-check2-circle me-2"></i> Doğru programa yönlendirme
+            <span class="mx-2">•</span>
+            <i class="bi bi-check2-circle me-2"></i> Kayıt & takvim bilgisi
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card-pro">
+            <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+              <div class="fw-bold" style="letter-spacing:-.02em;">
+                <i class="bi bi-person-lines-fill me-2"></i> İletişim Formu
+              </div>
+              <small class="text-white-50 fw-bold">* Backend yoksa WhatsApp’a yönlendirebiliriz</small>
+            </div>
+
+            <form id="callForm" class="row g-3">
+              <div class="col-md-6">
+                <input class="form-control" id="adsoyad" placeholder="Ad Soyad" required>
+              </div>
+              <div class="col-md-6">
+                <input class="form-control" id="telefon" placeholder="Telefon" required>
+              </div>
+              <div class="col-12">
+                <select class="form-control" id="programSec">
+                  <option value="Mega Hızlı Okuma">Mega Hızlı Okuma</option>
+                  <option value="Mega Aktif Okuma">Mega Aktif Okuma</option>
+                  <option value="Mega Anzan Aritmetik">Mega Anzan Aritmetik</option>
+                  <option value="Zeka & Hafıza Atölyesi">Zeka & Hafıza Atölyesi</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <textarea class="form-control" id="not" rows="3"
+                  placeholder="Kısaca not (yaş, sınıf, hedef vb.)"></textarea>
+              </div>
+              <div class="col-12 d-flex gap-2 flex-wrap">
+                <button type="submit" class="btn btn-light fw-bold rounded-pill px-4">
+                  <i class="bi bi-send me-2"></i> Gönder
+                </button>
+                <a class="btn-ghost" href="https://wa.me/905439680233" target="_blank" rel="noopener">
+                  <i class="bi bi-whatsapp"></i> WhatsApp’tan Yaz
+                </a>
+              </div>
+              <div class="small text-white-50">
+                Formu backend’e bağlamayacaksan, istersen bunu direkt WhatsApp mesajına çeviririm.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container-xl">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <a class="navbar-brand brand" href="index.html">
+              <img src="logoo.png" alt="">
+            </a>
+          </div>
+          <p class="text-white-50 mb-3">Hızlı okuma • dikkat geliştirme • mental aritmetik</p>
+          <div class="text-white-50 small">
+            <div class="mb-1"><i class="bi bi-geo-alt"></i> Ankara</div>
+            <div class="mb-1"><i class="bi bi-telephone"></i> 0543 968 0233</div>
+            <div class="mb-1"><i class="bi bi-envelope"></i> info@siteniz.com</div>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <strong class="d-block mb-2">Menü</strong>
+          <a class="footer-link d-block mb-1" href="index.html">Anasayfa</a>
+          <a class="footer-link d-block mb-1" href="hakkimizda.html">Hakkımızda</a>
+          <a class="footer-link d-block mb-1" href="egitimlerimiz.html">Eğitimlerimiz</a>
+          <a class="footer-link d-block mb-1" href="iletisim.html">İletişim</a>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <strong class="d-block mb-2">Sayfalar</strong>
+          <a class="footer-link d-block mb-1" href="egzersizlerimiz.html">Egzersizlerimiz</a>
+          <a class="footer-link d-block mb-1" href="mega-o-mega.html">Mega O Mega</a>
+          <a class="footer-link d-block mb-1" href="#">KVKK</a>
+          <a class="footer-link d-block mb-1" href="#">Gizlilik</a>
+        </div>
+
+        <div class="col-lg-4">
+          <strong class="d-block mb-2">Hızlı İletişim</strong>
+          <p class="text-white-50 mb-3">Hemen bilgi alın: WhatsApp’tan yazın veya iletişim formuna gidin.</p>
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-primary btn-lg" href="iletisim.html"><i class="bi bi-chat-dots"></i> İletişim</a>
+            <a class="btn-ghost" href="https://wa.me/905439680233" target="_blank" rel="noopener"><i
+                class="bi bi-whatsapp"></i> WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-4" style="border-color: rgba(255,255,255,.10);">
+
+      <div
+        class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2 text-white-50 small">
+        <div>© <span id="year"></span> Mega Hafıza Ankara</div>
+        <div><i class="bi bi-shield-check"></i> SEO + Hız Odaklı Altyapı</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating -->
+  <div class="floating">
+    <a class="float-btn" href="https://wa.me/905439680233" target="_blank" rel="noopener">
+      <span class="fab"><i class="bi bi-whatsapp"></i></span><span>Destek</span>
+    </a>
+    <a class="float-btn" href="iletisim.html">
+      <span class="fab"><i class="bi bi-chat-dots"></i></span><span>Bilgi Alın</span>
+    </a>
+  </div>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // (Şimdilik sadece form submit engelleme)
+    // İstersen bunu WhatsApp'a otomatik mesaj gönderecek şekilde yaparım.
+    document.getElementById("callForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Form alındı (demo). İstersen bunu WhatsApp mesajına dönüştürelim ya da backend'e bağlayalım.");
+    });
+  </script>
+
+</body>
+</html>
