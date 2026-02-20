@@ -343,7 +343,7 @@
 
         .sec-blue {
             background:
-                linear-gradient(180deg, rgba(35,25,92), rgba(35,25,92)),
+                linear-gradient(180deg, rgba(35, 25, 92), rgba(35, 25, 92)),
                 var(--blue);
             border-top: 1px solid rgba(255, 255, 255, .14);
             border-bottom: 1px solid rgba(255, 255, 255, .14);
@@ -749,157 +749,237 @@
                 opacity: 0;
             }
         }
-        .card-features{
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 18px;
-    font-size: 14px;
-    opacity: .9;
+
+        .card-features {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 18px;
+            font-size: 14px;
+            opacity: .9;
+        }
+
+        .card-features li {
+            margin-bottom: 4px;
+        }
+
+        /* White section */
+        .sec-white {
+            background: #ffffff;
+        }
+
+        /* White feature card */
+        .feature-white {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, .08);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, .08);
+            border-radius: 28px;
+        }
+
+        /* Dark kicker */
+        .feature-kicker.dark {
+            color: #0b0f19;
+            font-weight: 800;
+        }
+
+        /* Dark list */
+        .list-clean.dark li {
+            color: #0b0f19;
+        }
+
+        .list-clean.dark i {
+            color: #0b5ed7;
+        }
+
+        .feature-video {
+            height: 100%;
+            padding: 12px;
+        }
+
+        .feature-video iframe {
+            border-radius: 20px;
+            border: none;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, .25);
+        }
+
+        .card-apple iframe {
+            border-radius: 14px;
+            transition: transform .3s ease;
+        }
+
+        .card-apple:hover iframe {
+            transform: scale(1.02);
+        }
+
+        /* Netflix style video slider */
+        .video-rail {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc(33.333% - 12px);
+            gap: 18px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 6px 4px 14px;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* scrollbar (minimal) */
+        .video-rail::-webkit-scrollbar {
+            height: 10px;
+        }
+
+        .video-rail::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .video-rail::-webkit-scrollbar-thumb {
+            background: rgba(15, 23, 42, .18);
+            border-radius: 999px;
+        }
+
+        .video-rail:hover::-webkit-scrollbar-thumb {
+            background: rgba(15, 23, 42, .28);
+        }
+
+        .video-item {
+            scroll-snap-align: start;
+        }
+
+        .video-card {
+            transition: transform .22s ease, box-shadow .22s ease;
+            transform-origin: center;
+        }
+
+        .video-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 18px 45px rgba(2, 6, 23, .12);
+        }
+
+        /* From Uiverse.io by cssbuttons-io */
+        .btn4 {
+            position: relative;
+            font-size: 17px;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 1em 2.5em;
+            display: inline-block;
+            cursor: pointer;
+            border-radius: 6em;
+            transition: all 0.2s;
+            border: none;
+            font-family: inherit;
+            font-weight: 500;
+            color: black;
+            background-color: white;
+        }
+
+        .btn4:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn4:active {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn4::after {
+            content: "";
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            border-radius: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: all 0.4s;
+        }
+
+        .btn4::after {
+            background-color: #fff;
+        }
+
+        .btn4:hover::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+
+        /* responsive columns */
+        @media (max-width: 992px) {
+            .video-rail {
+                grid-auto-columns: calc(55% - 12px);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .video-rail {
+                grid-auto-columns: calc(85% - 12px);
+            }
+        }
+        .test-float{
+    position:fixed;
+    right:18px;
+    bottom:165px;
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    font-family:Inter;
 }
 
-.card-features li{
-    margin-bottom: 4px;
-}
-/* White section */
-.sec-white{
-    background: #ffffff;
-}
-
-/* White feature card */
-.feature-white{
-    background: #ffffff;
-    border: 1px solid rgba(0,0,0,.08);
-    box-shadow: 0 20px 60px rgba(0,0,0,.08);
-    border-radius: 28px;
+/* Icon */
+.test-icon{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#ff3b3b,#ff9900);
+    display:grid;
+    place-items:center;
+    color:#fff;
+    font-size:26px;
+    box-shadow:0 8px 25px rgba(0,0,0,.35);
+    animation:alarmPulse 1.6s infinite;
 }
 
-/* Dark kicker */
-.feature-kicker.dark{
-    color: #0b0f19;
-    font-weight: 800;
+/* SOLA açılan yazı */
+.test-label{
+    background:#fff;
+    color:#111;
+    padding:10px 16px;
+    border-radius:20px;
+    font-weight:700;
+    font-size:14px;
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
+
+    opacity:0;
+    transform:translateX(20px);
+    transition:.4s;
+    white-space:nowrap;
 }
 
-/* Dark list */
-.list-clean.dark li{
-    color: #0b0f19;
+/* görünür */
+.test-float.show .test-label{
+    opacity:1;
+    transform:translateX(0);
 }
 
-.list-clean.dark i{
-    color: #0b5ed7;
-}
-.feature-video{
-    height: 100%;
-    padding: 12px;
-}
-
-.feature-video iframe{
-    border-radius: 20px;
-    border: none;
-    box-shadow: 0 15px 50px rgba(0,0,0,.25);
-}
-.card-apple iframe{
-  border-radius: 14px;
-  transition: transform .3s ease;
+/* alarm animasyonu */
+@keyframes alarmPulse{
+    0%{transform:scale(1)}
+    50%{transform:scale(1.08)}
+    100%{transform:scale(1)}
 }
 
-.card-apple:hover iframe{
-  transform: scale(1.02);
+/* desktop'ta sürekli açık */
+@media(min-width:768px){
+    .test-label{
+        opacity:1 !important;
+        transform:none !important;
+    }
 }
-/* Netflix style video slider */
-.video-rail{
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc(33.333% - 12px);
-  gap: 18px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding: 6px 4px 14px;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
-
-/* scrollbar (minimal) */
-.video-rail::-webkit-scrollbar{ height: 10px; }
-.video-rail::-webkit-scrollbar-track{ background: transparent; }
-.video-rail::-webkit-scrollbar-thumb{
-  background: rgba(15,23,42,.18);
-  border-radius: 999px;
-}
-.video-rail:hover::-webkit-scrollbar-thumb{
-  background: rgba(15,23,42,.28);
-}
-
-.video-item{
-  scroll-snap-align: start;
-}
-
-.video-card{
-  transition: transform .22s ease, box-shadow .22s ease;
-  transform-origin: center;
-}
-.video-card:hover{
-  transform: scale(1.03);
-  box-shadow: 0 18px 45px rgba(2,6,23,.12);
-}
-/* From Uiverse.io by cssbuttons-io */ 
-.btn4 {
-  position: relative;
-  font-size: 17px;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1em 2.5em;
-  display: inline-block;
-  cursor: pointer;
-  border-radius: 6em;
-  transition: all 0.2s;
-  border: none;
-  font-family: inherit;
-  font-weight: 500;
-  color: black;
-  background-color: white;
-}
-
-.btn4:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.btn4:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-.btn4::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 100px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.4s;
-}
-
-.btn4::after {
-  background-color: #fff;
-}
-
-.btn4:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-}
-
-/* responsive columns */
-@media (max-width: 992px){
-  .video-rail{ grid-auto-columns: calc(55% - 12px); }
-}
-@media (max-width: 576px){
-  .video-rail{ grid-auto-columns: calc(85% - 12px); }
-}
-
     </style>
 
     <!-- LocalBusiness schema -->
@@ -1042,111 +1122,111 @@
 
             <div class="row g-4">
 
-    <!-- Kart 1 -->
-    <div class="col-md-6 col-lg-3">
-        <div class="card-pro">
-            <div class="card-head">
-                <div class="icon-pill"><i class="bi bi-speedometer2"></i></div>
-                <small class="badge bg-primary">Yeni Grup</small>
+                <!-- Kart 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card-pro">
+                        <div class="card-head">
+                            <div class="icon-pill"><i class="bi bi-speedometer2"></i></div>
+                            <small class="badge bg-primary">Yeni Grup</small>
+                        </div>
+
+                        <h3 class="h5">Mega Hızlı Okuma</h3>
+
+                        <p>
+                            Okuma hızını artırırken anlama seviyesini koruyan
+                            profesyonel eğitim programı.
+                        </p>
+
+                        <ul class="card-features">
+                            <li>✔ Odak geliştirme</li>
+                            <li>✔ Sınav teknikleri</li>
+                        </ul>
+
+                        <a class="btn-card" href="iletisim.html">
+                            <i class="bi bi-chat-dots"></i> Bilgi Alın
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kart 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card-pro">
+                        <div class="card-head">
+                            <div class="icon-pill"><i class="bi bi-book"></i></div>
+                            <small class="badge bg-success">Yeni Dönem</small>
+                        </div>
+
+                        <h3 class="h5">Mega Aktif Okuma</h3>
+
+                        <p>
+                            Okuduğunu anlama ve kalıcı öğrenme teknikleri
+                            ile desteklenen program.
+                        </p>
+
+                        <ul class="card-features">
+                            <li>✔ Hafıza teknikleri</li>
+                            <li>✔ Not alma sistemi</li>
+                        </ul>
+
+                        <a class="btn-card" href="iletisim.html">
+                            <i class="bi bi-chat-dots"></i> Bilgi Alın
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kart 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card-pro">
+                        <div class="card-head">
+                            <div class="icon-pill"><i class="bi bi-calculator"></i></div>
+                            <small class="badge bg-warning text-dark">Kayıt Açık</small>
+                        </div>
+
+                        <h3 class="h5">Mega Anzan Aritmetik</h3>
+
+                        <p>
+                            Beyin egzersizleri ve zeka oyunlarıyla
+                            zihinsel işlem becerisi geliştirme.
+                        </p>
+
+                        <ul class="card-features">
+                            <li>✔ Mental hesaplama</li>
+                            <li>✔ Konsantrasyon</li>
+                        </ul>
+
+                        <a class="btn-card" href="iletisim.html">
+                            <i class="bi bi-chat-dots"></i> Bilgi Alın
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kart 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card-pro">
+                        <div class="card-head">
+                            <div class="icon-pill"><i class="bi bi-lightning"></i></div>
+                            <small class="badge bg-info text-dark">Atölye</small>
+                        </div>
+
+                        <h3 class="h5">Egzersizlerimiz</h3>
+
+                        <p>
+                            Dikkat, hafıza ve odak artıran
+                            uygulamalı gelişim çalışmaları.
+                        </p>
+
+                        <ul class="card-features">
+                            <li>✔ Hafıza oyunları</li>
+                            <li>✔ Beyin egzersizi</li>
+                        </ul>
+
+                        <a class="btn-card" href="iletisim.html">
+                            <i class="bi bi-chat-dots"></i> Bilgi Alın
+                        </a>
+                    </div>
+                </div>
+
             </div>
-
-            <h3 class="h5">Mega Hızlı Okuma</h3>
-
-            <p>
-                Okuma hızını artırırken anlama seviyesini koruyan
-                profesyonel eğitim programı.
-            </p>
-
-            <ul class="card-features">
-                <li>✔ Odak geliştirme</li>
-                <li>✔ Sınav teknikleri</li>
-            </ul>
-
-            <a class="btn-card" href="iletisim.html">
-                <i class="bi bi-chat-dots"></i> Bilgi Alın
-            </a>
-        </div>
-    </div>
-
-    <!-- Kart 2 -->
-    <div class="col-md-6 col-lg-3">
-        <div class="card-pro">
-            <div class="card-head">
-                <div class="icon-pill"><i class="bi bi-book"></i></div>
-                <small class="badge bg-success">Yeni Dönem</small>
-            </div>
-
-            <h3 class="h5">Mega Aktif Okuma</h3>
-
-            <p>
-                Okuduğunu anlama ve kalıcı öğrenme teknikleri
-                ile desteklenen program.
-            </p>
-
-            <ul class="card-features">
-                <li>✔ Hafıza teknikleri</li>
-                <li>✔ Not alma sistemi</li>
-            </ul>
-
-            <a class="btn-card" href="iletisim.html">
-                <i class="bi bi-chat-dots"></i> Bilgi Alın
-            </a>
-        </div>
-    </div>
-
-    <!-- Kart 3 -->
-    <div class="col-md-6 col-lg-3">
-        <div class="card-pro">
-            <div class="card-head">
-                <div class="icon-pill"><i class="bi bi-calculator"></i></div>
-                <small class="badge bg-warning text-dark">Kayıt Açık</small>
-            </div>
-
-            <h3 class="h5">Mega Anzan Aritmetik</h3>
-
-            <p>
-                Beyin egzersizleri ve zeka oyunlarıyla
-                zihinsel işlem becerisi geliştirme.
-            </p>
-
-            <ul class="card-features">
-                <li>✔ Mental hesaplama</li>
-                <li>✔ Konsantrasyon</li>
-            </ul>
-
-            <a class="btn-card" href="iletisim.html">
-                <i class="bi bi-chat-dots"></i> Bilgi Alın
-            </a>
-        </div>
-    </div>
-
-    <!-- Kart 4 -->
-    <div class="col-md-6 col-lg-3">
-        <div class="card-pro">
-            <div class="card-head">
-                <div class="icon-pill"><i class="bi bi-lightning"></i></div>
-                <small class="badge bg-info text-dark">Atölye</small>
-            </div>
-
-            <h3 class="h5">Egzersizlerimiz</h3>
-
-            <p>
-                Dikkat, hafıza ve odak artıran
-                uygulamalı gelişim çalışmaları.
-            </p>
-
-            <ul class="card-features">
-                <li>✔ Hafıza oyunları</li>
-                <li>✔ Beyin egzersizi</li>
-            </ul>
-
-            <a class="btn-card" href="iletisim.html">
-                <i class="bi bi-chat-dots"></i> Bilgi Alın
-            </a>
-        </div>
-    </div>
-
-</div>
 
         </div>
     </section>
@@ -1155,65 +1235,62 @@
     <div class="soft-divider"></div>
 
     <!-- 2) MEGA ANZAN (BLACK) -->
-<section class="section sec-white">
-    <div class="container-xl">
-        <div class="feature feature-white">
-            <div class="row g-0 align-items-stretch">
+    <section class="section sec-white">
+        <div class="container-xl">
+            <div class="feature feature-white">
+                <div class="row g-0 align-items-stretch">
 
-                <!-- Görsel -->
-                <div class="col-lg-5">
-                    <div class="feature-media"
-                        style="background-image:url('2.jpg');"></div>
-                </div>
-
-                <!-- İçerik -->
-                <div class="col-lg-7">
-                    <div class="feature-body">
-
-                        <div class="feature-kicker dark">
-                            <i class="bi bi-calculator"></i>
-                            Program Tanıtımı
-                        </div>
-
-                        <h2 class="section-title h1 mb-2 text-dark">
-                            MEGA ANZAN ARİTMETİK
-                        </h2>
-
-                        <p class="mb-3 text-muted">
-                            Mega Anzan Aritmetik programı; beyin egzersizleri,
-                            zihinden işlem teknikleri ve zeka oyunları ile
-                            çocukların dikkat, hız ve zihinsel çevikliğini
-                            geliştirmeye odaklanan özel bir eğitim sistemidir.
-                        </p>
-
-                        <ul class="list-clean dark">
-                            <li><i class="bi bi-check2-circle"></i> Zihinden hızlı işlem becerisi</li>
-                            <li><i class="bi bi-check2-circle"></i> Odak ve dikkat gelişimi</li>
-                            <li><i class="bi bi-check2-circle"></i> Oyun temelli öğrenme</li>
-                            <li><i class="bi bi-check2-circle"></i> Hafıza güçlendirme çalışmaları</li>
-                        </ul>
-
-                        <div class="btn-row">
-                            <a class="btn btn-primary btn-lg"
-                                href="iletisim.html">
-                                <i class="bi bi-chat-dots"></i>
-                                Bilgi Alın
-                            </a>
-
-                            <a class="btn btn-outline-dark btn-lg"
-                                href="egitimlerimiz.html">
-                                <i class="bi bi-arrow-right"></i>
-                                Detayları İncele
-                            </a>
-                        </div>
-
+                    <!-- Görsel -->
+                    <div class="col-lg-5">
+                        <div class="feature-media" style="background-image:url('2.jpg');"></div>
                     </div>
-                </div>
 
+                    <!-- İçerik -->
+                    <div class="col-lg-7">
+                        <div class="feature-body">
+
+                            <div class="feature-kicker dark">
+                                <i class="bi bi-calculator"></i>
+                                Program Tanıtımı
+                            </div>
+
+                            <h2 class="section-title h1 mb-2 text-dark">
+                                MEGA ANZAN ARİTMETİK
+                            </h2>
+
+                            <p class="mb-3 text-muted">
+                                Mega Anzan Aritmetik programı; beyin egzersizleri,
+                                zihinden işlem teknikleri ve zeka oyunları ile
+                                çocukların dikkat, hız ve zihinsel çevikliğini
+                                geliştirmeye odaklanan özel bir eğitim sistemidir.
+                            </p>
+
+                            <ul class="list-clean dark">
+                                <li><i class="bi bi-check2-circle"></i> Zihinden hızlı işlem becerisi</li>
+                                <li><i class="bi bi-check2-circle"></i> Odak ve dikkat gelişimi</li>
+                                <li><i class="bi bi-check2-circle"></i> Oyun temelli öğrenme</li>
+                                <li><i class="bi bi-check2-circle"></i> Hafıza güçlendirme çalışmaları</li>
+                            </ul>
+
+                            <div class="btn-row">
+                                <a class="btn btn-primary btn-lg" href="iletisim.html">
+                                    <i class="bi bi-chat-dots"></i>
+                                    Bilgi Alın
+                                </a>
+
+                                <a class="btn btn-outline-dark btn-lg" href="egitimlerimiz.html">
+                                    <i class="bi bi-arrow-right"></i>
+                                    Detayları İncele
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
     <!-- 3) AKTİF OKUMA (BLUE) -->
@@ -1287,161 +1364,140 @@
     </section>
 
     <!-- 5) MENTAL ARİTMETİK (BLUE) -->
-<section class="section sec-blue">
-    <div class="container-xl">
-        <div class="feature">
-            <div class="row g-0 align-items-stretch flex-lg-row-reverse">
+    <section class="section sec-blue">
+        <div class="container-xl">
+            <div class="feature">
+                <div class="row g-0 align-items-stretch flex-lg-row-reverse">
 
-                <!-- VIDEO -->
-                <div class="col-lg-5">
-                    <div class="feature-video">
+                    <!-- VIDEO -->
+                    <div class="col-lg-5">
+                        <div class="feature-video">
+                            <div class="ratio ratio-16x9">
+                                <iframe src="https://www.youtube.com/embed/o6J100ppegs"
+                                    title="Mental Aritmetik Tanıtım Videosu" allowfullscreen loading="lazy">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TEXT -->
+                    <div class="col-lg-7">
+                        <div class="feature-body">
+                            <div class="feature-kicker">
+                                <i class="bi bi-lightning"></i> Program Tanıtımı
+                            </div>
+
+                            <h2 class="section-title h1 mb-2">
+                                Mental Aritmetik Nedir?
+                            </h2>
+
+                            <p class="mb-3">
+                                İşlem hızı, dikkat ve çalışma hafızasını destekleyen
+                                egzersiz yaklaşımı.
+                            </p>
+
+                            <ul class="list-clean">
+                                <li><i class="bi bi-check2-circle"></i> İşlem hızını artırma</li>
+                                <li><i class="bi bi-check2-circle"></i> Dikkat sürekliliği</li>
+                                <li><i class="bi bi-check2-circle"></i> Çalışma hafızası gelişimi</li>
+                            </ul>
+
+                            <div class="btn-row">
+                                <a class="btn btn-outline-light btn-lg fw-bold rounded-pill" href="iletisim.html">
+                                    <i class="bi bi-chat-dots"></i> Bilgi Alın
+                                </a>
+
+                                <a class="btn-ghost" href="egitimlerimiz.html">
+                                    <i class="bi bi-arrow-right"></i>
+                                    Detayları İncele
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 6) VIDEOS (BLACK) -->
+    <!-- Video Galerisi -->
+    <!-- Video Galerisi -->
+    <!-- Video Galerisi -->
+    <!-- Video Slider (Netflix tarzı) -->
+    <section class="section" id="videolar">
+        <div class="container">
+
+            <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-3 reveal">
+                <div>
+                    <div class="pill d-inline-flex mb-2">
+                        <i class="bi bi-play-btn"></i>
+                        <span>Videolar</span>
+                    </div>
+                    <h2 class="fw-bold mb-0" style="letter-spacing:-.02em;">Tanıtım Videoları</h2>
+                    <p class="muted mb-0">Kaydırarak inceleyin.</p>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button class="btn btn-ghost btn-sm" type="button" id="vidPrev">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button class="btn btn-ghost btn-sm" type="button" id="vidNext">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="video-rail reveal" id="videoRail" aria-label="Video slider">
+                <!-- Item 1 -->
+                <div class="video-item">
+                    <div class="card-apple p-2 video-card">
                         <div class="ratio ratio-16x9">
-                            <iframe
-                                src="https://www.youtube.com/embed/o6J100ppegs"
-                                title="Mental Aritmetik Tanıtım Videosu"
-                                allowfullscreen
-                                loading="lazy">
-                            </iframe>
+                            <iframe src="https://www.youtube-nocookie.com/embed/jjgsYv1zcA0" title="Tanıtım Videosu 1"
+                                loading="lazy" allowfullscreen style="border:0;border-radius:18px;"></iframe>
                         </div>
                     </div>
                 </div>
 
-                <!-- TEXT -->
-                <div class="col-lg-7">
-                    <div class="feature-body">
-                        <div class="feature-kicker">
-                            <i class="bi bi-lightning"></i> Program Tanıtımı
+                <!-- Item 2 -->
+                <div class="video-item">
+                    <div class="card-apple p-2 video-card">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube-nocookie.com/embed/DtRQtO0tnjo" title="Tanıtım Videosu 2"
+                                loading="lazy" allowfullscreen style="border:0;border-radius:18px;"></iframe>
                         </div>
+                    </div>
+                </div>
 
-                        <h2 class="section-title h1 mb-2">
-                            Mental Aritmetik Nedir?
-                        </h2>
+                <!-- Item 3 -->
+                <div class="video-item">
+                    <div class="card-apple p-2 video-card">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube-nocookie.com/embed/o6J100ppegs" title="Tanıtım Videosu 3"
+                                loading="lazy" allowfullscreen style="border:0;border-radius:18px;"></iframe>
+                        </div>
+                    </div>
+                </div>
 
-                        <p class="mb-3">
-                            İşlem hızı, dikkat ve çalışma hafızasını destekleyen
-                            egzersiz yaklaşımı.
-                        </p>
-
-                        <ul class="list-clean">
-                            <li><i class="bi bi-check2-circle"></i> İşlem hızını artırma</li>
-                            <li><i class="bi bi-check2-circle"></i> Dikkat sürekliliği</li>
-                            <li><i class="bi bi-check2-circle"></i> Çalışma hafızası gelişimi</li>
-                        </ul>
-
-                        <div class="btn-row">
-                            <a class="btn btn-outline-light btn-lg fw-bold rounded-pill"
-                               href="iletisim.html">
-                                <i class="bi bi-chat-dots"></i> Bilgi Alın
-                            </a>
-
-                            <a class="btn-ghost"
-                               href="egitimlerimiz.html">
-                                <i class="bi bi-arrow-right"></i>
-                                Detayları İncele
-                            </a>
+                <!-- Item 4 -->
+                <div class="video-item">
+                    <div class="card-apple p-2 video-card">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube-nocookie.com/embed/jjgsYv1zcA0" title="Tanıtım Videosu 4"
+                                loading="lazy" allowfullscreen style="border:0;border-radius:18px;"></iframe>
                         </div>
                     </div>
                 </div>
 
             </div>
+
+            <div class="muted small mt-3 text-center reveal">
+                İpucu: Trackpad/mouse tekeri ile de yatay kaydırabilirsiniz.
+            </div>
+
         </div>
-    </div>
-</section>
-
-
-    <!-- 6) VIDEOS (BLACK) -->
-<!-- Video Galerisi -->
-<!-- Video Galerisi -->
-<!-- Video Galerisi -->
-<!-- Video Slider (Netflix tarzı) -->
-<section class="section" id="videolar">
-  <div class="container">
-
-    <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-3 reveal">
-      <div>
-        <div class="pill d-inline-flex mb-2">
-          <i class="bi bi-play-btn"></i>
-          <span>Videolar</span>
-        </div>
-        <h2 class="fw-bold mb-0" style="letter-spacing:-.02em;">Tanıtım Videoları</h2>
-        <p class="muted mb-0">Kaydırarak inceleyin.</p>
-      </div>
-
-      <div class="d-flex gap-2">
-        <button class="btn btn-ghost btn-sm" type="button" id="vidPrev">
-          <i class="bi bi-chevron-left"></i>
-        </button>
-        <button class="btn btn-ghost btn-sm" type="button" id="vidNext">
-          <i class="bi bi-chevron-right"></i>
-        </button>
-      </div>
-    </div>
-
-    <div class="video-rail reveal" id="videoRail" aria-label="Video slider">
-      <!-- Item 1 -->
-      <div class="video-item">
-        <div class="card-apple p-2 video-card">
-          <div class="ratio ratio-16x9">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/jjgsYv1zcA0"
-              title="Tanıtım Videosu 1"
-              loading="lazy"
-              allowfullscreen
-              style="border:0;border-radius:18px;"></iframe>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 2 -->
-      <div class="video-item">
-        <div class="card-apple p-2 video-card">
-          <div class="ratio ratio-16x9">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/DtRQtO0tnjo"
-              title="Tanıtım Videosu 2"
-              loading="lazy"
-              allowfullscreen
-              style="border:0;border-radius:18px;"></iframe>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 3 -->
-      <div class="video-item">
-        <div class="card-apple p-2 video-card">
-          <div class="ratio ratio-16x9">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/o6J100ppegs"
-              title="Tanıtım Videosu 3"
-              loading="lazy"
-              allowfullscreen
-              style="border:0;border-radius:18px;"></iframe>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 4 -->
-      <div class="video-item">
-        <div class="card-apple p-2 video-card">
-          <div class="ratio ratio-16x9">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/jjgsYv1zcA0"
-              title="Tanıtım Videosu 4"
-              loading="lazy"
-              allowfullscreen
-              style="border:0;border-radius:18px;"></iframe>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="muted small mt-3 text-center reveal">
-      İpucu: Trackpad/mouse tekeri ile de yatay kaydırabilirsiniz.
-    </div>
-
-  </div>
-</section>
+    </section>
 
 
 
@@ -1486,9 +1542,9 @@
             <div class="row g-4">
                 <div class="col-lg-4">
                     <div class="d-flex align-items-center gap-2 mb-2">
-                   <a class="navbar-brand brand" href="index.html">
-                <img src="logoo.png" alt="">
-            </a>
+                        <a class="navbar-brand brand" href="index.html">
+                            <img src="logoo.png" alt="">
+                        </a>
                     </div>
                     <p class="text-white-50 mb-3">Hızlı okuma • dikkat geliştirme • mental aritmetik</p>
                     <div class="text-white-50 small">
@@ -1535,7 +1591,13 @@
             </div>
         </div>
     </footer>
+<a href="test-1-dakika.html" class="test-float">
+    <div class="test-label">Çocuğunuzu Test Edin</div>
 
+    <div class="test-icon">
+        <i class="bi bi-stopwatch-fill"></i>
+    </div>
+</a>
     <!-- Floating -->
     <div class="floating">
         <a class="float-btn" href="https://wa.me/905439680233" target="_blank" rel="noopener">
@@ -1573,37 +1635,49 @@
 
         start();
     </script>
+    <script>
+        // Video slider controls
+        const rail = document.getElementById("videoRail");
+        const btnPrev = document.getElementById("vidPrev");
+        const btnNext = document.getElementById("vidNext");
+
+        function railStep() {
+            // bir kart + gap kadar kaydır
+            const first = rail.querySelector(".video-item");
+            if (!first) return 520;
+            const itemWidth = first.getBoundingClientRect().width;
+            return itemWidth + 18;
+        }
+
+        btnNext?.addEventListener("click", () => {
+            rail.scrollBy({ left: railStep(), behavior: "smooth" });
+        });
+
+        btnPrev?.addEventListener("click", () => {
+            rail.scrollBy({ left: -railStep(), behavior: "smooth" });
+        });
+
+        // Mouse wheel ile yatay kaydırma (Netflix hissi)
+        rail?.addEventListener("wheel", (e) => {
+            if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+                e.preventDefault();
+                rail.scrollBy({ left: e.deltaY, behavior: "auto" });
+            }
+        }, { passive: false });
+    </script>
 <script>
-  // Video slider controls
-  const rail = document.getElementById("videoRail");
-  const btnPrev = document.getElementById("vidPrev");
-  const btnNext = document.getElementById("vidNext");
+const testBtn = document.querySelector(".test-float");
 
-  function railStep(){
-    // bir kart + gap kadar kaydır
-    const first = rail.querySelector(".video-item");
-    if(!first) return 520;
-    const itemWidth = first.getBoundingClientRect().width;
-    return itemWidth + 18;
-  }
+function showLabel(){
+    testBtn.classList.add("show");
+    setTimeout(()=>{
+        testBtn.classList.remove("show");
+    },3500);
+}
 
-  btnNext?.addEventListener("click", () => {
-    rail.scrollBy({ left: railStep(), behavior: "smooth" });
-  });
-
-  btnPrev?.addEventListener("click", () => {
-    rail.scrollBy({ left: -railStep(), behavior: "smooth" });
-  });
-
-  // Mouse wheel ile yatay kaydırma (Netflix hissi)
-  rail?.addEventListener("wheel", (e) => {
-    if(Math.abs(e.deltaY) > Math.abs(e.deltaX)){
-      e.preventDefault();
-      rail.scrollBy({ left: e.deltaY, behavior: "auto" });
-    }
-  }, { passive:false });
+setTimeout(showLabel,1500);
+setInterval(showLabel,12000);
 </script>
-
 </body>
 
 </html>
