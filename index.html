@@ -169,11 +169,9 @@
             inset: 0;
             background-repeat: no-repeat;
             background-size: cover;
-            /* responsive: ekrana sığdırır */
             background-position: center center;
-            /* ortadan kırpar */
-            transform: none;
-            /* zoom istemiyorsan kapat */
+            opacity: 0;
+            transition: opacity .7s ease;
         }
 
         /* İstersen: masaüstünde biraz yukarı odak, mobilde ortala */
@@ -229,7 +227,7 @@
             height: 100%;
             display: flex;
             align-items: flex-start;
-            padding-top: clamp(70px, 10vh, 120px);
+            padding-top: clamp(10px, 2vh, 60px);
         }
 
         .hero-kicker {
@@ -597,7 +595,7 @@
         @media (max-width: 991px) {
             .hero {
                 height: auto;
-                min-height: 520px;
+                min-height: 83vh;
             }
 
             .hero-arrow {
@@ -989,6 +987,10 @@
                 transform: none !important;
             }
         }
+
+        .bannertitle-red {
+            color: #ee5959;
+        }
     </style>
 
     <!-- LocalBusiness schema -->
@@ -1016,8 +1018,8 @@
                         class="bi bi-whatsapp"></i><span>WhatsApp</span></a>
             </div>
             <div class="d-flex gap-3">
-                <a class="item" href="https://www.instagram.com/megahafizabatikent/" aria-label="Instagram"><i class="bi bi-instagram"></i><span
-                        class="d-none d-md-inline">Instagram</span></a>
+                <a class="item" href="https://www.instagram.com/megahafizabatikent/" aria-label="Instagram"><i
+                        class="bi bi-instagram"></i><span class="d-none d-md-inline">Instagram</span></a>
             </div>
         </div>
     </div>
@@ -1052,65 +1054,146 @@
 
     <!-- HERO -->
     <header class="hero" aria-label="Giriş banner">
-        <div class="hero-slide active" style="background-image:url('banner.png');"></div>
-        <div class="hero-slide" style="background-image:url('banner.png');"></div>
+        <!-- 5 slide -->
 
-        <div class="container-fluid">
-            <div class="container-xl hero-inner">
-                <div class="hero-box">
-                    <div class="hero-kicker">
-                        <i class="bi bi-geo-alt"></i>
-                        <span>Ankara • Eğitim Merkezi</span>
-                    </div>
 
-                    <h1 class="display-4 mb-2">Mega Hafıza Batıkent</h1>
+        <div class="hero-slide active" style="background-image:url('banenr.jpeg');">
+            <div class="container-fluid">
+                <div class="container-xl hero-inner">
+                    <div class="hero-box">
+                
 
-                    <p class="mb-2">
-                        Hızlı okuma, dikkat geliştirme ve mental aritmetik programlarıyla öğrencinin
-                        <strong>odak</strong> ve <strong>öğrenme performansını</strong> güçlendirin.
-                    </p>
+                        <h1 class="display-4 mb-2">Mega Hızlı Okuma <span class="bannertitle-red">Eğitimi</span></h1>
 
-                    <!-- İçerik artışı: kısa “pill” maddeler -->
-                    <ul class="hero-points">
-                        <li><i class="bi bi-speedometer2"></i> Hızlı Okuma</li>
-                        <li><i class="bi bi-bullseye"></i> Dikkat & Odak</li>
-                        <li><i class="bi bi-calculator"></i> Anzan Aritmetik</li>
-                        <li><i class="bi bi-lightning-charge"></i> Mental Aritmetik</li>
-                    </ul>
+                        <p class="mb-2">
+                            “Mega Hızlı Okuma” programı, “MEMORIAD Hızlı Okuma Olimpiyatları” ve “MEB Talim Terbiye
+                            Kurulu” onaylı, dünyada, hafızada kalan ve anlayarak hızlı okuma becerilerini en etkili, en
+                            hızlı ve en kolay şekilde öğrettiğini kanıtlayan ve test edilmiş tek eğitim programıdır.
+                        </p>
 
-                    <div class="d-flex flex-wrap gap-2">
-                        <a href="#takvim" class="btn4">
-                            <i class="bi bi-calendar3"></i> Eğitim Takvimi
-                        </a>
-                        <a href="iletisim.html" class="btn btn-outline-light btn-lg">
-                            <i class="bi bi-chat-dots"></i> Bilgi Alın
-                        </a>
-                    </div>
 
-                    <!-- İçerik artışı: küçük güven satırı -->
-                    <div class="hero-trust">
-                        <span><i class="bi bi-check2-circle"></i> Kayıt & Danışmanlık</span>
-                        <span><i class="bi bi-shield-check"></i> Kurumsal Eğitim Yapısı</span>
-                        <span><i class="bi bi-play-btn"></i> Veli Videoları</span>
+
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="egitimlerimiz.html" class="btn4">
+                                <i class="bi bi-arrow-right-circle"></i> Eğitimi Detayları
+                            </a>
+                            <a href="iletisim.html" class="btn btn-outline-light btn-lg">
+                                <i class="bi bi-chat-dots"></i> Bilgi Alın
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <div class="hero-slide" style="background-image:url('banner.png');">
+            <div class="container-fluid">
+                <div class="container-xl hero-inner">
+                    <div class="hero-box">
+                        
 
+                        <h1 class="display-4 mb-2">Mega Anzan Aritmetik <span class="bannertitle-red">Eğitimi</span></h1>
+
+                        <p class="mb-2">
+                            Mega Aritmetik™ Dünya Hafıza ve Zihinsel Matematik Olimpiyatları Yönetim Kurulu Üyesi Melik
+                            Duyar tarafından geliştirilmiş, 5 ile 12 yaş arasındaki çocukların beyin gelişimini
+                            destekleyen, beyne uygun zihinsel aritmetik teknikleriyle hafıza tekniklerini birleştirerek
+                            beyinde sinerji yaratan çok özel bir zihinsel aritmetik ve beyin egzersizleri eğitim
+                            sistemidir
+                        </p>
+
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="egzersizlerimiz.html" class="btn4">
+                                <i class="bi bi-controller"></i> Eğitimi İncele
+                            </a>
+                            <a href="iletisim.html" class="btn btn-outline-light btn-lg">
+                                <i class="bi bi-chat-dots"></i> Bilgi Alın
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-slide" style="background-image:url('banner.png');">
+            <div class="container-fluid">
+                <div class="container-xl hero-inner">
+                    <div class="hero-box">
+                        <h1 class="display-4 mb-2">Çocuk Zeka Ve Hafıza <span class="bannertitle-red">Atölyesi</span></h1>
+                        <p class="mb-2">
+                          Çocuk zekâ ve hafıza atölyemizin amacı, çocukların okul öncesi potansiyellerini sağlam bir zemine oturtmak, hafıza ve zekâ potansiyellerini maksimum seviyeye çıkartmaktır. Bunun yanı sıra dikkat ve konsantrasyon seviyelerini, mantıklı ve soyut düşünme becerilerini geliştirmeyi hedefleyen bir beyin gelişim programıdır.
+                        </p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="egitimlerimiz.html" class="btn4">
+                                <i class="bi bi-arrow-right-circle"></i>EĞİTİMİ İNCELE
+                            </a>
+                            <a href="iletisim.html" class="btn btn-outline-light btn-lg">
+                                <i class="bi bi-chat-dots"></i> Bilgi Alın
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-slide" style="background-image:url('indir.jpeg');">
+            <div class="container-fluid">
+                <div class="container-xl hero-inner">
+                    <div class="hero-box">
+                        <h1 class="display-4 mb-2">Mega Aktif Okuma <span class="bannertitle-red">Eğitimi</span></h1>
+                        <p class="mb-2">
+                           Akıcı okuma takılmadan, hızlı, doğru ve uygun ifade ile konuşuyor gibi pürüzsüz ve rahat okumaktır. Çocukların okuduklarını iyi anlamaları için ister sesli, ister sessiz okusunlar öncelikle akıcı bir şekilde okuyabilmeleri gerekir.
+                        </p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="egitimlerimiz.html" class="btn4">
+                                <i class="bi bi-arrow-right-circle"></i> EĞİTİMİ İNCELE
+                            </a>
+                            <a href="iletisim.html" class="btn btn-outline-light btn-lg">
+                                <i class="bi bi-chat-dots"></i> Bilgi Alın
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+             <div class="hero-slide" style="background-image:url('banner.png');">
+            <div class="container-fluid">
+                <div class="container-xl hero-inner">
+                    <div class="hero-box">
+                        <h1 class="display-4 mb-2">Mega O Mega <span class="bannertitle-red">Balık Yağı</span></h1>
+                        <p class="mb-2">
+Mega Vitamin™ Mega-O-Mega” sıvı balık yağı, yüksek oranda DHA ve EPA içeren doğal bir omega-3 kaynağıdır. Yüksek emilime sahip doğal Trigliserid formda GMP standartlarında üretilen Mega-O-Mega sıvı balık yağı Morina balığı karaciğeri ve Tuna balığı vücudundan elde edilmektedir. Bu formulasyon neticesinde 10 ml’de 1300 mg DHA, 700 mg EPA ve uygun miktarlarda A, D ve E vitamini içermektedir.                        </p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="egitimlerimiz.html" class="btn4">
+                                <i class="bi bi-arrow-right-circle"></i> ÜRÜNÜ KEŞFET
+                            </a>
+                            <a href="iletisim.html" class="btn btn-outline-light btn-lg">
+                                <i class="bi bi-chat-dots"></i> Bilgi Alın
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- arrows -->
         <div class="hero-arrow left" id="prev" aria-label="Önceki"><i class="bi bi-chevron-left"></i></div>
         <div class="hero-arrow right" id="next" aria-label="Sonraki"><i class="bi bi-chevron-right"></i></div>
 
+        <!-- 5 dots -->
         <div class="hero-dots">
             <div class="hero-dot active" data-slide="0"></div>
             <div class="hero-dot" data-slide="1"></div>
+            <div class="hero-dot" data-slide="2"></div>
+            <div class="hero-dot" data-slide="3"></div>
+            <div class="hero-dot" data-slide="4"></div>
         </div>
+
         <a href="#takvim" class="scroll-indicator">
             <span class="mouse">
                 <span class="wheel"></span>
             </span>
         </a>
-
     </header>
 
     <!-- 1) Eğitim Takvimi (BLUE) -->
@@ -1316,7 +1399,17 @@
                         <div class="feature-body">
                             <div class="feature-kicker"><i class="bi bi-book"></i> Program Tanıtımı</div>
                             <h2 class="section-title h1 mb-2">MEGA HAFIZA İLE Mega Aktif Okuma</h2>
-                            <p class="mb-3">Mega Aktif Okuma Eğitim Programı, ilkokul 2 ile 5. sınıf arasındaki öğrenciler için "Okumanın Bilimi" esaslarına göre hazırlanmış bir programdır. Eğitim hibrit eğitim programı olarak çalışmaktadır. Çevrim içi bir yazılım ve basılı eğitim materyalleri paralel olarak yürütülmektedir. Çevrim içi sistem ister grup eğitimi olsun, ister bire bir eğitim olsun sürekli olarak her öğrenci için veri toplamaktadır. Daha çok hangi tür okuma ve anlama safhalarında problem yaşadığı ve gelişimi sürekli ölçülmektedir. Eğitim 7 temel adımda gerçekleştirilmektedir. Eğitim modüler olup, öğrencinin akıcı okuması, okuduğunu anlaması ve düşündüğünü yazması konusunda ihtiyacına göre bazı etkinlikler az, çok veya hiç yapılmayacak ayarlardadır. Programın amacı beyinde anlamayı sağlayan ve temelleri ilkokulda atılması gereken anlamayla ilgili beyindeki nöral ağların SİSTAMATİK bir şekilde kurulmasını sağlamaktır.</p>
+                            <p class="mb-3">Mega Aktif Okuma Eğitim Programı, ilkokul 2 ile 5. sınıf arasındaki
+                                öğrenciler için "Okumanın Bilimi" esaslarına göre hazırlanmış bir programdır. Eğitim
+                                hibrit eğitim programı olarak çalışmaktadır. Çevrim içi bir yazılım ve basılı eğitim
+                                materyalleri paralel olarak yürütülmektedir. Çevrim içi sistem ister grup eğitimi olsun,
+                                ister bire bir eğitim olsun sürekli olarak her öğrenci için veri toplamaktadır. Daha çok
+                                hangi tür okuma ve anlama safhalarında problem yaşadığı ve gelişimi sürekli
+                                ölçülmektedir. Eğitim 7 temel adımda gerçekleştirilmektedir. Eğitim modüler olup,
+                                öğrencinin akıcı okuması, okuduğunu anlaması ve düşündüğünü yazması konusunda ihtiyacına
+                                göre bazı etkinlikler az, çok veya hiç yapılmayacak ayarlardadır. Programın amacı
+                                beyinde anlamayı sağlayan ve temelleri ilkokulda atılması gereken anlamayla ilgili
+                                beyindeki nöral ağların SİSTAMATİK bir şekilde kurulmasını sağlamaktır.</p>
 
                             <ul class="list-clean">
                                 <li><i class="bi bi-check2-circle"></i> Anlama odaklı teknikler</li>
@@ -1350,10 +1443,20 @@
                         <div class="feature-body">
                             <div class="feature-kicker"><i class="bi bi-speedometer2"></i> Program Tanıtımı</div>
                             <h2 class="section-title h1 mb-2">Mega Hızlı Okuma Eğitimi</h2>
-                            <p class="mb-3">Son yıllarda yapılan araştırmalar, insanların çok hızlı okuyabileceklerini bilimsel olarak kanıtlamıştır. Sınav rekabeti, yoğun iş temposu ve zamanın verimli kullanılması zorunlulukları hayatımızda hızlı okumayı birinci öncelikler sırasına getirmiştir.
-Çok hızlı okuyarak, zamandan tasarruf etmek kesinlikle mümkündür. Ancak, bununla birlikte, çok daha kısa zamanda çok daha hızlı okunulan metinlerin hafızada tutulabilmesi de gerekmektedir. Eğer, okuduklarınızı hafızanıza yerleştiremiyor ve gerektiğinde hatırlayamıyorsanız, çok hızlı okumanın hiçbir anlamı yoktur.Böyle bir hızlı okuma, zamanı boşa harcamaktan başka birşey değildir.
-"MHO - Mega Hızlı Okuma" programı hem öğrenciler, hem de yetişkinler için dünyada sonuçları kanıtlanmış olan Türkiye'deki güvenilir, tek "Anlayarak Hızlı Okuma Programı"dır.
-Program hem kağıt üzerinde, hem de bilgisayar ekranında anlayarak hızlı okumayı sağlayacak şekilde düzenlenmiştir.</p>
+                            <p class="mb-3">Son yıllarda yapılan araştırmalar, insanların çok hızlı okuyabileceklerini
+                                bilimsel olarak kanıtlamıştır. Sınav rekabeti, yoğun iş temposu ve zamanın verimli
+                                kullanılması zorunlulukları hayatımızda hızlı okumayı birinci öncelikler sırasına
+                                getirmiştir.
+                                Çok hızlı okuyarak, zamandan tasarruf etmek kesinlikle mümkündür. Ancak, bununla
+                                birlikte, çok daha kısa zamanda çok daha hızlı okunulan metinlerin hafızada
+                                tutulabilmesi de gerekmektedir. Eğer, okuduklarınızı hafızanıza yerleştiremiyor ve
+                                gerektiğinde hatırlayamıyorsanız, çok hızlı okumanın hiçbir anlamı yoktur.Böyle bir
+                                hızlı okuma, zamanı boşa harcamaktan başka birşey değildir.
+                                "MHO - Mega Hızlı Okuma" programı hem öğrenciler, hem de yetişkinler için dünyada
+                                sonuçları kanıtlanmış olan Türkiye'deki güvenilir, tek "Anlayarak Hızlı Okuma
+                                Programı"dır.
+                                Program hem kağıt üzerinde, hem de bilgisayar ekranında anlayarak hızlı okumayı
+                                sağlayacak şekilde düzenlenmiştir.</p>
 
                             <ul class="list-clean">
                                 <li><i class="bi bi-check2-circle"></i> Hız + anlama dengesi</li>
@@ -1404,9 +1507,17 @@ Program hem kağıt üzerinde, hem de bilgisayar ekranında anlayarak hızlı ok
                             </h2>
 
                             <p class="mb-3">
-                      Mental aritmetik nedir, zihinsel matematik becerilerini ifade eden ve abaküs kullanımıyla desteklenen bir yöntemdir. Bu yöntem, sayıları zihinde görselleştirerek toplama, çıkarma, çarpma ve bölme gibi işlemleri hızlı bir şekilde yapmayı öğretir. Mental aritmetik, çocukların matematiksel düşünme becerilerini geliştirmek için kullanılan etkili bir tekniktir.
+                                Mental aritmetik nedir, zihinsel matematik becerilerini ifade eden ve abaküs
+                                kullanımıyla desteklenen bir yöntemdir. Bu yöntem, sayıları zihinde görselleştirerek
+                                toplama, çıkarma, çarpma ve bölme gibi işlemleri hızlı bir şekilde yapmayı öğretir.
+                                Mental aritmetik, çocukların matematiksel düşünme becerilerini geliştirmek için
+                                kullanılan etkili bir tekniktir.
 
-Mental aritmetik nedir, aynı zamanda çocukların hafıza ve konsantrasyon yeteneklerini güçlendiren bir eğitim sürecidir. Bu beceriyi öğrenen çocuklar, matematik derslerinde daha başarılı olur ve problemlere karşı daha analitik bir yaklaşım sergiler. Mental aritmetik, çocukların sadece matematikte değil, diğer akademik alanlarda da performanslarını artırır.
+                                Mental aritmetik nedir, aynı zamanda çocukların hafıza ve konsantrasyon yeteneklerini
+                                güçlendiren bir eğitim sürecidir. Bu beceriyi öğrenen çocuklar, matematik derslerinde
+                                daha başarılı olur ve problemlere karşı daha analitik bir yaklaşım sergiler. Mental
+                                aritmetik, çocukların sadece matematikte değil, diğer akademik alanlarda da
+                                performanslarını artırır.
                             </p>
 
                             <ul class="list-clean">
@@ -1528,7 +1639,11 @@ Mental aritmetik nedir, aynı zamanda çocukların hafıza ve konsantrasyon yete
                             <div class="feature-kicker"><i class="bi bi-box-seam"></i> Ürün Tanıtımı</div>
                             <h2 class="section-title h1 mb-2">Mega O Mega</h2>
                             <p class="mb-3">Mega O Mega Balık Yağı
-Mega Vitamin™ Mega-O-Mega” sıvı balık yağı, yüksek oranda DHA ve EPA içeren doğal bir omega-3 kaynağıdır. Yüksek emilime sahip doğal Trigliserid formda GMP standartlarında üretilen Mega-O-Mega sıvı balık yağı Morina balığı karaciğeri ve Tuna balığı vücudundan elde edilmektedir. Bu formulasyon neticesinde 10 ml’de 1300 mg DHA, 700 mg EPA ve uygun miktarlarda A, D ve E vitamini içermektedir.</p>
+                                Mega Vitamin™ Mega-O-Mega” sıvı balık yağı, yüksek oranda DHA ve EPA içeren doğal bir
+                                omega-3 kaynağıdır. Yüksek emilime sahip doğal Trigliserid formda GMP standartlarında
+                                üretilen Mega-O-Mega sıvı balık yağı Morina balığı karaciğeri ve Tuna balığı vücudundan
+                                elde edilmektedir. Bu formulasyon neticesinde 10 ml’de 1300 mg DHA, 700 mg EPA ve uygun
+                                miktarlarda A, D ve E vitamini içermektedir.</p>
 
                             <ul class="list-clean">
                                 <li><i class="bi bi-check2-circle"></i> Planlı kullanım ve gelişim takibi</li>
@@ -1626,10 +1741,6 @@ Mega Vitamin™ Mega-O-Mega” sıvı balık yağı, yüksek oranda DHA ve EPA i
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // Year
-        document.getElementById("year").textContent = new Date().getFullYear();
-
-        // Slider
         const $slides = $(".hero-slide");
         const $dots = $(".hero-dot");
         let idx = 0, timer = null;
@@ -1639,12 +1750,22 @@ Mega Vitamin™ Mega-O-Mega” sıvı balık yağı, yüksek oranda DHA ve EPA i
             $slides.removeClass("active").eq(idx).addClass("active");
             $dots.removeClass("active").eq(idx).addClass("active");
         }
-        function start() { stop(); timer = setInterval(() => go(idx + 1), 6500); }
-        function stop() { if (timer) clearInterval(timer); }
+
+        function start() {
+            stop();
+            timer = setInterval(() => go(idx + 1), 5000);
+        }
+
+        function stop() {
+            if (timer) clearInterval(timer);
+        }
 
         $("#next").on("click", () => { go(idx + 1); start(); });
         $("#prev").on("click", () => { go(idx - 1); start(); });
-        $dots.on("click", function () { go(parseInt($(this).data("slide"))); start(); });
+        $dots.on("click", function () {
+            go(parseInt($(this).data("slide")));
+            start();
+        });
 
         start();
     </script>
