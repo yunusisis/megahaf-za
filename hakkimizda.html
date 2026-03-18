@@ -344,23 +344,36 @@
     }
 
     /* White cards variant */
-    .card-white{
-      height:100%;
+    .card-white {
+      height: 100%;
       border-radius: var(--r2);
-      background:#fff;
-      border: 1px solid rgba(0,0,0,.08);
-      box-shadow: 0 18px 55px rgba(0,0,0,.10);
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, .08);
+      box-shadow: 0 18px 55px rgba(0, 0, 0, .10);
       padding: 22px;
       transition: transform .2s ease, border-color .2s ease;
     }
-    .card-white:hover{ transform: translateY(-6px); border-color: rgba(0,0,0,.14); }
-    .card-white p{ color: rgba(11,15,25,.70); margin: 10px 0 0; font-weight: 600; }
-    .icon-pill.dark{
-      background: rgba(11,94,215,.10);
-      border: 1px solid rgba(11,94,215,.18);
+
+    .card-white:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0, 0, 0, .14);
+    }
+
+    .card-white p {
+      color: rgba(11, 15, 25, .70);
+      margin: 10px 0 0;
+      font-weight: 600;
+    }
+
+    .icon-pill.dark {
+      background: rgba(11, 94, 215, .10);
+      border: 1px solid rgba(11, 94, 215, .18);
       color: var(--blue);
     }
-    .icon-pill.dark .bi{ color: var(--blue); }
+
+    .icon-pill.dark .bi {
+      color: var(--blue);
+    }
 
     /* Feature block */
     .feature {
@@ -371,10 +384,10 @@
       box-shadow: var(--shadow2);
     }
 
-    .feature-white{
-      background:#fff;
-      border: 1px solid rgba(0,0,0,.08);
-      box-shadow: 0 20px 60px rgba(0,0,0,.08);
+    .feature-white {
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, .08);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .08);
       border-radius: 34px;
     }
 
@@ -404,7 +417,7 @@
       margin-bottom: 10px;
     }
 
-    .feature-kicker.dark{
+    .feature-kicker.dark {
       color: #0b0f19;
       font-weight: 900;
     }
@@ -413,7 +426,10 @@
       color: rgba(255, 255, 255, .82);
       max-width: 78ch;
     }
-    .feature-body .text-muted{ color: rgba(11,15,25,.70) !important; }
+
+    .feature-body .text-muted {
+      color: rgba(11, 15, 25, .70) !important;
+    }
 
     .list-clean {
       margin: 16px 0 0;
@@ -429,10 +445,17 @@
       margin-bottom: 10px;
     }
 
-    .list-clean i { color: rgba(255, 255, 255, .95); }
+    .list-clean i {
+      color: rgba(255, 255, 255, .95);
+    }
 
-    .list-clean.dark li{ color:#0b0f19; }
-    .list-clean.dark i{ color: var(--blue); }
+    .list-clean.dark li {
+      color: #0b0f19;
+    }
+
+    .list-clean.dark i {
+      color: var(--blue);
+    }
 
     .btn-row {
       display: flex;
@@ -495,10 +518,154 @@
     }
 
     @media (max-width: 991px) {
-      .feature-media { min-height: 240px; }
-      .about-hero{ min-height: 520px; }
-      .hero-box{ padding: 20px; }
+      .feature-media {
+        min-height: 240px;
+      }
+
+      .about-hero {
+        min-height: 670px;
+      }
+
+      .hero-box {
+        padding: 20px;
+      }
     }
+    .veli-video-section{
+    padding: 80px 0;
+    background: #fff;
+}
+
+.video-section-head{
+    max-width: 760px;
+    margin: 0 auto 40px;
+}
+
+.video-kicker{
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: rgba(11,94,215,.10);
+    color: #0b5ed7;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: .04em;
+    margin-bottom: 14px;
+}
+
+.video-section-head h2{
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 900;
+    color: #0b0f19;
+    letter-spacing: -.03em;
+    margin-bottom: 12px;
+}
+
+.video-section-head p{
+    color: rgba(11,15,25,.70);
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.veli-video-grid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.veli-video-card{
+    background: #ffffff;
+    border: 1px solid rgba(15,23,42,.08);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 16px 45px rgba(2,6,23,.08);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.veli-video-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 22px 55px rgba(2,6,23,.12);
+}
+
+.veli-video-frame{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+}
+
+.veli-video-frame iframe{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.veli-video-content{
+    padding: 20px 20px 22px;
+}
+
+.veli-video-content h3{
+    font-size: 20px;
+    font-weight: 850;
+    color: #0b0f19;
+    letter-spacing: -.02em;
+    margin-bottom: 8px;
+}
+
+.veli-video-content p{
+    margin: 0;
+    color: rgba(11,15,25,.68);
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* Tablet */
+@media (max-width: 991px){
+    .veli-video-section{
+        padding: 70px 0;
+    }
+
+    .veli-video-grid{
+        gap: 18px;
+    }
+
+    .veli-video-content{
+        padding: 18px;
+    }
+
+    .veli-video-content h3{
+        font-size: 18px;
+    }
+}
+
+/* Mobil */
+@media (max-width: 767px){
+    .veli-video-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .video-section-head{
+        margin-bottom: 28px;
+    }
+
+    .video-section-head h2{
+        font-size: 28px;
+    }
+
+    .video-section-head p{
+        font-size: 15px;
+    }
+
+    .veli-video-card{
+        border-radius: 20px;
+    }
+
+    .veli-video-content{
+        padding: 16px;
+    }
+}
   </style>
 
   <!-- LocalBusiness schema -->
@@ -526,8 +693,8 @@
             class="bi bi-whatsapp"></i><span>WhatsApp</span></a>
       </div>
       <div class="d-flex gap-3">
-        <a class="item" href="https://www.instagram.com/megahafizabatikent/" aria-label="Instagram"><i class="bi bi-instagram"></i><span
-            class="d-none d-md-inline">Instagram</span></a>
+        <a class="item" href="https://www.instagram.com/megahafizabatikent/" aria-label="Instagram"><i
+            class="bi bi-instagram"></i><span class="d-none d-md-inline">Instagram</span></a>
       </div>
     </div>
   </div>
@@ -566,24 +733,16 @@
       <div class="hero-box">
         <div class="hero-kicker">
           <i class="bi bi-info-circle"></i>
-          <span>Mega Hafıza • Ankara</span>
+          <span>Mega Hafıza Nedir?</span>
         </div>
 
-        <h1 class="display-5 fw-bold mb-2" style="letter-spacing:-.04em;">Hakkımızda</h1>
+        <h1 class="display-5 fw-bold mb-2" style="letter-spacing:-.04em;">Neler Yapıyoruz?</h1>
         <p class="mb-2" style="color: rgba(255,255,255,.86); max-width: 70ch;">
-         Mega Hafıza Batıkent Şubesi olarak, Çocuk zeka ve hafıza atölyesi, Mega aktif okuma, Mega hızlı okuma, Mega anzan aritmetik gibi verdiğimiz başlıca eğitimler ile çocuklarımızın hayata emin adımlarla başlaması gayesiyle var gücümüzle çalışıyoruz.
-
- 
-
-Eğitimlerimiz hakkında daha fazla bilgi almak için eğitimler sayfamızı ziyaret ediniz.
+          Mega Hafıza Batıkent Şubesi olarak, Çocuk zeka ve hafıza atölyesi, Mega aktif okuma, Mega hızlı okuma, Mega
+          anzan aritmetik gibi verdiğimiz başlıca eğitimler ile çocuklarımızın hayata emin adımlarla başlaması gayesiyle
+          var gücümüzle çalışıyoruz. <br><br>
+          Eğitimlerimiz hakkında daha fazla bilgi almak için eğitimler sayfamızı ziyaret ediniz.
         </p>
-
-        <ul class="hero-points">
-          <li><i class="bi bi-speedometer2"></i> Hız + Anlama</li>
-          <li><i class="bi bi-bullseye"></i> Dikkat & Odak</li>
-          <li><i class="bi bi-journal-text"></i> Aktif Okuma</li>
-          <li><i class="bi bi-calculator"></i> Anzan Aritmetik</li>
-        </ul>
 
         <div class="btn-row mt-3">
           <a class="btn btn-primary btn-lg" href="iletisim.html"><i class="bi bi-chat-dots"></i> Bilgi Alın</a>
@@ -594,201 +753,62 @@ Eğitimlerimiz hakkında daha fazla bilgi almak için eğitimler sayfamızı ziy
   </header>
 
   <!-- 1) VİZYON / MİSYON (WHITE) -->
-  <section class="section sec-white">
-    <div class="container-xl">
-      <div class="row align-items-end g-3 mb-4">
-        <div class="col-lg-8">
-          <h2 class="section-title display-6 mb-2 text-dark">
-            <i class="bi bi-compass me-2"></i>Yaklaşımımız
-          </h2>
-          <p class="section-sub dark mb-0">
-            Amacımız: öğrencinin <strong>hız</strong>, <strong>anlama</strong> ve <strong>dikkat</strong> becerilerini
-            birlikte geliştirmek. Ölçülebilir ilerleme ve düzenli pratikle kalıcı sonuç hedefleriz.
-          </p>
-        </div>
-        <div class="col-lg-4 text-lg-end">
-          <a class="btn btn-primary btn-lg" href="1-dakikada-test.html"><i class="bi bi-stopwatch"></i> 1 Dakikada Test</a>
-        </div>
-      </div>
 
-      <div class="row g-4">
-        <div class="col-lg-6">
-          <div class="card-white">
-            <div class="card-head">
-              <div class="icon-pill dark"><i class="bi bi-bullseye"></i></div>
-              <small class="badge bg-primary">Misyon</small>
-            </div>
-            <h3 class="h4 fw-black" style="font-weight:950; letter-spacing:-.02em;">Öğrenciyi hızlandırırken anlayışı korumak</h3>
-            <p>
-              Hızlı okuma çalışmaları; göz takibi, dikkat yönetimi ve anlama teknikleriyle birlikte ilerler.
-              Hedefimiz yalnız “hız” değil; <strong>hız + anlama dengesi</strong>.
-            </p>
-            <ul class="list-clean dark mb-0">
-              <li><i class="bi bi-check2-circle"></i> Seviye tespiti + kişiye uygun plan</li>
-              <li><i class="bi bi-check2-circle"></i> Düzenli pratik ve takip</li>
-              <li><i class="bi bi-check2-circle"></i> Sınav odaklı okuma stratejileri</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-lg-6">
-          <div class="card-white">
-            <div class="card-head">
-              <div class="icon-pill dark"><i class="bi bi-stars"></i></div>
-              <small class="badge bg-dark">Vizyon</small>
-            </div>
-            <h3 class="h4 fw-black" style="font-weight:950; letter-spacing:-.02em;">Ankara’da güçlü öğrenme alışkanlığı</h3>
-            <p>
-              Öğrencinin okuma, dikkat ve öğrenme becerilerini güçlendirerek; okul başarısını ve özgüvenini desteklemek.
-              Hedef: <strong>kalıcı öğrenme</strong> ve <strong>istikrarlı gelişim</strong>.
-            </p>
-            <ul class="list-clean dark mb-0">
-              <li><i class="bi bi-check2-circle"></i> Dikkat sürekliliği ve odak kontrolü</li>
-              <li><i class="bi bi-check2-circle"></i> Aktif okuma ile not alma & hatırlama</li>
-              <li><i class="bi bi-check2-circle"></i> Mental egzersizlerle zihinsel çeviklik</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 2) NEDEN MEGA HAFIZA (BLACK) -->
-  <section class="section sec-black">
-    <div class="container-xl">
-      <div class="row align-items-end g-3 mb-4">
-        <div class="col-lg-8">
-          <h2 class="section-title display-6 mb-2"><i class="bi bi-shield-check me-2"></i>Neden Mega Hafıza?</h2>
-          <p class="section-sub mb-0">
-            Eğitim modelimiz, öğrencinin gelişimini ölçülebilir hale getirir.
-            Anlama, dikkat ve hız alanlarında düzenli ilerleme hedefler.
-          </p>
-        </div>
-        <div class="col-lg-4 text-lg-end">
-          <a class="btn btn-outline-light fw-bold px-4 rounded-pill" href="iletisim.html"><i class="bi bi-chat-dots"></i> Danışmanlık Al</a>
-        </div>
-      </div>
-
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-3">
-          <div class="card-pro">
-            <div class="card-head">
-              <div class="icon-pill"><i class="bi bi-clipboard-data"></i></div>
-              <small class="text-white-50 fw-bold">Ölçüm</small>
-            </div>
-            <h3 class="h5">Seviye Belirleme</h3>
-            <p>Okuma, dikkat ve temel beceriler için kısa ölçümlerle başlarız.</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-          <div class="card-pro">
-            <div class="card-head">
-              <div class="icon-pill"><i class="bi bi-diagram-3"></i></div>
-              <small class="text-white-50 fw-bold">Plan</small>
-            </div>
-            <h3 class="h5">Kişiye Uygun Program</h3>
-            <p>Yaş ve hedefe uygun pratikler ile öğrenciyi yormadan ilerleriz.</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-          <div class="card-pro">
-            <div class="card-head">
-              <div class="icon-pill"><i class="bi bi-lightning-charge"></i></div>
-              <small class="text-white-50 fw-bold">Uygulama</small>
-            </div>
-            <h3 class="h5">Düzenli Pratik</h3>
-            <p>Alışkanlık kazandıran kısa egzersizlerle süreklilik sağlarız.</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-          <div class="card-pro">
-            <div class="card-head">
-              <div class="icon-pill"><i class="bi bi-graph-up-arrow"></i></div>
-              <small class="text-white-50 fw-bold">Takip</small>
-            </div>
-            <h3 class="h5">Gelişim Takibi</h3>
-            <p>İlerlemeyi görünür hale getirip motivasyonu güçlendiririz.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <div class="soft-divider"></div>
-
-  <!-- 3) EĞİTİM MODELİ (BLUE) -->
-  <section class="section sec-blue">
+<section class="veli-video-section">
     <div class="container-xl">
-      <div class="feature">
-        <div class="row g-0 align-items-stretch flex-lg-row-reverse">
-          <div class="col-lg-5">
-            <div class="feature-media" style="background-image:url('kitap-okuma-aliskanligi-ve-cocuk.jpg');"></div>
-          </div>
-          <div class="col-lg-7">
-            <div class="feature-body">
-              <div class="feature-kicker"><i class="bi bi-journal-text"></i> Eğitim Modeli</div>
-              <h2 class="section-title h1 mb-2">Hız + Anlama + Dikkat Birlikte Gelişir</h2>
-              <p class="mb-3">
-                Okuma hızını artırırken, anlama kaybı yaşamamak için göz hareketleri, odak yönetimi,
-                metin stratejileri ve pratik rutini birlikte ilerler.
-              </p>
-
-              <ul class="list-clean">
-                <li><i class="bi bi-check2-circle"></i> Okuma stratejileri ve metin takibi</li>
-                <li><i class="bi bi-check2-circle"></i> Dikkat egzersizleri ve odak kontrolü</li>
-                <li><i class="bi bi-check2-circle"></i> Aktif okuma: not alma & hatırlama</li>
-              </ul>
-
-              <div class="btn-row">
-                <a class="btn btn-outline-light btn-lg fw-bold rounded-pill" href="egitimlerimiz.html"><i
-                    class="bi bi-grid"></i> Eğitimleri Gör</a>
-                <a class="btn-ghost" href="iletisim.html"><i class="bi bi-chat-dots"></i> Bilgi Alın</a>
-              </div>
-            </div>
-          </div>
+        <div class="video-section-head text-center">
+            <span class="video-kicker">Veli Görüşleri</span>
+            <h2>Öğrenci Velilerinden Bizi Dinleyin</h2>
+            <p>
+                Mega Hafıza Batıkent eğitimleri hakkında veli deneyimlerini izleyin.
+            </p>
         </div>
-      </div>
 
+        <div class="veli-video-grid">
+            <div class="veli-video-card">
+                <div class="veli-video-frame">
+                    <iframe
+                        src="https://www.youtube.com/embed/y-JfRGGpwAY?rel=0"
+                        title="Mega Aritmetik Öğrenci Velisi Yorumu 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+                <div class="veli-video-content">
+                    <h3>Mega Aritmetik Öğrenci Velisi Yorumu</h3>
+                    <p>
+                        Eğitim sürecinde yaşanan gelişimi ve veli deneyimini izleyin.
+                    </p>
+                </div>
+            </div>
+
+            <div class="veli-video-card">
+                <div class="veli-video-frame">
+                    <iframe
+                        src="https://www.youtube.com/embed/DtRQtO0tnjo?rel=0"
+                        title="Mega Aritmetik Öğrenci Velisi Yorumu 1"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+                <div class="veli-video-content">
+                    <h3>Veli Deneyimi ve Yorumlar</h3>
+                    <p>
+                        Mega Hafıza Batıkent programlarının öğrenci üzerindeki etkisini dinleyin.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
+</section>
+  <!-- 3) EĞİTİM MODELİ (BLUE) -->
 
   <!-- 4) KISA CTA (WHITE) -->
-  <section class="section sec-white">
-    <div class="container-xl">
-      <div class="feature feature-white">
-        <div class="row g-0 align-items-stretch">
-          <div class="col-lg-5">
-            <div class="feature-media" style="background-image:url('cocuk-degerlendirme-testleri-egitimiun-ab00-0.jpg');"></div>
-          </div>
-          <div class="col-lg-7">
-            <div class="feature-body">
-              <div class="feature-kicker dark"><i class="bi bi-chat-dots"></i> Hızlı Başlangıç</div>
-              <h2 class="section-title h1 mb-2 text-dark">Ön Değerlendirme ile Başlayalım</h2>
-              <p class="mb-3 text-muted">
-                Öğrencinin seviyesini netleştirelim, hedefe uygun bir plan oluşturalım.
-                Düzenli pratik ve takip ile gelişimi görünür hale getirelim.
-              </p>
-
-              <ul class="list-clean dark">
-                <li><i class="bi bi-check2-circle"></i> Kayıt & danışmanlık süreci</li>
-                <li><i class="bi bi-check2-circle"></i> Program önerisi ve yol haritası</li>
-                <li><i class="bi bi-check2-circle"></i> Düzenli takip ve geri bildirim</li>
-              </ul>
-
-              <div class="btn-row">
-                <a class="btn btn-primary btn-lg" href="iletisim.html"><i class="bi bi-chat-dots"></i> Bilgi Alın</a>
-                <a class="btn btn-outline-dark btn-lg" href="egzersizlerimiz.html"><i class="bi bi-lightning"></i> Egzersizlere Git</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
+   
 
   <!-- FOOTER -->
   <footer>
@@ -845,14 +865,14 @@ Eğitimlerimiz hakkında daha fazla bilgi almak için eğitimler sayfamızı ziy
     </div>
   </footer>
 
- <div class="floating">
-        <a class="float-btn" href="https://wa.me/905441760389" target="_blank" rel="noopener">
-            <span class="fab"><i class="bi bi-whatsapp"></i></span><span>Destek</span>
-        </a>
-        <a class="float-btn" href="tel:+905441760389">
-            <span class="fab"><i class="bi bi-telephone"></i></span><span>Arayınız</span>
-        </a>
-    </div>
+  <div class="floating">
+    <a class="float-btn" href="https://wa.me/905441760389" target="_blank" rel="noopener">
+      <span class="fab"><i class="bi bi-whatsapp"></i></span><span>Destek</span>
+    </a>
+    <a class="float-btn" href="tel:+905441760389">
+      <span class="fab"><i class="bi bi-telephone"></i></span><span>Arayınız</span>
+    </a>
+  </div>
 
   <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
